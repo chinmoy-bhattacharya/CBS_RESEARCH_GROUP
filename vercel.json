@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/iiest-shibpur/chemistry-department/cbs-research-groups/v1/api/(.*)",
-      "dest": "/index.js"
+      "dest": "/server.js"
     }
   ]
 }
