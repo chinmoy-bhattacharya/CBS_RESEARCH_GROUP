@@ -1,15 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
-      "src": "/iiest-shibpur/chemistry-department/cbs-research-groups/v1/(.*)",
-      "dest": "/server.js"
+      "src": "/iiest-shibpur/chemistry-department/cbs-research-groups/v1/api/(.*)",
+      "dest": "/index.js"
     }
   ]
 }
