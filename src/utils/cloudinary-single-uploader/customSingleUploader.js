@@ -33,7 +33,6 @@ const customSingleUploader = async (fileBuffer, folderName) => {
           }
         }
       );
-
       // Create a readable stream from the buffer
       streamifier.createReadStream(fileBuffer).pipe(uploadStream);
     });
