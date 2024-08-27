@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "src/controller/**/*.js": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
   "builds": [
     {
       "src": "server.js",
