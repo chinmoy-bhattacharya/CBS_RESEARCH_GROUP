@@ -36,7 +36,7 @@ const checkAdminAuth = async (req, res, next) => {
         .select("-adminUserPassword");
       next();
     } catch (error) {
-      return res.status(500).json({
+      return res.status(401).json({
         issue: error.message,
         details: "Authorization failed.",
       });
