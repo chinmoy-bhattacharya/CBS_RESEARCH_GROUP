@@ -23,7 +23,7 @@
 
 const {
   clearCache,
-} = require("../../../middlewares/cache-middleware/cacheMiddleware");
+} = require("../../../middlewares/cache-middleware/cacheMiddleware.js");
 const personalAwardsModel = require("../../../models/awards-model/personal-awards-model/personalAwardsModel");
 
 const uploadPersonalAwardsCtrl = async (req, res) => {
