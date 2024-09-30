@@ -23,12 +23,11 @@ const {
   mainEmailHostUser,
   mainEmailHostPassword,
 } = require("../../config/envConfig");
+const envConfig = require("../../config/envConfig");
 
 const sendAdminRegistrationDeniedMail = async (sendTo, userName, response) => {
-  const CBSLogo =
-    "https://res.cloudinary.com/dmgs52isy/image/upload/v1724431697/email-assets/pdz67r83witpewa82owg.png";
-  const emailIllustration =
-    "https://res.cloudinary.com/dmgs52isy/image/upload/v1724435282/email-assets/rhje0fzumnwilzqwjqy7.png";
+  const CBSLogo = envConfig.researchGroupLogo;
+  const emailIllustration = envConfig.emailIllustration;
   try {
     const transporter = nodemailer.createTransport({
       host: mainEmailHostProtocol,

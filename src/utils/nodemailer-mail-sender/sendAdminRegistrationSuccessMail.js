@@ -24,6 +24,7 @@ const {
   mainEmailHostUser,
   mainEmailHostPassword,
 } = require("../../config/envConfig");
+const envConfig = require("../../config/envConfig");
 
 const sendAdminRegistrationSuccessMail = async (
   sendTo,
@@ -32,11 +33,9 @@ const sendAdminRegistrationSuccessMail = async (
   loginPassword,
   response
 ) => {
-  const CBSLogo =
-    "https://res.cloudinary.com/dmgs52isy/image/upload/v1724431697/email-assets/pdz67r83witpewa82owg.png";
-  const emailIllustration =
-    "https://res.cloudinary.com/dmgs52isy/image/upload/v1724435282/email-assets/rhje0fzumnwilzqwjqy7.png";
-  const loginLink = "https://www.kunalchandradas.tech";
+  const CBSLogo = envConfig.researchGroupLogo;
+  const emailIllustration = envConfig.emailIllustration;
+  const loginLink = envConfig.loginLink;
   try {
     const transporter = nodemailer.createTransport({
       host: mainEmailHostProtocol,

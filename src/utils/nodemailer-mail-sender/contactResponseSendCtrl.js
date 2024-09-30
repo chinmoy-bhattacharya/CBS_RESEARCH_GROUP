@@ -22,6 +22,7 @@ const {
   mainEmailHostUser,
   mainEmailHostPassword,
 } = require("../../config/envConfig");
+const envConfig = require("../../config/envConfig");
 
 const contactResponseSendCtrl = async (
   sendTo,
@@ -36,8 +37,7 @@ const contactResponseSendCtrl = async (
     month: "2-digit",
     day: "2-digit",
   });
-  const CBSLogo =
-    "https://res.cloudinary.com/dmgs52isy/image/upload/v1724431697/email-assets/pdz67r83witpewa82owg.png";
+  const CBSLogo = envConfig.researchGroupLogo;
 
   try {
     const transporter = nodemailer.createTransport({

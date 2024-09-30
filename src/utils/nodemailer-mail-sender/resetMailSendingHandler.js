@@ -22,20 +22,17 @@ const {
   supportEmailHostUser,
   supportEmailHostPassword,
 } = require("../../config/envConfig");
+const envConfig = require("../../config/envConfig");
 const sendPasswordResetEmail = async (
   sendTo,
   userName,
   corespondingLink,
   response
 ) => {
-  const animatedHeader =
-    "https://res.cloudinary.com/dmgs52isy/image/upload/v1724431747/email-assets/wmr55mj9bqw8kwztjbxv.gif";
-  const mailBackground =
-    "https://res.cloudinary.com/dmgs52isy/image/upload/v1724431747/email-assets/jhama4gudp3ww3oarkpz.png";
-  const mailBottom =
-    "https://res.cloudinary.com/dmgs52isy/image/upload/v1724431748/email-assets/g1bpwqh7cujsh5jkm7pt.png";
-  const CBSLogo =
-    "https://res.cloudinary.com/dmgs52isy/image/upload/v1724431697/email-assets/pdz67r83witpewa82owg.png";
+  const animatedHeader = envConfig.mailTemplateHeader;
+  const mailBackground = envConfig.mailTemplateBody;
+  const mailBottom = envConfig.mailTemplateFooter;
+  const CBSLogo = envConfig.researchGroupLogo;
 
   try {
     const transporter = nodemailer.createTransport({
