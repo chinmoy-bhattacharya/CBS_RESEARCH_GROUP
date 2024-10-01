@@ -21,8 +21,8 @@
 
 const {
   clearCache,
-} = require("../../middlewares/cache-middleware/cacheMiddleware");
-const groupNewsModel = require("../../models/group-news-model/groupNewsModel");
+} = require('../../middlewares/cache-middleware/cacheMiddleware');
+const groupNewsModel = require('../../models/group-news-model/groupNewsModel');
 
 const updateGroupNewsCtrl = async (req, res) => {
   const { id } = req.params;
@@ -32,8 +32,8 @@ const updateGroupNewsCtrl = async (req, res) => {
     const getPreviousGroupNews = await groupNewsModel.findById(id);
     if (!getPreviousGroupNews) {
       return res.status(404).json({
-        issue: "Not found!",
-        details: "Requested resources are not found.",
+        issue: 'Not found!',
+        details: 'Requested resources are not found.',
       });
     } else {
       const newNewsTitle = newsTitle || getPreviousGroupNews.newsTitle;
@@ -52,8 +52,8 @@ const updateGroupNewsCtrl = async (req, res) => {
 
       if (!updateGroupNews) {
         return res.status(501).json({
-          issue: "Not implemented!",
-          details: "Something went wrong, please try again later.",
+          issue: 'Not implemented!',
+          details: 'Something went wrong, please try again later.',
         });
       } else {
         clearCache(
@@ -62,8 +62,11 @@ const updateGroupNewsCtrl = async (req, res) => {
         clearCache(
           `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/latest-news/groups/${id}`
         );
+        clearCache(
+          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+        );
         return res.status(200).json({
-          details: "Requested resources has been successfully updated!",
+          details: 'Requested resources has been successfully updated!',
         });
       }
     }
@@ -71,7 +74,7 @@ const updateGroupNewsCtrl = async (req, res) => {
     return res.status(500).json({
       issue: error.message,
       details:
-        "Unable to update requested resources due to some technical problem.",
+        'Unable to update requested resources due to some technical problem.',
     });
   }
 };

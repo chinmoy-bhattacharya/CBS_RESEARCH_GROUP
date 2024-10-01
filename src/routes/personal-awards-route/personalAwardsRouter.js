@@ -18,37 +18,37 @@
  * or services.
  */
 
-const express = require("express");
-const uploadPersonalAwardsCtrl = require("../../controller/awards-controllers/personal-awards-controller/uploadPersonalAwardCtrl");
-const updatePersonalAwardCtrl = require("../../controller/awards-controllers/personal-awards-controller/updatePersonalAwardCtrl");
-const deletePersonalAwardsCtrl = require("../../controller/awards-controllers/personal-awards-controller/deletePersonalAwardsCtrl");
-const getPersonalAwardsCtrl = require("../../controller/awards-controllers/personal-awards-controller/getPersonalAwardsCtrl");
-const checkAdminAuth = require("../../middlewares/auth-middleware/authAdminMiddleware");
+const express = require('express');
+const uploadPersonalAwardsCtrl = require('../../controller/awards-controllers/personal-awards-controller/uploadPersonalAwardCtrl');
+const updatePersonalAwardCtrl = require('../../controller/awards-controllers/personal-awards-controller/updatePersonalAwardCtrl');
+const deletePersonalAwardsCtrl = require('../../controller/awards-controllers/personal-awards-controller/deletePersonalAwardsCtrl');
+const getPersonalAwardsCtrl = require('../../controller/awards-controllers/personal-awards-controller/getPersonalAwardsCtrl');
+const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
 const {
   cacheMiddleware,
-} = require("../../middlewares/cache-middleware/cacheMiddleware");
+} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const personalAwardsRouter = express.Router();
 
 // Post chinmoy bhattacharya' s personal awards info router
-personalAwardsRouter.post("/awards", checkAdminAuth, uploadPersonalAwardsCtrl);
+personalAwardsRouter.post('/awards', checkAdminAuth, uploadPersonalAwardsCtrl);
 
 // Update chinmoy bhattacharya' s personal awards info router
 personalAwardsRouter.patch(
-  "/awards/:id",
+  '/awards/:id',
   checkAdminAuth,
   updatePersonalAwardCtrl
 );
 
 // Get all chinmoy bhattacharya' s personal awards info router
-personalAwardsRouter.get("/awards", cacheMiddleware, getPersonalAwardsCtrl);
+personalAwardsRouter.get('/awards', cacheMiddleware, getPersonalAwardsCtrl);
 
 // Get one by one chinmoy bhattacharya' s personal awards info router
-personalAwardsRouter.get("/awards/:id", cacheMiddleware, getPersonalAwardsCtrl);
+personalAwardsRouter.get('/awards/:id', cacheMiddleware, getPersonalAwardsCtrl);
 
 // Delete specific chinmoy bhattacharya' s personal awards info router
 personalAwardsRouter.delete(
-  "/awards/:id",
+  '/awards/:id',
   checkAdminAuth,
   deletePersonalAwardsCtrl
 );

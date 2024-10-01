@@ -25,10 +25,10 @@
 
 const {
   clearCache,
-} = require("../../../middlewares/cache-middleware/cacheMiddleware");
-const phdMemberModel = require("../../../models/members-model/phd-member-model/phdMemberModel");
-const customSingleDestroyer = require("../../../utils/cloudinary-single-destroyer/customSingleDestroyer");
-const customSingleUploader = require("../../../utils/cloudinary-single-uploader/customSingleUploader");
+} = require('../../../middlewares/cache-middleware/cacheMiddleware');
+const phdMemberModel = require('../../../models/members-model/phd-member-model/phdMemberModel');
+const customSingleDestroyer = require('../../../utils/cloudinary-single-destroyer/customSingleDestroyer');
+const customSingleUploader = require('../../../utils/cloudinary-single-uploader/customSingleUploader');
 
 const updatePhdMemberCtrl = async (req, res) => {
   const { id } = req.params;
@@ -50,8 +50,8 @@ const updatePhdMemberCtrl = async (req, res) => {
     const getPreviousMemberInfo = await phdMemberModel.findById(id);
     if (!getPreviousMemberInfo) {
       return res.status(404).json({
-        issue: "Not found!",
-        details: "Requested resources are not found.",
+        issue: 'Not found!',
+        details: 'Requested resources are not found.',
       });
     }
 
@@ -69,7 +69,7 @@ const updatePhdMemberCtrl = async (req, res) => {
 
     if (req.file) {
       const { storedDataAccessUrl, storedDataAccessId } =
-        await customSingleUploader(filePath, "phd_members_image");
+        await customSingleUploader(filePath, 'phd_members_image');
       newMemberImage = storedDataAccessUrl;
       newCloudPublicId = storedDataAccessId;
       const { profilePicturePublicId } = getPreviousMemberInfo;
@@ -102,8 +102,8 @@ const updatePhdMemberCtrl = async (req, res) => {
 
     if (!updateMemberInfo) {
       return res.status(501).json({
-        issue: "Not implemented!",
-        details: "Something went wrong, please try again later.",
+        issue: 'Not implemented!',
+        details: 'Something went wrong, please try again later.',
       });
     } else {
       clearCache(
@@ -112,15 +112,18 @@ const updatePhdMemberCtrl = async (req, res) => {
       clearCache(
         `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/phd/members/${id}`
       );
+      clearCache(
+        '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+      );
       return res.status(200).json({
-        details: "Requested resources has been successfully updated!",
+        details: 'Requested resources has been successfully updated!',
       });
     }
   } catch (error) {
     return res.status(500).json({
       issue: error.message,
       details:
-        "Unable to update requested resources due to some technical problem.",
+        'Unable to update requested resources due to some technical problem.',
     });
   }
 };

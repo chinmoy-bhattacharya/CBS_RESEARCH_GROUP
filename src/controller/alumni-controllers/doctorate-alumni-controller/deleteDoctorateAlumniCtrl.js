@@ -26,18 +26,18 @@
 
 const {
   clearCache,
-} = require("../../../middlewares/cache-middleware/cacheMiddleware");
-const doctorateAlumniModel = require("../../../models/alumni-model/doctorate-alumni-model/doctorateAlumniModel");
-const customSingleDestroyer = require("../../../utils/cloudinary-single-destroyer/customSingleDestroyer");
+} = require('../../../middlewares/cache-middleware/cacheMiddleware');
+const doctorateAlumniModel = require('../../../models/alumni-model/doctorate-alumni-model/doctorateAlumniModel');
+const customSingleDestroyer = require('../../../utils/cloudinary-single-destroyer/customSingleDestroyer');
 
 const deleteDoctorateAlumniCtrl = async (req, res) => {
-  let { id } = req.params;
+  const { id } = req.params;
   try {
     const currentDoctorateAlumni = await doctorateAlumniModel.findById(id);
     if (!currentDoctorateAlumni) {
       return res.status(404).json({
-        issue: "Not found!",
-        details: "Requested resources are not found.",
+        issue: 'Not found!',
+        details: 'Requested resources are not found.',
       });
     } else {
       const currentAlumniImgsCloudId =
@@ -50,8 +50,8 @@ const deleteDoctorateAlumniCtrl = async (req, res) => {
       );
       if (!removeAlumniFromDb) {
         return res.status(501).json({
-          issue: "Not implemented!",
-          details: "Something went wrong, please try again later.",
+          issue: 'Not implemented!',
+          details: 'Something went wrong, please try again later.',
         });
       } else {
         clearCache(
@@ -60,8 +60,11 @@ const deleteDoctorateAlumniCtrl = async (req, res) => {
         clearCache(
           `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/doctorate/alumni-data`
         );
+        clearCache(
+          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+        );
         return res.status(200).json({
-          details: "The requested resources has been successfully removed!",
+          details: 'The requested resources has been successfully removed!',
         });
       }
     }
@@ -69,7 +72,7 @@ const deleteDoctorateAlumniCtrl = async (req, res) => {
     return res.status(500).json({
       issue: error.message,
       details:
-        "Unable to remove requested resources due to some technical problem.",
+        'Unable to remove requested resources due to some technical problem.',
     });
   }
 };

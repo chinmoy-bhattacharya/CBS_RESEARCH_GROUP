@@ -64,6 +64,9 @@ const deletePublicationCtrl = async (req, res) => {
         clearCache(
           `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/publication/about-info/${req.params.id}`
         );
+        clearCache(
+          "/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard"
+        );
         return res.status(200).json({
           details: "Requested resources has been successfully removed.",
         });

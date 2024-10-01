@@ -23,8 +23,8 @@
 
 const {
   clearCache,
-} = require("../../middlewares/cache-middleware/cacheMiddleware");
-const projectModel = require("../../models/projects-model/projectModel");
+} = require('../../middlewares/cache-middleware/cacheMiddleware');
+const projectModel = require('../../models/projects-model/projectModel');
 
 const updateProjectCtrl = async (req, res) => {
   const { id } = req.params;
@@ -34,8 +34,8 @@ const updateProjectCtrl = async (req, res) => {
     const getPreviousProject = await projectModel.findById(id);
     if (!getPreviousProject) {
       return res.status(404).json({
-        issue: "Not found!",
-        details: "Requested resources are not found.",
+        issue: 'Not found!',
+        details: 'Requested resources are not found.',
       });
     } else {
       const newProjectName = projectName || getPreviousProject.projectName;
@@ -58,8 +58,8 @@ const updateProjectCtrl = async (req, res) => {
 
       if (!updateProject) {
         return res.status(501).json({
-          issue: "Not implemented!",
-          details: "Something went wrong, please try again later.",
+          issue: 'Not implemented!',
+          details: 'Something went wrong, please try again later.',
         });
       } else {
         clearCache(
@@ -68,8 +68,11 @@ const updateProjectCtrl = async (req, res) => {
         clearCache(
           `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-labs/projects/${id}`
         );
+        clearCache(
+          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+        );
         return res.status(200).json({
-          details: "Requested resources has been successfully updated!",
+          details: 'Requested resources has been successfully updated!',
         });
       }
     }
@@ -77,7 +80,7 @@ const updateProjectCtrl = async (req, res) => {
     return res.status(500).json({
       issue: error.message,
       details:
-        "Unable to update requested resources due to some technical problem.",
+        'Unable to update requested resources due to some technical problem.',
     });
   }
 };

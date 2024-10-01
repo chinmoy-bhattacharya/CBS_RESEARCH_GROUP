@@ -16,14 +16,17 @@
  * applicants are informed of the decision in a professional manner.
  */
 
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
 const {
   mainEmailHostProtocol,
   mainEmailPort,
   mainEmailHostUser,
   mainEmailHostPassword,
-} = require("../../config/envConfig");
-const envConfig = require("../../config/envConfig");
+} = require('../../config/envConfig');
+const envConfig = require('../../config/envConfig');
+const {
+  clearCache,
+} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const sendAdminRegistrationDeniedMail = async (sendTo, userName, response) => {
   const CBSLogo = envConfig.researchGroupLogo;
@@ -41,7 +44,7 @@ const sendAdminRegistrationDeniedMail = async (sendTo, userName, response) => {
     const mailOptions = {
       from: mainEmailHostUser, // Sender address
       to: sendTo, // List of receivers
-      subject: "Request to Become Admin - CBS Research Group ",
+      subject: 'Request to Become Admin - CBS Research Group ',
       html: `
         <style>
       * {
@@ -634,7 +637,7 @@ const sendAdminRegistrationDeniedMail = async (sendTo, userName, response) => {
 										<br /><br />Thank you for your support.
                                     </p>
                                     <p style="margin: 0; margin-bottom: 16px">
-                                       
+                                       
                                     </p>
                                     <p style="margin: 0">
                                   
@@ -716,7 +719,7 @@ const sendAdminRegistrationDeniedMail = async (sendTo, userName, response) => {
                                 font-size: 1px;
                               "
                             >
-                               
+                              
                             </div>
                           </td>
                         </tr>
@@ -829,13 +832,16 @@ const sendAdminRegistrationDeniedMail = async (sendTo, userName, response) => {
         return response.status(500).json({
           issue: error.message,
           details:
-            "Unable to drop this mail due to some technical problem. Please try again later.",
+            'Unable to drop this mail due to some technical problem. Please try again later.',
           alert:
-            "If the issue not resolve autometically then contact to your tech support team.",
+            'If the issue not resolve autometically then contact to your tech support team.',
         });
       } else {
+        clearCache(
+          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+        );
         return response.status(200).json({
-          message: "Email has been sended successfully.",
+          message: 'Email has been sended successfully.',
           sending_id: info.messageId,
           notification: `The mail has been successfully droppet to this:${sendTo} account.`,
         });
@@ -844,9 +850,9 @@ const sendAdminRegistrationDeniedMail = async (sendTo, userName, response) => {
   } catch (error) {
     return response.status(500).json({
       issue: error.message,
-      details: "Unable to perform this task due to some technical problem.",
+      details: 'Unable to perform this task due to some technical problem.',
       message:
-        "Please try again later, or if the issue not resolve autometically then contact with your tech support team.",
+        'Please try again later, or if the issue not resolve autometically then contact with your tech support team.',
     });
   }
 };

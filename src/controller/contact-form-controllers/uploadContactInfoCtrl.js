@@ -20,15 +20,15 @@
 
 const {
   clearCache,
-} = require("../../middlewares/cache-middleware/cacheMiddleware");
-const contactFormModel = require("../../models/contact-form-model/contactFormModel");
+} = require('../../middlewares/cache-middleware/cacheMiddleware');
+const contactFormModel = require('../../models/contact-form-model/contactFormModel');
 
 const uploadContactInfoCtrl = async (req, res) => {
   const { userName, emailId, phoneNumber, desireCourse, message } = req.body;
   if (!userName || !emailId || !phoneNumber) {
     return res.status(400).json({
-      issue: "Bad Request!",
-      details: "All fields are required.",
+      issue: 'Bad Request!',
+      details: 'All fields are required.',
     });
   } else {
     try {
@@ -42,22 +42,25 @@ const uploadContactInfoCtrl = async (req, res) => {
       const uploadData = await contactUserDetails.save();
       if (!uploadData) {
         return res.status(501).json({
-          issue: "Not implemented!",
-          details: "Something went wrong, please try again later.",
+          issue: 'Not implemented!',
+          details: 'Something went wrong, please try again later.',
         });
       } else {
         clearCache(
           `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/contact-us/information`
         );
+        clearCache(
+          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+        );
         return res.status(201).json({
-          details: "Requested resources has been successfully uploaded!",
+          details: 'Requested resources has been successfully uploaded!',
         });
       }
     } catch (error) {
       return res.status(500).json({
         issue: error.message,
         details:
-          "Unable to upload requested resources due to some technical problem.",
+          'Unable to upload requested resources due to some technical problem.',
       });
     }
   }

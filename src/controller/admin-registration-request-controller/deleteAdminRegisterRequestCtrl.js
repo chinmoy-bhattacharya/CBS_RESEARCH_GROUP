@@ -25,8 +25,8 @@
 
 const {
   clearCache,
-} = require("../../middlewares/cache-middleware/cacheMiddleware");
-const adminRegistrationRequestMessageModel = require("../../models/admin-registration-request-model/adminRegisterRequestModel");
+} = require('../../middlewares/cache-middleware/cacheMiddleware');
+const adminRegistrationRequestMessageModel = require('../../models/admin-registration-request-model/adminRegisterRequestModel');
 
 const deleteAdminRegisterRequestMessage = async (req, res) => {
   const { id } = req.params;
@@ -37,16 +37,16 @@ const deleteAdminRegisterRequestMessage = async (req, res) => {
 
     if (!getRequestedUserMessage) {
       return res.status(404).json({
-        issue: "Not found!",
-        details: "Requested message are not found please check the details.",
+        issue: 'Not found!',
+        details: 'Requested message are not found please check the details.',
       });
     } else {
       const deleteMessage =
         await adminRegistrationRequestMessageModel.findByIdAndDelete(id);
       if (!deleteMessage) {
         return res.status(501).json({
-          issue: "Not implemented!",
-          details: "Something went wrong, please try again later.",
+          issue: 'Not implemented!',
+          details: 'Something went wrong, please try again later.',
         });
       } else {
         clearCache(
@@ -55,15 +55,18 @@ const deleteAdminRegisterRequestMessage = async (req, res) => {
         clearCache(
           `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/register-request/admin`
         );
+        clearCache(
+          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+        );
         return res.status(200).json({
-          details: "Requested message has been successfully removed!",
+          details: 'Requested message has been successfully removed!',
         });
       }
     }
   } catch (error) {
     return res.status(500).json({
       issue: error.message,
-      details: "Unable to perform this task due to some technical problem",
+      details: 'Unable to perform this task due to some technical problem',
     });
   }
 };

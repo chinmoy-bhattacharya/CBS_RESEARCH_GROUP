@@ -15,14 +15,17 @@
  * necessary information or acknowledgments to the inquirer.
  */
 
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
 const {
   mainEmailHostProtocol,
   mainEmailPort,
   mainEmailHostUser,
   mainEmailHostPassword,
-} = require("../../config/envConfig");
-const envConfig = require("../../config/envConfig");
+} = require('../../config/envConfig');
+const envConfig = require('../../config/envConfig');
+const {
+  clearCache,
+} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const contactResponseSendCtrl = async (
   sendTo,
@@ -32,10 +35,10 @@ const contactResponseSendCtrl = async (
   response
 ) => {
   const date = new Date();
-  const todaysDate = date.toLocaleDateString("en-IN", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
+  const todaysDate = date.toLocaleDateString('en-IN', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
   });
   const CBSLogo = envConfig.researchGroupLogo;
 
@@ -52,7 +55,7 @@ const contactResponseSendCtrl = async (
     const mailOptions = {
       from: mainEmailHostUser, // Sender address
       to: sendTo, // List of receivers
-      subject: subject,
+      subject,
       html: `
           <style>
       * {
@@ -424,7 +427,7 @@ const contactResponseSendCtrl = async (
                                           "
                                         >
                                           <span style="word-break: break-word"
-                                            > </span
+                                            > </span
                                           >
                                         </td>
                                       </tr>
@@ -556,7 +559,7 @@ const contactResponseSendCtrl = async (
                                           mso-line-height-alt: 18px;
                                         "
                                       >
-                                         
+                                        
                                       </p>
                                       <p
                                         style="
@@ -574,7 +577,7 @@ const contactResponseSendCtrl = async (
                                           mso-line-height-alt: 18px;
                                         "
                                       >
-                                         
+                                        
                                       </p>
                                     </div>
                                   </div>
@@ -645,7 +648,7 @@ const contactResponseSendCtrl = async (
                                 font-size: 1px;
                               "
                             >
-                               
+                              
                             </div>
                           </td>
                           <td
@@ -845,7 +848,7 @@ const contactResponseSendCtrl = async (
                                           "
                                         >
                                           <span style="word-break: break-word"
-                                            > </span
+                                            > </span
                                           >
                                         </td>
                                       </tr>
@@ -948,7 +951,7 @@ const contactResponseSendCtrl = async (
                                     >
                                       <span style="word-break: break-word"
                                         >Copyright © ${todaysDate} CBS Research
-                                        Group. All rights reserved. </span
+                                        Group. All rights reserved. </span
                                       >
                                     </p>
                                   </div>
@@ -1046,7 +1049,7 @@ const contactResponseSendCtrl = async (
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                       <br />
+                                       <br />
                                     </p>
                                   </div>
                                 </td>
@@ -1163,13 +1166,16 @@ const contactResponseSendCtrl = async (
         return response.status(500).json({
           issue: error.message,
           details:
-            "Unable to send this mail, due to some technical problem. Please try again later.",
+            'Unable to send this mail, due to some technical problem. Please try again later.',
           alert:
-            "If the issue not resolve autometically then contact to your tech support team.",
+            'If the issue not resolve autometically then contact to your tech support team.',
         });
       } else {
+        clearCache(
+          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+        );
         return response.status(200).json({
-          message: "Email has been send successfully!",
+          message: 'Email has been send successfully!',
           sending_id: info.messageId,
           notification: `The mail has been successfully send to this:${sendTo} adress.`,
         });
@@ -1179,7 +1185,7 @@ const contactResponseSendCtrl = async (
     return response.status(500).json({
       issue: error.message,
       details:
-        "Unable to perform this task due to some technical problem, please try again later.",
+        'Unable to perform this task due to some technical problem, please try again later.',
     });
   }
 };

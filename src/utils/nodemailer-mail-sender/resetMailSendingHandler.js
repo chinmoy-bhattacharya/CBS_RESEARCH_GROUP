@@ -15,14 +15,14 @@
  * email with the necessary information to reset their passwords.
  */
 
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
 const {
   supportEmailHostProtocol,
   supportEmailPort,
   supportEmailHostUser,
   supportEmailHostPassword,
-} = require("../../config/envConfig");
-const envConfig = require("../../config/envConfig");
+} = require('../../config/envConfig');
+const envConfig = require('../../config/envConfig');
 const sendPasswordResetEmail = async (
   sendTo,
   userName,
@@ -47,7 +47,7 @@ const sendPasswordResetEmail = async (
     const mailOptions = {
       from: supportEmailHostUser, // Sender address
       to: sendTo, // List of receivers
-      subject: " CBS Research Group - Admin User Password Reset Request",
+      subject: ' CBS Research Group - Admin User Password Reset Request',
       html: `
 
    <style>
@@ -885,22 +885,22 @@ const sendPasswordResetEmail = async (
         return response.status(500).json({
           issue: error.message,
           details:
-            "Unable to send this mail due to technical problem, please try again later",
+            'Unable to send this mail due to technical problem, please try again later',
         });
       } else {
         return response.status(200).json({
-          message: "Email has been send successfully",
+          message: 'Email has been send successfully',
           resetLink: corespondingLink,
-          notification: `Password reset link has been sended to this:${sendTo} email account.`,
+          notification: `Password reset link has been sended to this:${sendTo} email account.${info}`,
         });
       }
     });
   } catch (error) {
     return response.status(500).json({
       issue: error.message,
-      details: "Unable to perform this task due to some technical problem.",
+      details: 'Unable to perform this task due to some technical problem.',
       message:
-        "Please try again later, or if the issue not resolve autometically then contact with your tech support team.",
+        'Please try again later, or if the issue not resolve autometically then contact with your tech support team.',
     });
   }
 };

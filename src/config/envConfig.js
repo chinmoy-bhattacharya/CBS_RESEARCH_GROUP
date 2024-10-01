@@ -11,7 +11,7 @@
  * throughout the application to access environment-specific variables.
  **********************************************************************/
 
-require("dotenv").config();
+require('dotenv').config();
 
 // Creting custom environment for server //
 const environment = {

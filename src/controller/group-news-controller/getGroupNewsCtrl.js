@@ -19,7 +19,7 @@
  * as requested. It ensures that users can access up-to-date news about the group.
  */
 
-const groupNewsModel = require("../../models/group-news-model/groupNewsModel");
+const groupNewsModel = require('../../models/group-news-model/groupNewsModel');
 
 const getGroupNewsCtrl = async (req, res) => {
   const { id } = req.params;
@@ -28,8 +28,8 @@ const getGroupNewsCtrl = async (req, res) => {
       const getRequestedGroupNews = await groupNewsModel.findById(id);
       if (!getRequestedGroupNews) {
         return res.status(404).json({
-          issue: "Not found!",
-          details: "Requested resources are not found.",
+          issue: 'Not found!',
+          details: 'Requested resources are not found.',
         });
       } else {
         return res.status(200).sendCachedData(getRequestedGroupNews);
@@ -38,7 +38,7 @@ const getGroupNewsCtrl = async (req, res) => {
       return res.status(500).json({
         issue: error.message,
         details:
-          "Unable to find requested resources due to some technical problem.",
+          'Unable to find requested resources due to some technical problem.',
       });
     }
   } else {
@@ -46,8 +46,8 @@ const getGroupNewsCtrl = async (req, res) => {
       const getAllGroupNews = await groupNewsModel.find();
       if (!getAllGroupNews) {
         return res.status(404).json({
-          issue: "Not found!",
-          details: "Requested resources are not found.",
+          issue: 'Not found!',
+          details: 'Requested resources are not found.',
         });
       } else {
         return res.status(200).sendCachedData(getAllGroupNews);
@@ -56,7 +56,7 @@ const getGroupNewsCtrl = async (req, res) => {
       return res.status(500).json({
         issue: error.message,
         details:
-          "Unable to find requested resources due to some technical problem.",
+          'Unable to find requested resources due to some technical problem.',
       });
     }
   }

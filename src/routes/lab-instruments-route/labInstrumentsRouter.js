@@ -16,52 +16,52 @@
  * processed and routed to the appropriate handlers or services.
  */
 
-const express = require("express");
-const uploadLabInstrumentCtrl = require("../../controller/lab-instruments-controllers/uploadLabInstrumentCtrl");
-const updateLabInstrumentCtrl = require("../../controller/lab-instruments-controllers/updateLabInstrumentCtrl");
-const deleteLabInstrumentCtrl = require("../../controller/lab-instruments-controllers/deleteLabInstrumentCtrl");
-const getLabInstrumentsCtrl = require("../../controller/lab-instruments-controllers/getLabInstrumentsCtrl");
-const multerLocalFileUploader = require("../../middlewares/multer-localfile-uploader/multerLocalFileUploader");
-const checkAdminAuth = require("../../middlewares/auth-middleware/authAdminMiddleware");
+const express = require('express');
+const uploadLabInstrumentCtrl = require('../../controller/lab-instruments-controllers/uploadLabInstrumentCtrl');
+const updateLabInstrumentCtrl = require('../../controller/lab-instruments-controllers/updateLabInstrumentCtrl');
+const deleteLabInstrumentCtrl = require('../../controller/lab-instruments-controllers/deleteLabInstrumentCtrl');
+const getLabInstrumentsCtrl = require('../../controller/lab-instruments-controllers/getLabInstrumentsCtrl');
+const multerLocalFileUploader = require('../../middlewares/multer-localfile-uploader/multerLocalFileUploader');
+const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
 const {
   cacheMiddleware,
-} = require("../../middlewares/cache-middleware/cacheMiddleware");
+} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const labInstrumentsRouter = express.Router();
 
 // Post lab instrument router
 labInstrumentsRouter.post(
-  "/lab-instruments",
+  '/lab-instruments',
   checkAdminAuth,
-  multerLocalFileUploader.single("instrumentImage"),
+  multerLocalFileUploader.single('instrumentImage'),
   uploadLabInstrumentCtrl
 );
 
 // Update lab instrument router
 labInstrumentsRouter.patch(
-  "/lab-instruments/:id",
+  '/lab-instruments/:id',
   checkAdminAuth,
-  multerLocalFileUploader.single("instrumentImage"),
+  multerLocalFileUploader.single('instrumentImage'),
   updateLabInstrumentCtrl
 );
 
 // Get all lab instrument router
 labInstrumentsRouter.get(
-  "/lab-instruments",
+  '/lab-instruments',
   cacheMiddleware,
   getLabInstrumentsCtrl
 );
 
 // Get single lab instrument router
 labInstrumentsRouter.get(
-  "/lab-instruments/:id",
+  '/lab-instruments/:id',
   cacheMiddleware,
   getLabInstrumentsCtrl
 );
 
 // Delete specific lab instrument router
 labInstrumentsRouter.delete(
-  "/lab-instruments/:id",
+  '/lab-instruments/:id',
   checkAdminAuth,
   deleteLabInstrumentCtrl
 );
