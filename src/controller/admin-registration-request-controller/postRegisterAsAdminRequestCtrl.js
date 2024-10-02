@@ -59,7 +59,7 @@ const postRegisterAsAdminRequestCtrl = async (req, res) => {
             `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/register-request/admin`
           );
           clearCache(
-            '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+            `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard`
           );
           return res.status(201).json({
             details: 'Request has been send successfully.',
