@@ -24,43 +24,22 @@
 const authAdminUserModel = require('../../models/auth-admin-model/authAdminUserModel');
 
 const getAllLoginAdminCtrl = async (req, res) => {
-  const { id } = req.params;
-  if (id) {
-    try {
-      const getSingleLoginAdminUser = await authAdminUserModel.findById(id);
-      if (!getSingleLoginAdminUser) {
-        return res.status(404).json({
-          issue: 'Not found!',
-          details: 'Requested resources are not found.',
-        });
-      } else {
-        return res.status(200).sendCachedData(getSingleLoginAdminUser);
-      }
-    } catch (error) {
-      return res.status(500).json({
-        issue: error.message,
-        details:
-          'Unable to find requested resources due to some technical problem.',
+  try {
+    const getAllLoginAdminUser = await authAdminUserModel.find();
+    if (!getAllLoginAdminUser) {
+      return res.status(404).json({
+        issue: 'Not found!',
+        details: 'Requested resources are not found.',
       });
+    } else {
+      return res.status(200).sendCachedData(getAllLoginAdminUser);
     }
-  } else {
-    try {
-      const getAllLoginAdminUser = await authAdminUserModel.find();
-      if (!getAllLoginAdminUser) {
-        return res.status(404).json({
-          issue: 'Not found!',
-          details: 'Requested resources are not found.',
-        });
-      } else {
-        return res.status(200).sendCachedData(getAllLoginAdminUser);
-      }
-    } catch (error) {
-      return res.status(500).json({
-        issue: error.message,
-        details:
-          'Unable to find requested resources due to some technical problem.',
-      });
-    }
+  } catch (error) {
+    return res.status(500).json({
+      issue: error.message,
+      details:
+        'Unable to find requested resources due to some technical problem.',
+    });
   }
 };
 module.exports = getAllLoginAdminCtrl;

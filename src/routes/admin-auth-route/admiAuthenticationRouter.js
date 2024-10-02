@@ -68,14 +68,6 @@ admiAuthenticationRouter.get(
   cacheMiddleware,
   getAllLoginAdminCtrl
 );
-
-// Single Logged in admin router
-admiAuthenticationRouter.get(
-  '/logged-in-admin-users/:id',
-  checkAdminAuth,
-  cacheMiddleware,
-  getAllLoginAdminCtrl
-);
 // Delete Specific Logged in admin router
 admiAuthenticationRouter.delete(
   '/logged-in-admin-users/:id',

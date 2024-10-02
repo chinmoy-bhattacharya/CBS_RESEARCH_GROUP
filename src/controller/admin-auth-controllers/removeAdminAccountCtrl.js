@@ -49,9 +49,6 @@ const removeAdminAccountCtrl = async (req, res) => {
           `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-admin/logged-in-admin-users`
         );
         clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-admin/logged-in-admin-users/${id}`
-        );
-        clearCache(
           '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
         );
         return res.status(200).json({

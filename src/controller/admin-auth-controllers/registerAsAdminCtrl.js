@@ -95,6 +95,9 @@ const registerAsAdminCtrl = async (req, res) => {
             clearCache(
               '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
             );
+            clearCache(
+              '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-admin/logged-in-admin-users'
+            );
             return res.status(201).json({
               message: 'Registration successful!',
               details:

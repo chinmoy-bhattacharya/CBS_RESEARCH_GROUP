@@ -25,6 +25,9 @@
 
 const bcrypt = require('bcrypt');
 const authAdminUserModel = require('../../models/auth-admin-model/authAdminUserModel');
+const {
+  clearCache,
+} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const changeAuthAdminPasswordCtrl = async (req, res) => {
   const { adminUserPassword, adminUserPassword_confirmation } = req.body;
@@ -52,6 +55,12 @@ const changeAuthAdminPasswordCtrl = async (req, res) => {
             details: 'Something went wrong, please try again later.',
           });
         } else {
+          clearCache(
+            `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-admin/logged-in-admin-users`
+          );
+          clearCache(
+            '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+          );
           return res.status(200).json({
             details: 'Password has been successfully updated.',
           });
