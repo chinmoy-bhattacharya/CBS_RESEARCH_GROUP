@@ -61,7 +61,7 @@ const deleteDoctorateAlumniCtrl = async (req, res) => {
           `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/doctorate/alumni-data`
         );
         clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
+          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard`
         );
         return res.status(200).json({
           details: 'The requested resources has been successfully removed!',
