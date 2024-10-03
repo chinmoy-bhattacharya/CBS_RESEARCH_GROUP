@@ -23,9 +23,6 @@
  * processed and stored in the system.
  */
 
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const adminRegistrationRequestMessageModel = require('../../models/admin-registration-request-model/adminRegisterRequestModel');
 const authAdminUserModel = require('../../models/auth-admin-model/authAdminUserModel');
 
@@ -55,12 +52,6 @@ const postRegisterAsAdminRequestCtrl = async (req, res) => {
             details: 'Something went wrong, please try again later.',
           });
         } else {
-          clearCache(
-            `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/register-request/admin`
-          );
-          clearCache(
-            `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard`
-          );
           return res.status(201).json({
             details: 'Request has been send successfully.',
           });

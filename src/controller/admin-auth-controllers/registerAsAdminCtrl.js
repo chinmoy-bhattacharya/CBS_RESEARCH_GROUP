@@ -27,9 +27,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { jwtSecretKey } = require('../../config/envConfig');
 const authAdminUserModel = require('../../models/auth-admin-model/authAdminUserModel');
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const registerAsAdminCtrl = async (req, res) => {
   try {
@@ -92,12 +89,6 @@ const registerAsAdminCtrl = async (req, res) => {
             const token = jwt.sign({ adminId: savedAdmin._id }, jwtSecretKey, {
               expiresIn: '1d',
             });
-            clearCache(
-              '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-            );
-            clearCache(
-              '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-admin/logged-in-admin-users'
-            );
             return res.status(201).json({
               message: 'Registration successful!',
               details:

@@ -24,9 +24,6 @@ const updatePublicationCtrl = require('../../controller/publication-controllers/
 const deletePublicationCtrl = require('../../controller/publication-controllers/deletePublicationCtrl');
 const getPublicationCtrl = require('../../controller/publication-controllers/getPublicationCtrl');
 const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const publicationRouter = express.Router();
 
@@ -53,9 +50,9 @@ publicationRouter.patch(
   updatePublicationCtrl
 );
 // Get all publication router
-publicationRouter.get('/about-info', cacheMiddleware, getPublicationCtrl);
+publicationRouter.get('/about-info', getPublicationCtrl);
 // Get single publication router
-publicationRouter.get('/about-info/:id', cacheMiddleware, getPublicationCtrl);
+publicationRouter.get('/about-info/:id', getPublicationCtrl);
 
 // Delete specific publication router
 publicationRouter.delete(

@@ -21,9 +21,6 @@
  * It ensures that project data remains accurate and up-to-date within the system.
  */
 
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const projectModel = require('../../models/projects-model/projectModel');
 
 const updateProjectCtrl = async (req, res) => {
@@ -62,15 +59,6 @@ const updateProjectCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-labs/projects`
-        );
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-labs/projects/${id}`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(200).json({
           details: 'Requested resources has been successfully updated!',
         });

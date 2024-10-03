@@ -23,9 +23,6 @@ const deleteLabInstrumentCtrl = require('../../controller/lab-instruments-contro
 const getLabInstrumentsCtrl = require('../../controller/lab-instruments-controllers/getLabInstrumentsCtrl');
 const multerLocalFileUploader = require('../../middlewares/multer-localfile-uploader/multerLocalFileUploader');
 const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const labInstrumentsRouter = express.Router();
 
@@ -46,18 +43,10 @@ labInstrumentsRouter.patch(
 );
 
 // Get all lab instrument router
-labInstrumentsRouter.get(
-  '/lab-instruments',
-  cacheMiddleware,
-  getLabInstrumentsCtrl
-);
+labInstrumentsRouter.get('/lab-instruments', getLabInstrumentsCtrl);
 
 // Get single lab instrument router
-labInstrumentsRouter.get(
-  '/lab-instruments/:id',
-  cacheMiddleware,
-  getLabInstrumentsCtrl
-);
+labInstrumentsRouter.get('/lab-instruments/:id', getLabInstrumentsCtrl);
 
 // Delete specific lab instrument router
 labInstrumentsRouter.delete(

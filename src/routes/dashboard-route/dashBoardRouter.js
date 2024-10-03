@@ -20,13 +20,10 @@
 
 const express = require('express');
 const getAllData = require('../../controller/dashboard-controllers/getAllData');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
 
 const dashBoardRouter = express.Router();
 
-dashBoardRouter.get('/dashboard', checkAdminAuth, cacheMiddleware, getAllData);
+dashBoardRouter.get('/dashboard', checkAdminAuth, getAllData);
 
 module.exports = dashBoardRouter;

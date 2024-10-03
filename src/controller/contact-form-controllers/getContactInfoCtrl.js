@@ -32,7 +32,7 @@ const getContactInfoCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getRequestedContactInfo);
+        return res.status(200).json(getRequestedContactInfo);
       }
     } catch (error) {
       return res.status(500).json({
@@ -50,7 +50,7 @@ const getContactInfoCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllRequestedContactInfo);
+        return res.status(200).json(getAllRequestedContactInfo);
       }
     } catch (error) {
       return res.status(500).json({

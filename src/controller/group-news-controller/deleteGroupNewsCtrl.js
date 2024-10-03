@@ -20,9 +20,6 @@
  * be updated or removed as needed.
  */
 
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const groupNewsModel = require('../../models/group-news-model/groupNewsModel');
 
 const deleteGroupNewsCtrl = async (req, res) => {
@@ -42,15 +39,6 @@ const deleteGroupNewsCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/latest-news/groups`
-        );
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/latest-news/groups/${id}`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(200).json({
           details: 'Requested resources has been successfully removed!',
         });

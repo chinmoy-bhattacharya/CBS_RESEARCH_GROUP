@@ -28,9 +28,6 @@ const { jwtSecretKey, clientSideUrl } = require('../../config/envConfig');
 const jwt = require('jsonwebtoken');
 const authAdminUserModel = require('../../models/auth-admin-model/authAdminUserModel');
 const sendPasswordResetEmail = require('../../utils/nodemailer-mail-sender/resetMailSendingHandler');
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 // eslint-disable-next-line consistent-return
 const sendResetPasswordEmailCtrl = async (req, res) => {
@@ -65,12 +62,6 @@ const sendResetPasswordEmailCtrl = async (req, res) => {
           requestedEmail.adminUserName,
           link,
           res
-        );
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-admin/logged-in-admin-users`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
         );
       }
     }

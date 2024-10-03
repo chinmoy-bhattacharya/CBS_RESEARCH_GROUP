@@ -152,7 +152,7 @@ const getAllData = async (req, res) => {
       aggregatedData.push(publications);
     }
 
-    return res.status(200).sendCachedData(aggregatedData);
+    return res.status(200).json(aggregatedData);
   } catch (error) {
     return res.status(500).json({
       issue: error.message,

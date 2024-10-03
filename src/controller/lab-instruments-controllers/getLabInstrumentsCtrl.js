@@ -35,7 +35,7 @@ const getLabInstrumentsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getSingleInstrumentInfo);
+        return res.status(200).json(getSingleInstrumentInfo);
       }
     } catch (error) {
       return res.status(500).json({
@@ -53,7 +53,7 @@ const getLabInstrumentsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllInstrumentsInfo);
+        return res.status(200).json(getAllInstrumentsInfo);
       }
     } catch (error) {
       return res.status(500).json({

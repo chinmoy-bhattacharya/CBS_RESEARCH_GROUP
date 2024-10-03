@@ -35,7 +35,7 @@ const getProjectsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getRequestedProject);
+        return res.status(200).json(getRequestedProject);
       }
     } catch (error) {
       return res.status(500).json({
@@ -53,7 +53,7 @@ const getProjectsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllProjects);
+        return res.status(200).json(getAllProjects);
       }
     } catch (error) {
       return res.status(500).json({

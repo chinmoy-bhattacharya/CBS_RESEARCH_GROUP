@@ -36,7 +36,7 @@ const getDoctorateAlumniCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getSingleAlumniInfo);
+        return res.status(200).json(getSingleAlumniInfo);
       }
     } catch (error) {
       return res.status(500).json({
@@ -53,7 +53,7 @@ const getDoctorateAlumniCtrl = async (req, res) => {
           details: 'Requested resources are not available.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllDoctorateAlumniInfo);
+        return res.status(200).json(getAllDoctorateAlumniInfo);
       }
     } catch (error) {
       return res.status(500).json({

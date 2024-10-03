@@ -22,9 +22,6 @@ const deleteContactInfoCtrl = require('../../controller/contact-form-controllers
 const getContactInfoCtrl = require('../../controller/contact-form-controllers/getContactInfoCtrl');
 const sendContactPersonResponseCtrl = require('../../controller/contact-form-controllers/sendContactPersonResponseCtrl');
 const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const contactFormRouter = express.Router();
 
@@ -39,20 +36,10 @@ contactFormRouter.post(
 );
 
 // Get all contact information router
-contactFormRouter.get(
-  '/information',
-  checkAdminAuth,
-  cacheMiddleware,
-  getContactInfoCtrl
-);
+contactFormRouter.get('/information', checkAdminAuth, getContactInfoCtrl);
 
 // Get single contact information router
-contactFormRouter.get(
-  '/information/:id',
-  checkAdminAuth,
-  cacheMiddleware,
-  getContactInfoCtrl
-);
+contactFormRouter.get('/information/:id', checkAdminAuth, getContactInfoCtrl);
 
 // Delete specific contact message router
 contactFormRouter.delete(

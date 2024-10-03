@@ -33,7 +33,7 @@ const getPublicationCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getSinglePublication);
+        return res.status(200).json(getSinglePublication);
       }
     } else {
       const getAllPublication = await publicationModel.find();
@@ -43,7 +43,7 @@ const getPublicationCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllPublication);
+        return res.status(200).json(getAllPublication);
       }
     }
   } catch (error) {

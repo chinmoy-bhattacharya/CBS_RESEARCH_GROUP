@@ -21,9 +21,6 @@ const updateGroupNewsCtrl = require('../../controller/group-news-controller/upda
 const deleteGroupNewsCtrl = require('../../controller/group-news-controller/deleteGroupNewsCtrl');
 const getGroupNewsCtrl = require('../../controller/group-news-controller/getGroupNewsCtrl');
 const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const groupNewsRouter = express.Router();
 
@@ -34,10 +31,10 @@ groupNewsRouter.post('/groups', checkAdminAuth, uploadGroupNewsCtrl);
 groupNewsRouter.patch('/groups/:id', checkAdminAuth, updateGroupNewsCtrl);
 
 // Get all  group news router
-groupNewsRouter.get('/groups', cacheMiddleware, getGroupNewsCtrl);
+groupNewsRouter.get('/groups', getGroupNewsCtrl);
 
 // Get single  group news router
-groupNewsRouter.get('/groups/:id', cacheMiddleware, getGroupNewsCtrl);
+groupNewsRouter.get('/groups/:id', getGroupNewsCtrl);
 
 // Delete group news router
 groupNewsRouter.delete('/groups/:id', checkAdminAuth, deleteGroupNewsCtrl);

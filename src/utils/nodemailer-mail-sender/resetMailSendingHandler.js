@@ -28,6 +28,7 @@ const sendPasswordResetEmail = async (
   userName,
   corespondingLink,
   response
+  // eslint-disable-next-line consistent-return
 ) => {
   const animatedHeader = envConfig.mailTemplateHeader;
   const mailBackground = envConfig.mailTemplateBody;

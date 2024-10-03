@@ -22,9 +22,6 @@
  * current and accurate based on client or administrative updates.
  */
 
-const {
-  clearCache,
-} = require('../../../middlewares/cache-middleware/cacheMiddleware');
 const teamAwardsModel = require('../../../models/awards-model/team-awards-model/teamAwardsModel');
 
 const updateTeamAwardCtrl = async (req, res) => {
@@ -61,15 +58,6 @@ const updateTeamAwardCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/team/awards/${id}`
-        );
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/team/awards`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(200).json({
           details: 'Requested resources has been successfully updated!',
         });

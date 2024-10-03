@@ -22,9 +22,6 @@
  * is updated with new information as provided by the client.
  */
 
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const projectModel = require('../../models/projects-model/projectModel');
 
 const uploadProjectCtrl = async (req, res) => {
@@ -48,12 +45,6 @@ const uploadProjectCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-labs/projects`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(201).json({
           details: 'Requested resources has been successfully uploaded!',
         });

@@ -24,9 +24,6 @@
  * be accurately removed from the system as requested by admins.
  */
 
-const {
-  clearCache,
-} = require('../../../middlewares/cache-middleware/cacheMiddleware');
 const mastersAlumniModel = require('../../../models/alumni-model/masters-alumni-model/mastersAlumniModel');
 const customSingleDestroyer = require('../../../utils/cloudinary-single-destroyer/customSingleDestroyer');
 
@@ -51,15 +48,6 @@ const deleteMastersAlumniCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/masters/alumni-data/${id}`
-        );
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/masters/alumni-data`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(200).json({
           details: 'The requested resources has been successfully removed!',
         });

@@ -25,9 +25,6 @@ const loginAsAdminCtrl = require('../../controller/admin-auth-controllers/loginA
 const sendResetPasswordEmailCtrl = require('../../controller/admin-auth-controllers/sendResetPaswordEmailCtrl');
 const resetForgottenPassword = require('../../controller/admin-auth-controllers/resetAuthAdminForgottenPasswrdCtrl');
 const getAllLoginAdminCtrl = require('../../controller/admin-auth-controllers/getAllLoginAdminCtrl');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const removeAdminAccountCtrl = require('../../controller/admin-auth-controllers/removeAdminAccountCtrl');
 
 const admiAuthenticationRouter = express.Router();
@@ -65,7 +62,6 @@ admiAuthenticationRouter.get(
 admiAuthenticationRouter.get(
   '/logged-in-admin-users',
   checkAdminAuth,
-  cacheMiddleware,
   getAllLoginAdminCtrl
 );
 // Delete Specific Logged in admin router

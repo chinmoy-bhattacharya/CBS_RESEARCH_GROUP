@@ -24,9 +24,6 @@
  * reflects any changes or updates made by the members.
  */
 
-const {
-  clearCache,
-} = require('../../../middlewares/cache-middleware/cacheMiddleware');
 const mscMemberModel = require('../../../models/members-model/msc-member-model/mscMemberModel');
 const customSingleDestroyer = require('../../../utils/cloudinary-single-destroyer/customSingleDestroyer');
 const customSingleUploader = require('../../../utils/cloudinary-single-uploader/customSingleUploader');
@@ -105,15 +102,6 @@ const updateMscMemberCtrl = async (req, res) => {
         details: 'Something went wrong, please try again later.',
       });
     } else {
-      clearCache(
-        `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/msc/members`
-      );
-      clearCache(
-        `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/msc/members/${id}`
-      );
-      clearCache(
-        '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-      );
       return res.status(200).json({
         details: 'Requested resources has been successfully updated!',
       });

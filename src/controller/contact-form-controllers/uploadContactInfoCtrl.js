@@ -18,9 +18,6 @@
  * provided by clients. This facilitates the collection and tracking of contact inquiries.
  */
 
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const contactFormModel = require('../../models/contact-form-model/contactFormModel');
 
 const uploadContactInfoCtrl = async (req, res) => {
@@ -46,12 +43,6 @@ const uploadContactInfoCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/contact-us/information`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(201).json({
           details: 'Requested resources has been successfully uploaded!',
         });

@@ -24,9 +24,6 @@
  * modified as needed.
  */
 
-const {
-  clearCache,
-} = require('../../../middlewares/cache-middleware/cacheMiddleware');
 const mastersAlumniModel = require('../../../models/alumni-model/masters-alumni-model/mastersAlumniModel');
 const customSingleDestroyer = require('../../../utils/cloudinary-single-destroyer/customSingleDestroyer');
 const customSingleUploader = require('../../../utils/cloudinary-single-uploader/customSingleUploader');
@@ -107,16 +104,6 @@ const updateMastersAlumniCtrl = async (req, res) => {
         details: 'Something went wrong, please try again later.',
       });
     } else {
-      clearCache(
-        `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/masters/alumni-data/${id}`
-      );
-      clearCache(
-        `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/masters/alumni-data`
-      );
-      clearCache(
-        '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-      );
-
       return res.status(200).json({
         details: 'Requested resources has been successfully updated!',
       });

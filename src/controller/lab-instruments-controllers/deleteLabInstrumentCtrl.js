@@ -20,9 +20,6 @@
  * managed and removed as needed.
  */
 
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const labInstrumentModel = require('../../models/lab-instruments-model/labInstrumentModel');
 const customSingleDestroyer = require('../../utils/cloudinary-single-destroyer/customSingleDestroyer');
 
@@ -48,15 +45,6 @@ const deleteLabInstrumentCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/facilities/lab-instruments`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/facilities/lab-instruments/${id}`
-        );
         return res.status(200).json({
           details: 'Requested resources has been successfully removed!',
         });

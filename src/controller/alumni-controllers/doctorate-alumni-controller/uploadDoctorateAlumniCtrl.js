@@ -24,9 +24,6 @@
  * added to the system as required.
  */
 
-const {
-  clearCache,
-} = require('../../../middlewares/cache-middleware/cacheMiddleware');
 const doctorateAlumniModel = require('../../../models/alumni-model/doctorate-alumni-model/doctorateAlumniModel');
 const customSingleDestroyer = require('../../../utils/cloudinary-single-destroyer/customSingleDestroyer');
 const customSingleUploader = require('../../../utils/cloudinary-single-uploader/customSingleUploader');
@@ -85,12 +82,6 @@ const uploadDoctorateAlumniCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/doctorate/alumni-data`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(201).json({
           details:
             'Doctorate alumni informations has been successfully uploaded!',

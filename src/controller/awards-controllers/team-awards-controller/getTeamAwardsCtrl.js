@@ -35,7 +35,7 @@ const getTeamAwardsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getRequestedTeamAward);
+        return res.status(200).json(getRequestedTeamAward);
       }
     } catch (error) {
       return res.status(500).json({
@@ -53,7 +53,7 @@ const getTeamAwardsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllTeamAwards);
+        return res.status(200).json(getAllTeamAwards);
       }
     } catch (error) {
       return res.status(500).json({

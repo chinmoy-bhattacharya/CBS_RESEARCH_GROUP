@@ -32,7 +32,7 @@ const getGroupNewsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getRequestedGroupNews);
+        return res.status(200).json(getRequestedGroupNews);
       }
     } catch (error) {
       return res.status(500).json({
@@ -50,7 +50,7 @@ const getGroupNewsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllGroupNews);
+        return res.status(200).json(getAllGroupNews);
       }
     } catch (error) {
       return res.status(500).json({

@@ -23,9 +23,6 @@ const getMscMembersCtrl = require('../../controller/member-controllers/msc-membe
 const deleteMscMemberCtrl = require('../../controller/member-controllers/msc-members-controller/deleteMscMemberCtrl');
 const multerLocalFileUploader = require('../../middlewares/multer-localfile-uploader/multerLocalFileUploader');
 const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const mscMembersRouter = express.Router();
 
@@ -45,10 +42,10 @@ mscMembersRouter.patch(
 );
 
 // Get all msc members information router
-mscMembersRouter.get('/members', cacheMiddleware, getMscMembersCtrl);
+mscMembersRouter.get('/members', getMscMembersCtrl);
 
 // Get single msc members information router
-mscMembersRouter.get('/members/:id', cacheMiddleware, getMscMembersCtrl);
+mscMembersRouter.get('/members/:id', getMscMembersCtrl);
 
 // Delete specific msc members information router
 mscMembersRouter.delete('/members/:id', checkAdminAuth, deleteMscMemberCtrl);

@@ -19,9 +19,6 @@
  * and available for retrieval and display.
  */
 
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const groupNewsModel = require('../../models/group-news-model/groupNewsModel');
 
 const uploadGroupNewsCtrl = async (req, res) => {
@@ -41,12 +38,6 @@ const uploadGroupNewsCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/latest-news/groups`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(201).json({
           details: 'Requested resources has been successfully uploaded!',
         });

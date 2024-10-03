@@ -25,9 +25,6 @@ const {
   mainEmailHostPassword,
 } = require('../../config/envConfig');
 const envConfig = require('../../config/envConfig');
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const sendAdminRegistrationSuccessMail = async (
   sendTo,
@@ -755,9 +752,6 @@ const sendAdminRegistrationSuccessMail = async (
         });
       } else {
         transporter.close();
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return response.status(200).json({
           message: 'Email has been sended successfully.',
           sending_id: info.messageId,

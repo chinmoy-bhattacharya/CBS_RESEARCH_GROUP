@@ -21,9 +21,6 @@
  * added to the system.
  */
 
-const {
-  clearCache,
-} = require('../../../middlewares/cache-middleware/cacheMiddleware.js');
 const personalAwardsModel = require('../../../models/awards-model/personal-awards-model/personalAwardsModel');
 
 const uploadPersonalAwardsCtrl = async (req, res) => {
@@ -47,12 +44,6 @@ const uploadPersonalAwardsCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/personal/awards'
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(201).json({
           details: 'Requested resources has been successfully uploaded!',
         });

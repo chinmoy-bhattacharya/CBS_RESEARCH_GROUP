@@ -26,9 +26,6 @@
 const mastersAlumniModel = require('../../../models/alumni-model/masters-alumni-model/mastersAlumniModel');
 const customSingleUploader = require('../../../utils/cloudinary-single-uploader/customSingleUploader');
 const customSingleDestroyer = require('../../../utils/cloudinary-single-destroyer/customSingleDestroyer');
-const {
-  clearCache,
-} = require('../../../middlewares/cache-middleware/cacheMiddleware');
 
 const uploadMastersAlumniCtrl = async (req, res) => {
   let profileImageUrl;
@@ -81,12 +78,6 @@ const uploadMastersAlumniCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/masters/alumni-data`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(201).json({
           details: 'Requested resources has been successfully uploaded!',
         });

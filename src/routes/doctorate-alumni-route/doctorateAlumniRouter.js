@@ -23,9 +23,6 @@ const getDoctorateAlumniCtrl = require('../../controller/alumni-controllers/doct
 const deleteDoctorateAlumniCtrl = require('../../controller/alumni-controllers/doctorate-alumni-controller/deleteDoctorateAlumniCtrl');
 const multerLocalFileUploader = require('../../middlewares/multer-localfile-uploader/multerLocalFileUploader');
 const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 // Use Express As Router //
 const doctorateAlumniRouter = express.Router();
@@ -47,18 +44,10 @@ doctorateAlumniRouter.patch(
 );
 
 // Get all doctorate alumni info router
-doctorateAlumniRouter.get(
-  '/alumni-data',
-  cacheMiddleware,
-  getDoctorateAlumniCtrl
-);
+doctorateAlumniRouter.get('/alumni-data', getDoctorateAlumniCtrl);
 
 // Get single doctorate alumni info router
-doctorateAlumniRouter.get(
-  '/alumni-data/:id',
-  cacheMiddleware,
-  getDoctorateAlumniCtrl
-);
+doctorateAlumniRouter.get('/alumni-data/:id', getDoctorateAlumniCtrl);
 
 // delete specific doctorate alumni info router
 doctorateAlumniRouter.delete(

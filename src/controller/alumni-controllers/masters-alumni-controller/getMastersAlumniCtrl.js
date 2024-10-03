@@ -36,10 +36,10 @@ const getMastersAlumniCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getSingleMastersAlumniInfo);
+        return res.status(200).json(getSingleMastersAlumniInfo);
       }
     } catch (error) {
-      return res.status(500).sendCachedData({
+      return res.status(500).json({
         issue: error.message,
         details:
           'Unable to find requested resources due to some technical problem.',
@@ -54,7 +54,7 @@ const getMastersAlumniCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllMastersAlumniInfo);
+        return res.status(200).json(getAllMastersAlumniInfo);
       }
     } catch (error) {
       return res.status(500).json({

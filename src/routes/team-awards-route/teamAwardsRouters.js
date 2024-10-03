@@ -22,9 +22,6 @@ const updateTeamAwardCtrl = require('../../controller/awards-controllers/team-aw
 const deleteTeamAwardCtrl = require('../../controller/awards-controllers/team-awards-controller/deleteTeamAwardCtrl');
 const getTeamAwardsCtrl = require('../../controller/awards-controllers/team-awards-controller/getTeamAwardsCtrl');
 const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const teamAwardsRouter = express.Router();
 
@@ -35,10 +32,10 @@ teamAwardsRouter.post('/awards', checkAdminAuth, uploadTeamAwardCtrl);
 teamAwardsRouter.patch('/awards/:id', checkAdminAuth, updateTeamAwardCtrl);
 
 // Get all team award information router
-teamAwardsRouter.get('/awards', cacheMiddleware, getTeamAwardsCtrl);
+teamAwardsRouter.get('/awards', getTeamAwardsCtrl);
 
 // Get single team award information router
-teamAwardsRouter.get('/awards/:id', cacheMiddleware, getTeamAwardsCtrl);
+teamAwardsRouter.get('/awards/:id', getTeamAwardsCtrl);
 
 // Delete specific team award information router
 teamAwardsRouter.delete('/awards/:id', checkAdminAuth, deleteTeamAwardCtrl);

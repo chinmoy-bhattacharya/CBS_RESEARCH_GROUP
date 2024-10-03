@@ -22,9 +22,6 @@ const updateProjectCtrl = require('../../controller/project-controllers/updatePr
 const deleteProjectCtrl = require('../../controller/project-controllers/deleteProjectCtrl');
 const getProjectsCtrl = require('../../controller/project-controllers/getProjectsCtrl');
 const checkAdminAuth = require('../../middlewares/auth-middleware/authAdminMiddleware');
-const {
-  cacheMiddleware,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 
 const projectsRouter = express.Router();
 
@@ -35,10 +32,10 @@ projectsRouter.post('/projects', checkAdminAuth, uploadProjectCtrl);
 projectsRouter.patch('/projects/:id', checkAdminAuth, updateProjectCtrl);
 
 // Get all project router
-projectsRouter.get('/projects', cacheMiddleware, getProjectsCtrl);
+projectsRouter.get('/projects', getProjectsCtrl);
 
 // Get single project router
-projectsRouter.get('/projects/:id', cacheMiddleware, getProjectsCtrl);
+projectsRouter.get('/projects/:id', getProjectsCtrl);
 
 // Delete specific project router
 projectsRouter.delete('/projects/:id', checkAdminAuth, deleteProjectCtrl);

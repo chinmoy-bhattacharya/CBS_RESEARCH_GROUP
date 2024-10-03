@@ -23,9 +23,6 @@
  * requests to become an admin user.
  */
 
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const adminRegistrationRequestMessageModel = require('../../models/admin-registration-request-model/adminRegisterRequestModel');
 
 const deleteAdminRegisterRequestMessage = async (req, res) => {
@@ -49,15 +46,6 @@ const deleteAdminRegisterRequestMessage = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/register-request/admin/${id}`
-        );
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/register-request/admin`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(200).json({
           details: 'Requested message has been successfully removed!',
         });

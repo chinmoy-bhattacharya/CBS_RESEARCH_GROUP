@@ -34,7 +34,7 @@ const getPersonalAwardsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getRequestedPersonalAward);
+        return res.status(200).json(getRequestedPersonalAward);
       }
     } catch (error) {
       return res.status(500).json({
@@ -52,7 +52,7 @@ const getPersonalAwardsCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllPersonalAwards);
+        return res.status(200).json(getAllPersonalAwards);
       }
     } catch (error) {
       return res.status(500).json({

@@ -35,7 +35,7 @@ const getAdminRegisterRequestCtrl = async (req, res) => {
           details: 'Please check the details, and try it again.',
         });
       } else {
-        return res.status(200).sendCachedData(getSingleRequestInfo);
+        return res.status(200).json(getSingleRequestInfo);
       }
     } else {
       const getAllRequestInfo =
@@ -46,7 +46,7 @@ const getAdminRegisterRequestCtrl = async (req, res) => {
           details: 'Requested resources are not available.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllRequestInfo);
+        return res.status(200).json(getAllRequestInfo);
       }
     }
   } catch (error) {

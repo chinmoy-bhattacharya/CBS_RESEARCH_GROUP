@@ -35,7 +35,7 @@ const getPhdMembersCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getSinglePhdMemberInfo);
+        return res.status(200).json(getSinglePhdMemberInfo);
       }
     } catch (error) {
       return res.status(500).json({
@@ -53,7 +53,7 @@ const getPhdMembersCtrl = async (req, res) => {
           details: 'Requested resources are not found.',
         });
       } else {
-        return res.status(200).sendCachedData(getAllPhdMembersInfo);
+        return res.status(200).json(getAllPhdMembersInfo);
       }
     } catch (error) {
       return res.status(500).json({

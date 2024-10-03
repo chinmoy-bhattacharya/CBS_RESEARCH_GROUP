@@ -22,9 +22,6 @@
  * within the system.
  */
 
-const {
-  clearCache,
-} = require('../../../middlewares/cache-middleware/cacheMiddleware');
 const phdMemberModel = require('../../../models/members-model/phd-member-model/phdMemberModel');
 const customSingleDestroyer = require('../../../utils/cloudinary-single-destroyer/customSingleDestroyer');
 const customSingleUploader = require('../../../utils/cloudinary-single-uploader/customSingleUploader');
@@ -81,13 +78,6 @@ const uploadPhdMemberCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/phd/members`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
-
         return res.status(201).json({
           details: 'Requested resources has been successfully uploaded!',
         });

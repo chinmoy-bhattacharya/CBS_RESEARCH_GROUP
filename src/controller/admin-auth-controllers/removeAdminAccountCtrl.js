@@ -20,9 +20,6 @@
  * managed and removed as needed.
  */
 
-const {
-  clearCache,
-} = require('../../middlewares/cache-middleware/cacheMiddleware');
 const authAdminUserModel = require('../../models/auth-admin-model/authAdminUserModel');
 
 const removeAdminAccountCtrl = async (req, res) => {
@@ -45,12 +42,6 @@ const removeAdminAccountCtrl = async (req, res) => {
           details: 'Something went wrong, please try again later.',
         });
       } else {
-        clearCache(
-          `/iiest-shibpur/chemistry-department/cbs-research-groups/v1/cbs-admin/logged-in-admin-users`
-        );
-        clearCache(
-          '/iiest-shibpur/chemistry-department/cbs-research-groups/v1/admin-portal/dashboard'
-        );
         return res.status(200).json({
           details: 'Requested resources has been successfully removed!',
         });
