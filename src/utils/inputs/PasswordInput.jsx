@@ -1,5 +1,5 @@
 import { IoEyeSharp } from "react-icons/io5";
-import showPasswordHandler from "../../../operations/functional/ShowPasswordHandler";
+import showPasswordHandler from "../../../operations/functional/showPasswordHandler.js";
 import PropTypes from "prop-types";
 const PasswordInput = ({
   inputId,

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import conditionalUserIconColor from "../../../../operations/functional/conditionalUserIconColor";
+import conditionalUserIconColor from "../../../../operations/functional/conditionalUserIconColor.js";
 
 const AccountHolderCard = ({
   iconCharacter,
