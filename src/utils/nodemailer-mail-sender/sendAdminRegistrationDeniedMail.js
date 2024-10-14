@@ -43,7 +43,7 @@ const sendAdminRegistrationDeniedMail = async (sendTo, userName, response) => {
     const mailOptions = {
       from: mainEmailHostUser, // Sender address
       to: sendTo, // List of receivers
-      subject: 'Request to Become Admin - CBS Research Group ',
+      subject: 'Request to Get Admin Position Rejected - CBS Research Group ',
       html: `
         <style>
       * {
@@ -626,7 +626,7 @@ const sendAdminRegistrationDeniedMail = async (sendTo, userName, response) => {
                                     "
                                   >
                                     <p style="margin: 0; margin-bottom: 16px">
-										Thank you for your interest in becoming an admin on [Your Site Name]. After careful consideration, we regret to inform you that we are unable to approve your request at this time.
+										Thank you for your interest in becoming an admin on CBS Research Group. After careful consideration, we regret to inform you that we are unable to approve your request at this time.
                                     </p>
                                     <p style="margin: 0; margin-bottom: 16px">
 										This decision is based on our current admin selection criteria and policies. We appreciate your understanding and hope that you will continue to engage with our platform in other ways.

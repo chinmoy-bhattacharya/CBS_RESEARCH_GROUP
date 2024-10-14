@@ -488,7 +488,7 @@ const sendAdminRegistrationSuccessMail = async (
                                       class="tinyMce-placeholder"
                                       style="word-break: break-word"
                                       >Dear ${userName}, We have confirmed your
-                                      registration request!</span
+                                      registration for Admin Position at CBS Research Group!</span
                                     >
                                   </h1>
                                 </td>
@@ -531,14 +531,14 @@ const sendAdminRegistrationSuccessMail = async (
                                   >
                                     <p style="margin: 0; margin-bottom: 16px">
                                       We are pleased to inform you that your
-                                      request to become an admin on CBS Research
-                                      Group has been approved. Below are your
+                                    request to get admin position at CBS Research Group has been approved. Below are your
                                       login credentials:
                                     </p>
                                     <p style="margin: 0; margin-bottom: 16px">
                                       <strong>Login ID:</strong>
                                       ${loginId}.<br />
-                                      <strong>Password:</strong>${loginPassword}
+                                      <strong>Password:</strong>
+                                      ${loginPassword}
                                     </p>
                                     <p style="margin: 0; margin-bottom: 16px">
                                       You can log in to the admin dashboard by
@@ -547,7 +547,7 @@ const sendAdminRegistrationSuccessMail = async (
                                       ><br /><br />Please make sure to keep your
                                       credentials secure and do not share them
                                       with anyone. We recommend that you change
-                                      your password after logging in for the
+                                      your password after loggin for the
                                       first time.<br /><br />If you have any
                                       questions or need assistance, feel free to
                                       reach out to us. 
