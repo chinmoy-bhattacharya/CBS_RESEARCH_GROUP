@@ -84,7 +84,7 @@ const ApproveRequest = () => {
     navigate("/admin-panel/manage-request");
   };
   return (
-    <main className="min-h-screen py-10">
+    <main className="min-h-screen py-10 bg-gray-50">
       {loading === true && <LoadingSpinner />}
       {showAlert === true && (
         <CustomModel
@@ -97,11 +97,11 @@ const ApproveRequest = () => {
           buttonColor={alertMessage.buttonColor}
         />
       )}
-      <section className="bg-gray-50">
+      <section>
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 mt-12 lg:mt-0">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-500 md:text-2xl">
                 Send login credentials to requested user
               </h1>
               <form
@@ -116,7 +116,7 @@ const ApproveRequest = () => {
                   defaultEmail={null}
                   emailValue={setLoginId}
                   emailValidationError={emailValidatErr}
-                  placeHolderText={"your_name@email.com"}
+                  placeHolderText={"new_admin_loginid@email.com"}
                   isRequired={true}
                   fieldId={"newLoginId"}
                 />

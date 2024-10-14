@@ -151,15 +151,14 @@ const AdminLogin = () => {
                          bg-gray-50 focus:ring-3 focus:ring-primary-300"
                         onChange={(e) => setRememberMeChecked(e.target.checked)}
                       />
-                    </div>
-                    <div className="ml-3 text-sm">
-                      <label
+                                            <label
                         htmlFor="remember"
-                        className="text-gray-900 cursor-pointer"
+                        className="text-gray-900 cursor-pointer ml-3 text-sm"
                       >
                         Remember me
                       </label>
                     </div>
+                 
                   </button>
                   <Link
                     to={"/forgot-password"}

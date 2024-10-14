@@ -17,16 +17,16 @@ const ManageAdminAccounts = () => {
   }, []);
 
   return (
-    <>
+    <main className="min-h-screen bg-gray-50 pb-24 lg:py-auto">
       {loading === true && <LoadingSpinner />}
 
-      <div className="text-center min-h-screen">
+      <div className="text-center">
         <SectionHeading
           heading={"Overview of Registered Admin Users"}
           subHeading={`
          Explore the complete list of all registered admin accounts, including their roles and registration dates, for effective management.`}
         />
-        <div className="flex justify-center items-center min-h-screen">
+        <div className="flex justify-center items-center mt-12 ">
           <div className="min-w-[80%] mx-auto">
             <div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
               <div className="p-6">
@@ -49,7 +49,7 @@ const ManageAdminAccounts = () => {
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 };
 
