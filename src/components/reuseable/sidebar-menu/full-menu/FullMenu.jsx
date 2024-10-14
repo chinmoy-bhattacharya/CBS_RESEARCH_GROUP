@@ -612,15 +612,14 @@ const FullMenu = ({ closeFullMenu, logoutHandler }) => {
 
         {/* LOGOUT SECTIONS  */}
         <ul className="space-y-3 mt-2" id="logout" onClick={logoutHandler}>
-          <li>
-            <a
-              href="#"
+          <li  onClick={closeFullMenu}>
+            <p
               className="text-gray-700 hover:text-black text-sm flex items-center
                hover:bg-gray-300  rounded px-4 py-3 transition-all"
             >
               <RiLogoutBoxLine className="text-xl text-gray-700 mr-5" />
               <span className="ml-1">Logout</span>
-            </a>
+            </p>
           </li>
         </ul>
       </nav>
