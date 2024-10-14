@@ -127,9 +127,9 @@ const UpdatePublication = () => {
       {prevData ? (
         <section className="bg-gray-50">
           <SectionHeading
-            heading={"Manage All Details"}
+            heading={"Update This Publication Details for CBS Research Group"}
             subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+       Update the details of a specific publication within the CBS Research Group, ensuring that all information is accurate and up-to-date for future reference..`}
           />
           <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
             <form onSubmit={updatePublicationHandler}>

@@ -106,8 +106,9 @@ const UpdateGroupnews = () => {
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 mt-12 lg:mt-0">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-                Update existing group news
+              Update This News for CBS Research Group
               </h1>
+              <p>Update the details of this news article of the CBS Research Group, ensuring accurate and up-to-date information is shared with stakeholders</p>
               <form
                 className="space-y-4 md:space-y-6"
                 onSubmit={handleGroupNewsUpdate}

@@ -133,10 +133,9 @@ const UploadPhdMember = () => {
         />
       )}
       <main className="bg-gray-50 min-h-screen">
-        <SectionHeading
-          heading={"Manage All Details"}
-          subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+      <SectionHeading
+          heading={"Upload PHd Member Profile Information"}
+          subHeading={`Submit and upload essential details for PHd students in the CBS Research Group, including academic records and research contributions for comprehensive tracking.`}
         />
 
         <form

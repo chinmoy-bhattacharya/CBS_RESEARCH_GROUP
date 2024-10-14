@@ -90,7 +90,7 @@ const UploadPersonalAward = () => {
           buttonColor={customAlert.buttonColor}
         />
       )}
-      <section className="pt-32">
+      <section className="py-32 bg-gray-50">
         <div className="w-full max-w-lg mx-auto overflow-hidden bg-white rounded-lg shadow-xl">
           <div className="px-6 py-4">
             <div className="flex justify-center mx-auto">
@@ -98,14 +98,14 @@ const UploadPersonalAward = () => {
             </div>
 
             <h3 className="mt-3 text-xl font-medium text-center text-gray-600">
-              Upload Personal Awards
+            Upload Award achieved by Mr.Bhattacharya
             </h3>
 
             <p className="mt-1 text-center text-gray-500">
-              Upload personal awards info
+            Upload details of specific award achieved by Mr. Bhattacharya.
             </p>
 
-            <form onSubmit={handleAwardSubmit} ref={personalAwardFormRef}>
+            <form onSubmit={handleAwardSubmit} ref={personalAwardFormRef} className="pt-8">
               <TextInput
                 inputLabel={""}
                 defaultText={null}

@@ -47,14 +47,13 @@ const ManageContacts = () => {
     <main className="bg-gray-50 ">
       {loading && <LoadingSpinner />}
       <SectionHeading
-        heading={"Manage All Details"}
-        subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+        heading={"Contact Us: Manage Inquiries"}
+        subHeading={`View and manage all contact applications submitted to the CBS Research Group. You can respond and connect with applicants via email for seamless communication.`}
       />
       {allContactData && allContactData.length === 0 ? (
         <h2 className="text-2xl text-gray-500 text-center font-bold pt-20">
           {" "}
-          Currently contact box are empty!
+          Currently contact applications box is empty!
         </h2>
       ) : (
         ""

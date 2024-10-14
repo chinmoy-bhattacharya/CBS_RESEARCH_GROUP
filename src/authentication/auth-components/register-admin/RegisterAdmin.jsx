@@ -145,8 +145,7 @@ const RegisterAdmin = () => {
                 Register user as a new admin.
               </h1>
               <p className="mt-4 text-gray-500">
-                Let’s get you all set up so you can verify your personal account
-                and begin setting up your profile.
+              Empowering New Leadership: Admin Registration Process
               </p>
               <div className="mt-6">
                 <h1 className="text-gray-500">Select type of account</h1>

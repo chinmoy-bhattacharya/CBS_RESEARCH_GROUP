@@ -154,9 +154,9 @@ const UploadMasterAlumni = () => {
       )}
       <main className="bg-gray-50 min-h-screen">
         <SectionHeading
-          heading={"Manage All Details"}
+          heading={"Upload MSc Alumni Profile"}
           subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+         Submit and upload the profile of a specific MSc alumnus from the CBS Research Group, including their academic achievements and professional milestones.`}
         />
 
         <form

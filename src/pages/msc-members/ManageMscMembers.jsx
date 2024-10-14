@@ -20,9 +20,9 @@ const ManageMscMembers = () => {
   return (
     <main className="min-h-screen bg-gray-50">
       <SectionHeading
-        heading={"Manage All Details"}
+        heading={"Manage MSc Members of CBS Research Group"}
         subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+         View, update, or delete profiles of all MSc students in the CBS Research Group, ensuring accurate records and efficient management of student information.`}
       />
       {membersInfo && membersInfo.length === 0 ? (
         <h2 className="text-2xl text-gray-500 text-center font-bold pt-20">

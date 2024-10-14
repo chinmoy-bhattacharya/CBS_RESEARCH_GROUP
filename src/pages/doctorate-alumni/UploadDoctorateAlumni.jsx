@@ -140,10 +140,10 @@ const UploadDoctorateAlumni = () => {
         />
       )}
       <main className="bg-gray-50 min-h-screen pb-12">
-        <SectionHeading
-          heading={"Manage All Details"}
+      <SectionHeading
+          heading={"Upload PHd Alumni Profile"}
           subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+         Submit and upload the profile of a specific PHd alumnus from the CBS Research Group, including their academic achievements and professional milestones.`}
         />
 
         <form

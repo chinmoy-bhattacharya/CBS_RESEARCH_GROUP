@@ -20,9 +20,9 @@ const ManageLabInstruments = () => {
   return (
     <main className="bg-gray-100">
       <SectionHeading
-        heading={"Manage All Details"}
+        heading={"Manage Lab Equipments of CBS Research Group"}
         subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+       View, update, or delete all lab equipment used by the CBS Research Group, ensuring accurate records and efficient management of resources for research activities.`}
       />
       {loading === true && <LoadingSpinner />}
       {allInstruments && allInstruments.length === 0 ? (

@@ -26,12 +26,12 @@ const PreviewContactInfo = () => {
   }, [id]);
 
   return (
-    <div>
+    <main className="bg-gray-50">
       {loading === true && <LoadingSpinner />}
-      <div className="min-h-screen flex items-center justify-center px-4 pt-20">
+      <div className="min-h-screen flex items-center justify-center px-4 py-20">
         <div className="max-w-4xl  bg-white w-full rounded-lg shadow-xl">
           <div className="p-4 border-b">
-            <h2 className="text-2xl ">Applicant Information</h2>
+            <h2 className="text-2xl ">Contact Us Inquiry</h2>
             <p className="text-sm text-gray-500">
               Personal details and application.
             </p>
@@ -96,7 +96,7 @@ const PreviewContactInfo = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

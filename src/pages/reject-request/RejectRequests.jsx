@@ -91,7 +91,7 @@ const RejectRequests = () => {
           </div>
           <div className="mt-8">
             <h3 className="text-2xl font-semibold flex-1 text-gray-600">
-              Are you really want to reject this request
+              Are you really want to reject this request?
             </h3>
             <div className="flex flex-row justify-between mx-2">
               <button

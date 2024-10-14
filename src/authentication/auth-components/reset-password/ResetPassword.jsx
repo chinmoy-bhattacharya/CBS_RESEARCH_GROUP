@@ -81,7 +81,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <>
+    <main className="min-h-screen py-16 lg:py-0 md:py-0 bg-gray-50">
       {loading === true && <LoadingSpinner />}
       {
         <CustomModel
@@ -93,13 +93,16 @@ const ResetPassword = () => {
           buttonColor={loginResponse.buttonColor}
         />
       }
-      <section className="bg-gray-50">
+      <section>
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-                Reset forgotten password
+            <div className="p-6 space-y-2 md:space-y-6 sm:p-8">
+              <h1 className="text-xl font-bold text-gray-500 md:text-2xl">
+                Reset Forgotten Password. 
               </h1>
+              <p className="mt-0">Reset password of your existing admin account of (CBS-Research-Group).
+                Link will be expire within 5min. Hurry Up!
+              </p>
               <form
                 className="space-y-4 md:space-y-6"
                 onSubmit={handleSubmit}
@@ -144,7 +147,7 @@ const ResetPassword = () => {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 };
 

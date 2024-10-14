@@ -90,9 +90,9 @@ const UpdateLabInstrument = () => {
   return (
     <main className="bg-gray-50">
       <SectionHeading
-        heading={"Manage All Details"}
+        heading={"Update This Lab Equipment of CBS Research Group"}
         subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+         Update details of "${getPrevData && getPrevData.instrumentName}" used by CBS Research Group team.`}
       />
       {loading === true && <LoadingSpinner />}
       {showAlert === true && (

@@ -107,7 +107,7 @@ const UpdateProject = () => {
           buttonColor={customAlert.buttonColor}
         />
       )}
-      <section className="pt-32 bg-gray-50">
+      <section className="py-32 bg-gray-50">
         <div className="w-full max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl">
           <div className="px-6 py-4">
             <div className="flex justify-center mx-auto">
@@ -115,14 +115,14 @@ const UpdateProject = () => {
             </div>
 
             <h3 className="mt-3 text-xl font-medium text-center text-gray-600">
-              Update Project Info
+            Update This Project Details of CBS Research Group
             </h3>
 
             <p className="mt-1 text-center text-gray-500">
-              Send response to the coresponding user application
+            Update the details of a specific project within the CBS Research Group, ensuring accurate and current information is available for reference.
             </p>
 
-            <form onSubmit={projectUpdateHandler}>
+            <form onSubmit={projectUpdateHandler} className="py-8 ">
 
               {/* Project Name  */}
               <div className="w-full mt-4">

@@ -149,11 +149,14 @@ const UpdatePhdMember = () => {
       )}
       {previousData ? (
         <main className="bg-gray-50 min-h-screen">
-          <SectionHeading
-            heading={"Manage All Details"}
-            subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
-          />
+                    <SectionHeading
+                        heading={`Update Information Of ${
+                            previousData && previousData.memberName
+                        }`}
+                        subHeading={`Update ${
+                            previousData && previousData.memberName
+                        }'s details, and ensuring accurate records of their achievements and contributions.`}
+                    />
 
           <form
             className="grid grid-cols-1 lg:grid-cols-2 pt-20"

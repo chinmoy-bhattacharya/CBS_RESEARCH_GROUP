@@ -22,9 +22,9 @@ const ManageAdminAccounts = () => {
 
       <div className="text-center min-h-screen">
         <SectionHeading
-          heading={"Manage All Registered Account"}
+          heading={"Overview of Registered Admin Users"}
           subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+         Explore the complete list of all registered admin accounts, including their roles and registration dates, for effective management.`}
         />
         <div className="flex justify-center items-center min-h-screen">
           <div className="min-w-[80%] mx-auto">

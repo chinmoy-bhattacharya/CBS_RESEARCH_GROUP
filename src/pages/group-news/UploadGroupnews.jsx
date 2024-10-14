@@ -90,8 +90,9 @@ const UploadGroupnews = () => {
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 mt-12 lg:mt-0">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-                Post a new group news
+              Post Important News of CBS Research Group.
               </h1>
+              <p>Submit the latest updates and news of the CBS Research Group, ensuring accurate and timely information is available to all stakeholders and users.</p>
               <form
                 className="space-y-4 md:space-y-6"
                 onSubmit={handleGroupNewsSubmit}

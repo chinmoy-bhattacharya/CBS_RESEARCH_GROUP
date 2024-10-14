@@ -105,9 +105,9 @@ const UploadPublication = () => {
       )}
       <section className="bg-gray-50 ">
         <SectionHeading
-          heading={"Manage All Details"}
+          heading={"Upload Specific Publication Details for CBS Research Group"}
           subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+       Submit the details of a specific publication from the CBS Research Group, ensuring accurate documentation and easy access to research outputs.`}
         />
         <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
           <form onSubmit={uploadPublicationHandler} ref={publicationFormRef}>

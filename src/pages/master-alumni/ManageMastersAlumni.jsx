@@ -20,9 +20,8 @@ const ManageMastersAlumni = () => {
   return (
     <main className="min-h-screen bg-gray-50">
       <SectionHeading
-        heading={"Manage All Details"}
-        subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+        heading={"CBS Research Group MSc Alumni (Management Console)"}
+        subHeading={`Explore and manage the complete list of MSc alumni from the CBS Research Group, highlighting their details, research contributions, and career paths since graduation`}
       />
       {alumniInfo && alumniInfo.length === 0 ? (
         <h2 className="text-2xl text-gray-500 text-center font-bold pt-20">

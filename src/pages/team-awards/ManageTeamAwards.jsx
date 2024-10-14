@@ -20,9 +20,9 @@ const ManageTeamAwards = () => {
   return (
     <main className="bg-gray-50">
       <SectionHeading
-        heading={"Manage All Details"}
+        heading={"Manage Awards of CBS Research Group (Team)"}
         subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+       View, update, or delete all awards achieved by the CBS Research Group team, including details for each award to maintain comprehensive recognition and documentation.`}
       />
       {loading === true && <LoadingSpinner />}
       {allAwards && allAwards.length === 0 ? (

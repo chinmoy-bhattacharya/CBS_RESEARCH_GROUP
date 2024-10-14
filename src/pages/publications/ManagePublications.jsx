@@ -20,9 +20,9 @@ const ManagePublications = () => {
   return (
     <main className="bg-gray-50 min-h-screen">
       <SectionHeading
-        heading={"Manage All Details"}
+        heading={"Manage Publication Details of CBS Research Group"}
         subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+     View, update, or delete all publication details for the CBS Research Group, ensuring accurate and comprehensive records of research contributions and findings.`}
       />
       {allPublication && allPublication.length === 0 ? (
         <h2 className="text-2xl text-gray-500 text-center font-bold pt-20">

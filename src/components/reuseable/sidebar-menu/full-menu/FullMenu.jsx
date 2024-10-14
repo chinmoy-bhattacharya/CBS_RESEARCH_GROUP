@@ -611,7 +611,7 @@ const FullMenu = ({ closeFullMenu, logoutHandler }) => {
         <hr className="my-2 border-gray-900" />
 
         {/* LOGOUT SECTIONS  */}
-        <ul className="space-y-3 mt-2" id="logout" onClick={logoutHandler}>
+        <ul className="space-y-3 mb-8 " id="logout" onClick={logoutHandler}>
           <li  onClick={closeFullMenu}>
             <p
               className="text-gray-700 hover:text-black text-sm flex items-center

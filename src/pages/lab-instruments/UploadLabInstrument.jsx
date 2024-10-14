@@ -75,9 +75,8 @@ const UploadLabInstrument = () => {
   return (
     <main className="bg-gray-50">
       <SectionHeading
-        heading={"Manage All Details"}
-        subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+        heading={"Upload Lab Equipment of CBS Research Group"}
+        subHeading={`Submit and manage details for a specific piece of lab equipment in the CBS Research Group, including image.`}
       />
       {loading === true && <LoadingSpinner />}
       {showAlert === true && (

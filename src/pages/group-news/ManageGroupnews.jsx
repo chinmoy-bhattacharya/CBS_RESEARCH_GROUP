@@ -19,9 +19,9 @@ const ManageGroupnews = () => {
   return (
     <main className="bg-gray-50">
       <SectionHeading
-        heading={"Manage All Details"}
+        heading={"Manage Current News of CBS Research Group"}
         subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+        View, update, or delete all current news articles for the CBS Research Group, ensuring relevant information is accurately presented and easily accessible.`}
       />
       {loadIng === true && <LoadingSpinner />}
       {allGroupNews && allGroupNews.length === 0 ? (

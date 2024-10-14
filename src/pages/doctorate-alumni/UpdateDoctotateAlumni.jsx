@@ -170,9 +170,8 @@ const UpdateDoctotateAlumni = () => {
             {previousData ? (
                 <main className="bg-gray-50 min-h-screen pb-12">
                     <SectionHeading
-                        heading={'Manage All Details'}
-                        subHeading={`
-         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium accusamus quaerat, odit, laborum placeat ipsa corporis ipsam eaque id ullam asperiores illo! Illum ex voluptate possimus recusandae, placeat assumenda magni.`}
+                        heading={`Update Information Of ${previousData&& previousData.alumniName}`}
+                        subHeading={`Update ${previousData&& previousData.alumniName}'s details, and ensuring accurate records of their achievements and contributions.`}
                     />
 
                     <form

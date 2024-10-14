@@ -90,7 +90,7 @@ const UploadTeamAward = () => {
           buttonColor={customAlert.buttonColor}
         />
       )}
-      <section className="pt-32">
+      <section className="py-32 bg-gray-50">
         <div className="w-full max-w-lg mx-auto overflow-hidden bg-white rounded-lg shadow-xl">
           <div className="px-6 py-4">
             <div className="flex justify-center mx-auto">
@@ -98,11 +98,11 @@ const UploadTeamAward = () => {
             </div>
 
             <h3 className="mt-3 text-xl font-medium text-center text-gray-600">
-              Upload Team Awards
+            Upload Award achieved by CBS-Research-Group (Team)
             </h3>
 
             <p className="mt-1 text-center text-gray-500">
-              Upload Team awards info
+              Upload details of specific award achieved by CBS-Research-Group (Team)
             </p>
 
             <form onSubmit={handleAwardSubmit} ref={teamAwardFormRef}>
