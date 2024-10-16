@@ -25,7 +25,7 @@ import { Helmet } from "react-helmet";
 const Dashboard = () => {
   const [apiRes, setApiRes] = useState(null);
   const [loading, setLoading] = useState(false);
-
+const superAdmin = localStorage.getItem('super-admin')
   useEffect(() => {
     window.scrollTo(0, 0);
     const fetchData = async () => {
@@ -108,7 +108,7 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
             uploadUrl={"/admin-panel/register"}
             uploadButtonText={"Register"}
           />
-
+          <div className={superAdmin ? 'visable' : 'hidden'}>
           <ItemCounter
             itemName={"Administrative Access Requests"}
             totalCount={apiRes && apiRes[1].be_admin_req.length}
@@ -121,6 +121,8 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
             uploadButtonText={null}
             uploadUrl={null}
           />
+          </div>
+
 
 
           <ItemCounter

@@ -35,6 +35,7 @@ const FullMenu = ({ closeFullMenu, logoutHandler }) => {
   const [groupNewsDropdown, setGroupNewsDropdown] = useState(false);
   const [projectsDropdown, setProjectsDropdown] = useState(false);
   const [publicationsDropdown, setPublicationssDropdown] = useState(false);
+  const superAdmin = localStorage.getItem("super-admin")
   const handleDropdown = (id) => {
     if (id === 1) {
       setAdminOperationDropdown((prev) => !prev);
@@ -156,7 +157,7 @@ const FullMenu = ({ closeFullMenu, logoutHandler }) => {
             </div>
           </li>
           {/* ADMIN REQUEST  */}
-          <li onClick={closeFullMenu}>
+          <li onClick={closeFullMenu} className={superAdmin ? 'visible' : 'hidden'}>
             <Link to={"/admin-panel/manage-request"} className="cursor-pointer">
               <p className="text-gray-700 hover:text-black text-sm flex justify-between items-center hover:bg-gray-300  rounded px-4 py-3 transition-all">
                 <VscGitPullRequestGoToChanges className="text-xl text-gray-700" />
