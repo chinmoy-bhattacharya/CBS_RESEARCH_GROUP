@@ -34,10 +34,6 @@ The CBS Research Group Backend is a RESTful API designed to manage the operation
 
 -   Frontend Framework: React js
 -   Language: Javascript
--   Database: MongoDB
--   Cloud Provider: Cloudinary
--   File Handling: Multer
--   Authentication: json web token, uuid
 
 ## Architecture
 
