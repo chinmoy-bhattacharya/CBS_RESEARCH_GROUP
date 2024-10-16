@@ -128,7 +128,7 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-full px-3 mb-6">
                 <TextInput
-                  inputLabel={"Instruement name"}
+                  inputLabel={"Instruement Name"}
                   defaultText={null}
                   textValue={setInstrumentName}
                   placeHolderText={"Instruement Name"}
@@ -138,10 +138,10 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
               </div>
               <div className="w-full px-3 mb-6">
                 <label
-                  className="block uppercase text-gray-500 text-sm font-bold mb-2"
+                  className="block font-semibold text-sm mb-2"
                   htmlFor="instrumentDetails"
                 >
-                  Instruement details
+                  Instruement Details
                 </label>
                 <textarea
                   id="instrumentDetails"

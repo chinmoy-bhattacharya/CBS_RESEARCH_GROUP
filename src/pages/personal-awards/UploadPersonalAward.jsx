@@ -128,7 +128,7 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
             </div>
 
             <h3 className="mt-3 text-xl font-medium text-center text-gray-600">
-            Upload Award achieved by Mr.Bhattacharya
+            Upload award achieved by Mr.Bhattacharya
             </h3>
 
             <p className="mt-1 text-center text-gray-500">
@@ -149,7 +149,7 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
                   <FloatLabel>
                     <label
                       htmlFor="recivedDate"
-                      className="text-gray-500 z-[100] pl-4"
+                      className="text-gray-400 z-[100] pl-4"
                     >
                       Recived Date
                     </label>

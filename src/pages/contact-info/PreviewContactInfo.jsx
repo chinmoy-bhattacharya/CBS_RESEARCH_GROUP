@@ -86,7 +86,7 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
               <p className="text-gray-600">Message</p>
               <p>{corespondingInfo && corespondingInfo.message}</p>
             </div>
-            <div className="flex justify-around items-center py-8 px-6">
+            <div className="flex flex-col md:flex-row justify-around items-center py-8 px-6">
               <Link
                 to={`/admin-panel/send-contact-application-response/${
                   corespondingInfo && corespondingInfo._id
@@ -94,7 +94,7 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
                 className={`${
                   localStorage.getItem(`res-send-${id}`) ? "hidden" : "flex"
                 } flex-row item-center border border-gray-300 mx-4 rounded-md shadow-lg bg-gray-50
-               justify-center h-10 w-[33.3%] transform translate-1 hover:scale-110 text-green-500`}
+               justify-center h-10 w-full md:w-[33.3%] transform translate-1 hover:scale-110 text-green-500`}
               >
                 <RiMailSendFill className="text-xl my-auto mr-2" />
                 <span className="text-md font-semibold my-auto">
@@ -107,7 +107,7 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
                   corespondingInfo && corespondingInfo._id
                 }`}
                 className="flex border border-gray-300 flex-row item-center mx-4 rounded-md shadow-lg bg-gray-50
-               justify-center h-10 w-[33.3%] transform translate-1 hover:scale-110 text-red-500"
+               justify-center h-10 my-4 md:my-0 w-full md:w-[33.3%] transform translate-1 hover:scale-110 text-red-500"
               >
                 <BsTrashFill className="text-xl my-auto mr-2" />
                 <span className="text-md font-semibold my-auto">Delete</span>
@@ -116,7 +116,7 @@ It takes around 20 minutes to reach IIEST, Shibpur from the heart of the city an
               <button
                 onClick={() => navigate("/admin-panel/manage-contacts")}
                 className="flex flex-row item-center border border-gray-300 mx-4 rounded-md shadow-lg bg-gray-50
-               justify-center h-10 w-[33.3%] transform translate-1 hover:scale-110 text-yellow-500"
+               justify-center h-10 w-full md:w-[33.3%] transform translate-1 hover:scale-110 text-yellow-500"
               >
                 <IoArrowBack className="text-xl my-auto mr-2" />
                 <span className="text-md font-semibold my-auto">Back</span>
