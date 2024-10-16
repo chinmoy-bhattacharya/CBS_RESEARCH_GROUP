@@ -16,6 +16,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import ManageAdminAccounts from "./pages/manage-admin-account/ManageAdminAccounts";
 import DeleteAdminAccount from "./pages/manage-admin-account/DeleteAdminAccount";
 
+
 const ForgotPassword = lazy(() =>
   import("./pages/forgot-password/ForgotPassword")
 );
@@ -30,9 +31,6 @@ const RegisterAdmin = lazy(() =>
 );
 const PasswordChange = lazy(() =>
   import("./pages/password-change/PasswordChange")
-);
-const ApproveRequest = lazy(() =>
-  import("./pages/approve-request/ApproveRequest")
 );
 const ManageAdminRequests = lazy(() =>
   import("./pages/manage-admin-requests/ManageAdminRequests")
@@ -235,10 +233,6 @@ function App() {
     {
       path: "/manage-request",
       element: <ManageAdminRequests />,
-    },
-    {
-      path: "/approve-request/:id",
-      element: <ApproveRequest />,
     },
     {
       path: "/reject-request/:id",

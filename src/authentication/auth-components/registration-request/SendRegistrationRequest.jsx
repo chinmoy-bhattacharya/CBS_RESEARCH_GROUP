@@ -85,6 +85,9 @@ const SendRegistrationRequest = () => {
       }
       setIsLoading(false);
       setCloseModel(true);
+    } else {
+      setIsLoading(false)
+      setEmailValidationError(true);
     }
 
     userMessageRef.current.reset();
