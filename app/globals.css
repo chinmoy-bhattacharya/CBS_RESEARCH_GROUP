@@ -2,32 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.blurBackground {
+  background-color: rgba(0, 0, 0, 0.562);
+  backdrop-filter: blur(8px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.tooltip {
+  position: relative;
+  display: inline-block;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 170px;
+  background-color: rgb(0, 116, 211);
+  font-size: small;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(0, 116, 211);
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
