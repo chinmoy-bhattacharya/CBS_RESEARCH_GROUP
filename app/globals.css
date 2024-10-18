@@ -4,7 +4,7 @@
 
 .blurBackground {
   background-color: rgba(0, 0, 0, 0.562);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(80px);
 }
 
 .tooltip {
@@ -40,4 +40,28 @@
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+/* For Webkit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #be8d1a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  scrollbar-width: thin; /* Options: auto, thin, none */
+  scrollbar-color: #be8d1a #f1f1f1; /* Handle color | Track color */
 }
