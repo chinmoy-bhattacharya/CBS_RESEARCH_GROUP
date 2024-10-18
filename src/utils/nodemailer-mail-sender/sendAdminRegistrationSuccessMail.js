@@ -25,7 +25,6 @@ const {
   mainEmailHostPassword,
   researchGroupLogo,
   emailIllustration,
-  loginLink,
 } = require('../../config/envConfig');
 
 const sendAdminRegistrationSuccessMail = async (
@@ -38,7 +37,7 @@ const sendAdminRegistrationSuccessMail = async (
 ) => {
   const CBSLogo = researchGroupLogo;
   const cbsEmailIllustration = emailIllustration;
-  const newLoginLink = loginLink;
+  const newLoginLink = 'adminsconsole.chinmoybhattacharyaelectrochemistry.com';
   try {
     const transporter = nodemailer.createTransport({
       host: mainEmailHostProtocol,
