@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins || inter}>
+      <body className={poppins || inter} suppressHydrationWarning={true}>
         <ThemeProvider>
           <PageHeader />
           {children}

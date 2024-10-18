@@ -1,0 +1,19 @@
+.loader {
+  height: 50px;
+  aspect-ratio: 2;
+  box-sizing: border-box;
+  background: radial-gradient(farthest-side, #b89600 98%, #2bb800) left/20px
+      20px,
+    radial-gradient(farthest-side, #b89600 98%, #0061b100) left/20px 20px,
+    radial-gradient(farthest-side, #b89600 98%, #0000) center/20px 20px,
+    radial-gradient(farthest-side, #b89600 98%, #0000) right/20px 20px,
+    #00000000;
+  background-repeat: no-repeat;
+  filter: blur(4px) contrast(10);
+  animation: l14 1s infinite;
+}
+@keyframes l14 {
+  100% {
+    background-position: right, left, center, right;
+  }
+}

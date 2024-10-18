@@ -160,18 +160,18 @@ const PageHeader = () => {
                   Home
                 </Link>
               </li>
-              {/* Professor */}
+              {/* About Us */}
               <li className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 lg:inline-flex lg:items-center">
                 <Link
-                  href="/professor"
+                  href="/about"
                   className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                     ${
-                      pathname === "/professor"
+                      pathname === "/about"
                         ? "text-[#007bff] border-b-2 w-fit border-[#007bff]"
                         : ""
                     }`}
                 >
-                  Professor
+                  About Us
                 </Link>
               </li>
 
