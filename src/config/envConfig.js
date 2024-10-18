@@ -41,6 +41,7 @@ const environment = {
   mailTemplateBody: process.env.RESET_PASSWORD_EMAIL_BODY,
   mailTemplateFooter: process.env.RESET_PASSWORD_EMAIL_FOOTER,
   emailIllustration: process.env.BE_ADMIN_REQUEST_ILLUSTRATION,
+  loginLink: process.env.LOGIN_LINK,
 };
 
 const envConfig = Object.freeze(environment);

@@ -25,6 +25,7 @@ const {
   mainEmailHostPassword,
   researchGroupLogo,
   emailIllustration,
+  loginLink,
 } = require('../../config/envConfig');
 
 const sendAdminRegistrationSuccessMail = async (
@@ -37,7 +38,7 @@ const sendAdminRegistrationSuccessMail = async (
 ) => {
   const CBSLogo = researchGroupLogo;
   const cbsEmailIllustration = emailIllustration;
-  const newLoginLink = 'adminsconsole.chinmoybhattacharyaelectrochemistry.com';
+  const newLoginLink = loginLink;
   try {
     const transporter = nodemailer.createTransport({
       host: mainEmailHostProtocol,
@@ -542,7 +543,7 @@ const sendAdminRegistrationSuccessMail = async (
                                     <p style="margin: 0; margin-bottom: 16px">
                                       You can log in to the admin dashboard by
                                       clicking the following link:
-                                      <a href="https://${newLoginLink}">Login Link</a
+                                      <a href="${newLoginLink}">Login Link</a
                                       ><br /><br />Please make sure to keep your
                                       credentials secure and do not share them
                                       with anyone. We recommend that you change
