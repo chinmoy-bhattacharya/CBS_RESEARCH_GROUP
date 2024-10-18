@@ -1,4 +1,6 @@
 import LandingBanner from "@/components/single-use/landing-banner/LandingBanner";
+import ResearchAreas from "@/components/single-use/research-areas/ResearchAreas";
+import CommonHeading from "@/utils/common-headings/CommonHeading";
 import CountUpSection from "@/utils/count-up/CountUpSection";
 
 export default function Home() {
@@ -6,7 +8,7 @@ export default function Home() {
     <main className="bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 min-h-screen">
       <LandingBanner />
       <CountUpSection />
-
+      <ResearchAreas />
       <div>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industrys standard dummy text ever

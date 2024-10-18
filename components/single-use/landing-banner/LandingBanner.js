@@ -41,29 +41,35 @@ const LandingBanner = () => {
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none ">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+            <div
+              className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7
+             text-white sm:grid-cols-2 md:flex lg:gap-x-10"
+            >
+              {/* Group News */}
               <Link
                 href="/news"
-                className="transform translate-x hover:scale-110 hover:text-blue-500 dark:text-gray-300"
+                className="transform translate-x hover:scale-110 hover:text-blue-500 dark:hover:text-blue-500 dark:text-gray-300"
               >
                 Group News <span aria-hidden="true">&rarr;</span>
               </Link>
-
+              {/* Lab Facilities */}
               <Link
                 href="/lab-facilities"
-                className="transform translate-x hover:scale-110 hover:text-yellow-400 dark:text-gray-300"
+                className="transform translate-x hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400 dark:text-gray-300"
               >
                 Lab Facilities <span aria-hidden="true">&rarr;</span>
               </Link>
+              {/* About Us */}
               <Link
                 href="/about"
-                className="transform translate-x hover:scale-110 hover:text-blue-500 dark:text-gray-300"
+                className="transform translate-x hover:scale-110 hover:text-blue-500 dark:hover:text-blue-500 dark:text-gray-300"
               >
                 About Us <span aria-hidden="true">&rarr;</span>
               </Link>
+              {/* Contct Us  */}
               <Link
                 href="/contact"
-                className="transform translate-x hover:scale-110 hover:text-yellow-400 dark:text-gray-300"
+                className="transform translate-x hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400 dark:text-gray-300"
               >
                 Contct Us <span aria-hidden="true">&rarr;</span>
               </Link>

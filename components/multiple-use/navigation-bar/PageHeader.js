@@ -85,7 +85,8 @@ const PageHeader = () => {
     <header
       className={`${
         isSticky === true ? "visable" : "hidden"
-      } min-h-[60px] tracking-wide w-full shadow-lg fixed top-0 right-0 left-0 z-[1000] `}
+      } min-h-[60px] tracking-wide w-full shadow-lg fixed top-0 right-0 left-0 z-[1000] 
+       `}
     >
       <section className="border-b border-gray-100 dark:border-gray-700">
         <div className="flex justify-center px-10 bg-white dark:bg-slate-800">
@@ -101,7 +102,7 @@ const PageHeader = () => {
       {/* Main Nav bar  */}
       <nav
         className="flex bg-white dark:bg-slate-800 dark:text-gray-400 min-h-[70px]
-        relative z-50 "
+        relative z-50"
       >
         <div className="flex flex-wrap items-center justify-between px-10 py-3 gap-4 w-full">
           <Link href="/">
@@ -133,7 +134,14 @@ const PageHeader = () => {
             <ul
               ref={navbarRef}
               onClick={handleClick}
-              className={`lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white dark:bg-slate-800 dark:text-gray-400 max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50`}
+              className={`lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white dark:bg-slate-800 dark:text-gray-400
+                 max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50
+  dark:[&::-webkit-scrollbar-thumb]:bg-blue-500"
+                 [&::-webkit-scrollbar]:w-[7px]
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:bg-yellow-500
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-blue-500`}
             >
               <li className="mb-6 hidden max-lg:block">
                 <Link href="/">
@@ -150,7 +158,7 @@ const PageHeader = () => {
               <li className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 block lg:inline-flex lg:items-center">
                 <Link
                   href="/"
-                  className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                  className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                     ${
                       pathname === "/"
                         ? "text-[#007bff] border-b-2 w-fit border-[#007bff]"
@@ -164,7 +172,7 @@ const PageHeader = () => {
               <li className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 lg:inline-flex lg:items-center">
                 <Link
                   href="/about"
-                  className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                  className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                     ${
                       pathname === "/about"
                         ? "text-[#007bff] border-b-2 w-fit border-[#007bff]"
@@ -179,7 +187,7 @@ const PageHeader = () => {
               <li className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 lg:inline-flex lg:items-center">
                 <Link
                   href="/publications"
-                  className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold
+                  className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold
                     ${
                       pathname === "/publications"
                         ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
@@ -193,7 +201,7 @@ const PageHeader = () => {
               {/* Groups */}
               <li className="group max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 relative">
                 <p
-                  className="cursor-pointer hover:text-[#007bff]
+                  className="cursor-pointer hover:text-[#007bff] dark:hover:text-[#007bff]
                      text-gray-600 dark:text-gray-400 text-[15px] font-bold
                      inline-flex items-center"
                 >
@@ -231,7 +239,7 @@ const PageHeader = () => {
                   <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
                     <Link
                       href="/msc-alumni"
-                      className={`hover:text-[#007bff] text-gray-600 
+                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 
                          dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/msc-alumni"
@@ -247,7 +255,7 @@ const PageHeader = () => {
                   <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
                     <Link
                       href="/phd-alumni"
-                      className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/phd-alumni"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
@@ -262,7 +270,7 @@ const PageHeader = () => {
                   <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
                     <Link
                       href="/msc-members"
-                      className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/msc-members"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
@@ -277,7 +285,7 @@ const PageHeader = () => {
                   <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
                     <Link
                       href="/phd-members"
-                      className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/phd-members"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
@@ -291,7 +299,7 @@ const PageHeader = () => {
                   <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
                     <Link
                       href="/awards"
-                      className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/awards"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
@@ -307,7 +315,7 @@ const PageHeader = () => {
               {/* Resources */}
               <li className="group max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 relative">
                 <p
-                  className="cursor-pointer hover:text-[#007bff]
+                  className="cursor-pointer hover:text-[#007bff] dark:hover:text-[#007bff]
                   text-gray-600 dark:text-gray-400  text-[15px] font-bold
                   inline-flex items-center"
                 >
@@ -339,7 +347,7 @@ const PageHeader = () => {
                   <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
                     <Link
                       href="/news"
-                      className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/news"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
@@ -354,7 +362,7 @@ const PageHeader = () => {
                   <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
                     <Link
                       href="/lab-facilities"
-                      className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/lab-facilities"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
@@ -369,7 +377,7 @@ const PageHeader = () => {
                   <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
                     <Link
                       href="/projects"
-                      className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/projects"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
@@ -384,7 +392,7 @@ const PageHeader = () => {
                   <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
                     <Link
                       href="/gallery"
-                      className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/gallery"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
@@ -401,7 +409,7 @@ const PageHeader = () => {
               <li className="max-lg:py-3 lg:inline-flex lg:items-center">
                 <Link
                   href="/contact"
-                  className={`hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold
+                  className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold
                     ${
                       pathname === "/contact"
                         ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "

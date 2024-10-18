@@ -60,8 +60,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-body {
-  scrollbar-width: thin; /* Options: auto, thin, none */
-  scrollbar-color: #be8d1a #f1f1f1; /* Handle color | Track color */
-}
