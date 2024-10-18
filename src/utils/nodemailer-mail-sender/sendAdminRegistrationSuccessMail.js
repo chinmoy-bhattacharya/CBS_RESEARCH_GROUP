@@ -543,7 +543,7 @@ const sendAdminRegistrationSuccessMail = async (
                                     <p style="margin: 0; margin-bottom: 16px">
                                       You can log in to the admin dashboard by
                                       clicking the following link:
-                                      <a href="${newLoginLink}">Login Link</a
+                                      <a href="https://${newLoginLink}">Login Link</a
                                       ><br /><br />Please make sure to keep your
                                       credentials secure and do not share them
                                       with anyone. We recommend that you change
