@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
           <a href="tel: +918334911400" className="text-blue-500 text-sm ml-3">
             <small className="block">Tel:</small>
-            <strong>+ 91 8334-911-400</strong>
+            <strong className="font-medium">+ 91 8334-911-400</strong>
           </a>
         </li>
 
@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
           <a href="tel: +917003191127" className="text-blue-500 text-sm ml-3">
             <small className="block">Tel:</small>
-            <strong>+ 91 7003-191-127</strong>
+            <strong className="font-medium">+ 91 7003-191-127</strong>
           </a>
         </li>
 
@@ -99,12 +99,15 @@ const Footer = () => {
             className="text-blue-500 text-sm ml-3"
           >
             <small className="block">Mail</small>
-            <strong>chinmoy@chem.iiests.ac.in</strong>
+            <strong className="font-medium">chinmoy@chem.iiests.ac.in</strong>
           </a>
         </li>
 
         <li className="flex items-center cursor-pointer" title="Send Email">
-          <div className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+          <div
+            className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center
+           justify-center shrink-0"
+          >
             <MdOutlineMailOutline className="text-2xl  text-blue-500 " />
           </div>
           <a
@@ -112,7 +115,9 @@ const Footer = () => {
             className="text-blue-500 text-sm ml-3"
           >
             <small className="block">Mail</small>
-            <strong>cbhattacharya.besus@gmail.com</strong>
+            <strong className="font-medium">
+              cbhattacharya.besus@gmail.com
+            </strong>
           </a>
         </li>
       </ul>

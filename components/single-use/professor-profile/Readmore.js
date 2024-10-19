@@ -148,9 +148,9 @@ const Readmore = () => {
                             className="flex items-center justify-center border-t border-b
                              border-gray-300 dark:border-gray-600  py-4"
                           >
-                            <p className="font-semibold hover:underline hover:text-blue-600">
+                            <p className="font-semibold">
                               {qualification.degree} in{" "}
-                              {qualification.specialization}(
+                              {qualification.specialization} (
                               {qualification.year})
                             </p>
                           </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import photocatalytic_research from "@/public/images/research-areas/photocatalytic_research.jpeg";
 import CorrosionBehavior from "@/public/images/research-areas/CorrosionBehavior.jpg";
 import Photocatalysts from "@/public/images/research-areas/Photocatalysts.jpg";
@@ -11,10 +10,13 @@ const ResearchAreas = () => {
       <div className="bg-gray-50 dark:bg-slate-800 pb-12 p-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-12 items-center max-w-6xl max-lg:max-w-2xl max-sm:max-w-sm mx-auto">
           <div>
-            <h2 className="text-4xl font-bold text-yellow-700 uppercase mb-6">
+            <h2 className="text-3xl font-semibold text-yellow-700  mb-6">
               Research Areas
             </h2>
-            <h3 className="text-2xl max-md:text-2xl font-extrabold text-gray-500 dark:text-gray-300 leading-10">
+            <h3
+              className="text-xl max-md:text-2xl font-semibold text-gray-500
+             dark:text-gray-300 leading-10"
+            >
               Electrochemistry Research Focus: Corrosion, Dopant Optimization,
               Metal Oxides, and Photocatalytic Performance....
             </h3>
@@ -41,7 +43,7 @@ const ResearchAreas = () => {
                   Study Of Photocatalytic Dye Degradation Ability(PCA)
                   Performance Of Semiconductors
                 </span>
-                <span className="text-sm block text-gray-600 dark:text-gray-300 font-bold mb-2 text-center">
+                <span className="text-sm block text-gray-600 dark:text-gray-300 font-normal mb-2 text-center">
                   The Photo Decolorization Of Dyes Is Considered As A Favorable
                   Technology For Industrial Wastewater Treatment Techniques
                   Owing To Its Environmentally Friendly Method, Low Cost, And
@@ -77,7 +79,7 @@ const ResearchAreas = () => {
                 <span className="text-sm block text-blue-600 font-bold mb-2 text-center border-b border-gray-300 dark:border-gray-600 pb-2">
                   Development Of Metal Oxides Based Photocatalysts
                 </span>
-                <span className="text-sm block text-gray-600 dark:text-gray-300 font-bold mb-2 text-center">
+                <span className="text-sm block text-gray-600 dark:text-gray-300 font-normal mb-2 text-center">
                   Synthesis Of Several Metal Oxides Nanocatalysts Using Iron
                   Oxide, Silica, Alumina, Halloysite, Copper Oxide, Zinc Oxide,
                   Titania,Etc. As The Support Matrix. These Engineered Oxide
@@ -113,7 +115,7 @@ const ResearchAreas = () => {
                   Use Of Scanning Electrochemical Microscopy(SECM) For
                   Synthesizing Semiconductors
                 </span>
-                <span className="text-sm block text-gray-600 dark:text-gray-300 font-bold mb-2 text-center">
+                <span className="text-sm block text-gray-600 dark:text-gray-300 font-normal mb-2 text-center">
                   Rapid Screening Of Microelectrode Arrays Of These
                   Photocatalysts Using Scanning Electrochemical Microscopy For
                   Finding Suitable Dopants For Better Photoelectrochemical (PEC)
@@ -143,7 +145,7 @@ const ResearchAreas = () => {
                   Study Of Corrosion Behavior Of Al Alloys & Metal Matrix
                   Composites Under Different Environmental Conditions
                 </span>
-                <span className="text-sm block text-gray-600 dark:text-gray-300 font-bold mb-2 text-center">
+                <span className="text-sm block text-gray-600 dark:text-gray-300 font-normal mb-2 text-center">
                   Metal Matrix Composite (MMC) Is A Material Which Consists Of
                   Metal Alloys Reinforced With Continuous, Discontinuous Fibers,
                   Whiskers Or Particulates, The End Properties Of Which Are
@@ -180,7 +182,7 @@ const ResearchAreas = () => {
                   Study Of Photoelectrochemical (PEC) Performance Of
                   Semiconductors
                 </span>
-                <span className="text-sm block text-gray-600 dark:text-gray-300 font-bold mb-2 text-center">
+                <span className="text-sm block text-gray-600 dark:text-gray-300 font-normal mb-2 text-center">
                   PEC Water Splitting Using Sunlight Represents An Eco-Friendly
                   And Promising Technology Which Has Generated Excessive
                   Consideration For The Production Of Renewable Hydrogen.
