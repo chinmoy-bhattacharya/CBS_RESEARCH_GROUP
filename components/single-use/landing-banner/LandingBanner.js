@@ -55,7 +55,8 @@ const LandingBanner = () => {
               {/* Lab Facilities */}
               <Link
                 href="/lab-facilities"
-                className="transform translate-x hover:scale-110 hover:text-yellow-400 dark:hover:text-yellow-400 dark:text-gray-300"
+                className="transform translate-x hover:scale-110 hover:text-yellow-400
+                 dark:hover:text-yellow-400 dark:text-gray-300"
               >
                 Lab Facilities <span aria-hidden="true">&rarr;</span>
               </Link>

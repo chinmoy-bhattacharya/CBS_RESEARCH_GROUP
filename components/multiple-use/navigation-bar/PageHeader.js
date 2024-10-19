@@ -424,14 +424,6 @@ const PageHeader = () => {
           </div>
 
           <div className="flex items-center space-x-8 max-lg:ml-auto">
-            <button onClick={() => setDarkMode((prev) => !prev)}>
-              {darkMode ? (
-                <TbMoonFilled className="text-2xl hover:text-yellow-400 cursor-pointer" />
-              ) : (
-                <PiSunFill className="text-2xl transition-opacity duration-300 dark:text-gray-400 hover:text-yellow-400 cursor-pointer" />
-              )}
-            </button>
-
             <a
               href="https://adminsconsole.chinmoybhattacharyaelectrochemistry.com/"
               target="_blank"
@@ -440,6 +432,15 @@ const PageHeader = () => {
               <MdAdminPanelSettings className="text-2xl hover:text-blue-500 cursor-pointer" />
               <span className="tooltiptext">Login As An Admin</span>
             </a>
+
+            <button onClick={() => setDarkMode((prev) => !prev)}>
+              {darkMode ? (
+                <TbMoonFilled className="text-2xl hover:text-yellow-400 cursor-pointer" />
+              ) : (
+                <PiSunFill className="text-2xl transition-opacity duration-300 dark:text-gray-400 hover:text-yellow-400 cursor-pointer" />
+              )}
+            </button>
+
             <button id="toggleOpen" onClick={handleClick} className="lg:hidden">
               <HiMenuAlt3 className="text-4xl hover:text-blue-500 transform translate-1 hover:scale-110" />
             </button>
