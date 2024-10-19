@@ -46,7 +46,7 @@ const CountUpSection = () => {
         <ComponentSpinner />
       ) : (
         <div
-          className="flex flex-col justify-center items-center shadow-lg
+          className="flex flex-col justify-center items-center shadow-lg mb-8
          bg-white text-blue-600 dark:bg-slate-900 dark:text-gray-400"
         >
           <div className="flex flex-col lg:flex-row md:flex-row justify-between gap-6 md:w-3/4 my-8 ">

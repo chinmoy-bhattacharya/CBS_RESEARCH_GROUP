@@ -89,7 +89,7 @@ const PageHeader = () => {
        `}
     >
       <section className="border-b border-gray-100 dark:border-gray-700">
-        <div className="flex justify-center px-10 bg-white dark:bg-slate-800">
+        <div className="flex justify-center px-10 bg-white dark:bg-slate-900">
           <Image
             src={darkMode === true ? IIESTLogoDark : IIESTLogo}
             alt="IIEST Shibpur Image"
@@ -101,7 +101,7 @@ const PageHeader = () => {
 
       {/* Main Nav bar  */}
       <nav
-        className="flex bg-white dark:bg-slate-800 dark:text-gray-400 min-h-[70px]
+        className="flex bg-white dark:bg-slate-900 dark:text-gray-400 min-h-[70px]
         relative z-50"
       >
         <div className="flex flex-wrap items-center justify-between px-10 py-3 gap-4 w-full">
@@ -118,13 +118,14 @@ const PageHeader = () => {
             className={`${
               openCollapseMenu === true ? "block" : "hidden"
             } lg:!block shadow-md lg:shadow-none max-lg:before:fixed max-lg:before:bg-black
-              dark:bg-slate-800 dark:text-gray-400
+              dark:bg-slate-900 dark:text-gray-400
               max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50
              `}
           >
             <button
               onClick={handleClick}
-              className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white dark:bg-slate-800 dark:text-gray-400 p-2 transform
+              className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white
+               dark:bg-slate-900 dark:text-gray-400 p-2 transform
               translate-1
               hover:scale-110"
             >
@@ -134,7 +135,7 @@ const PageHeader = () => {
             <ul
               ref={navbarRef}
               onClick={handleClick}
-              className={`lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white dark:bg-slate-800 dark:text-gray-400
+              className={`lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white dark:bg-slate-900 dark:text-gray-400
                  max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50
   dark:[&::-webkit-scrollbar-thumb]:bg-blue-500"
                  [&::-webkit-scrollbar]:w-[7px]
@@ -232,7 +233,7 @@ const PageHeader = () => {
                   />
                 </p>
                 <ul
-                  className="absolute shadow-lg bg-white dark:bg-slate-800 dark:text-gray-400 space-y-3 lg:top-10 mt-2 max-lg:top-8 -left-6 min-w-[250px]
+                  className="absolute shadow-lg bg-white dark:bg-slate-900 dark:text-gray-400 space-y-3 lg:top-10 mt-2 max-lg:top-8 -left-6 min-w-[250px]
                 z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500"
                 >
                   {/* MSC Alumni */}
@@ -342,7 +343,7 @@ const PageHeader = () => {
                     }`}
                   />
                 </p>
-                <ul className="absolute shadow-lg bg-white dark:bg-slate-800 dark:text-gray-400  space-y-3 lg:top-10 mt-2 max-lg:top-8 -left-6 min-w-[250px] z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500">
+                <ul className="absolute shadow-lg bg-white dark:bg-slate-900 dark:text-gray-400  space-y-3 lg:top-10 mt-2 max-lg:top-8 -left-6 min-w-[250px] z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500">
                   {/* News */}
                   <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
                     <Link

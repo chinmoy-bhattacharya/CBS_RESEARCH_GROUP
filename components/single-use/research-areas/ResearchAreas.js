@@ -7,8 +7,8 @@ import SynthesizingSemiconductors from "@/public/images/research-areas/Synthesiz
 import Image from "next/image";
 const ResearchAreas = () => {
   return (
-    <main>
-      <div className="bg-white dark:bg-slate-800 pt-8 p-6">
+    <main className="py-16">
+      <div className="bg-gray-50 dark:bg-slate-800 pb-12 p-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-12 items-center max-w-6xl max-lg:max-w-2xl max-sm:max-w-sm mx-auto">
           <div>
             <h2 className="text-4xl font-bold text-yellow-700 uppercase mb-6">
@@ -22,7 +22,7 @@ const ResearchAreas = () => {
             <div
               className="mt-8 cursor-pointer rounded-lg
              overflow-x-hidden overflow-y-scroll 
-             max-h-[300px] group shadow-lg bg-gray-50 dark:bg-slate-700 [&::-webkit-scrollbar]:w-[5px]
+             max-h-[270px] group shadow-lg bg-white dark:bg-slate-700 [&::-webkit-scrollbar]:w-[5px]
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-yellow-500
   dark:[&::-webkit-scrollbar-track]:bg-neutral-700
@@ -59,7 +59,7 @@ const ResearchAreas = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:col-span-2">
             {/* 1. Development Of Metal Oxides Based Photocatalysts */}
             <div
-              className="cursor-pointer rounded-lg overflow-x-hidden  overflow-y-scroll max-h-[300px] group shadow-lg bg-gray-50 dark:bg-slate-700  
+              className="cursor-pointer rounded-lg overflow-x-hidden  overflow-y-scroll max-h-[270px] group shadow-lg bg-white dark:bg-slate-700  
                  [&::-webkit-scrollbar]:w-[5px]
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-yellow-500
@@ -93,7 +93,9 @@ const ResearchAreas = () => {
 
             {/* 2. Use Of Scanning Electrochemical Microscopy(SECM) For Synthesizing Semiconductors */}
             <div
-              className="cursor-pointer rounded-lg overflow-x-hidden overflow-y-scroll max-h-[300px] group shadow-lg bg-gray-50 dark:bg-slate-700 [&::-webkit-scrollbar]:w-[5px]
+              className="cursor-pointer rounded-lg overflow-x-hidden 
+              overflow-y-scroll max-h-[270px] group shadow-lg bg-white dark:bg-slate-700
+               [&::-webkit-scrollbar]:w-[5px]
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-yellow-500
   dark:[&::-webkit-scrollbar-track]:bg-neutral-700
@@ -122,7 +124,7 @@ const ResearchAreas = () => {
 
             {/* 3. Study Of Corrosion Behavior Of Al Alloys & Metal Matrix Composites Under Different Environmental Conditions */}
             <div
-              className="cursor-pointer rounded-lg overflow-x-hidden overflow-y-scroll max-h-[300px] group shadow-lg bg-gray-50 dark:bg-slate-700
+              className="cursor-pointer rounded-lg overflow-x-hidden overflow-y-scroll max-h-[270px] group shadow-lg bg-white dark:bg-slate-700
                  [&::-webkit-scrollbar]:w-[5px]
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-yellow-500
@@ -158,7 +160,7 @@ const ResearchAreas = () => {
 
             {/* 4. Study Of Photoelectrochemical (PEC) Performance Of Semiconductors */}
             <div
-              className="cursor-pointer rounded-lg overflow-x-hidden overflow-y-scroll max-h-[300px] group shadow-lg bg-gray-50 dark:bg-slate-700   
+              className="cursor-pointer rounded-lg overflow-x-hidden overflow-y-scroll max-h-[270px] group shadow-lg bg-white dark:bg-slate-700   
             [&::-webkit-scrollbar]:w-[5px]
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-yellow-500

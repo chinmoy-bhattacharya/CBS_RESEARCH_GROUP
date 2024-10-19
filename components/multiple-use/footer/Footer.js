@@ -1,7 +1,134 @@
-import React from "react";
-
+import Link from "next/link";
+import { FaGoogleScholar } from "react-icons/fa6";
+import { FaResearchgate } from "react-icons/fa6";
+import { SiScopus } from "react-icons/si";
+import { FaOrcid } from "react-icons/fa";
+import { PiPhoneCallFill } from "react-icons/pi";
+import { MdOutlineMailOutline } from "react-icons/md";
 const Footer = () => {
-  return <main className="text-red-600">Footer</main>;
+  return (
+    <footer
+      className="bg-white dark:bg-slate-900 text-gray-600 dark:text-gray-300 py-10 px-10 
+    font-sans tracking-wide"
+    >
+      <div className="max-w-2xl mx-auto text-center">
+        <Link href="/" className="inline-block">
+          <h1 className="text-2xl font-semibold text-blue-700">
+            CBS Research Group
+          </h1>
+        </Link>
+        <p className="text-sm mt-4">
+          CBS Research Group is an electrochemistry research lab under (Indian
+          Institute of Engineering Science and Technology). It&apos;s located in
+          Shibpur P.O. - Botanic Garden, Howrah - 711 103 West Bengal, India.
+        </p>
+
+        <ul className="flex items-center justify-center flex-wrap gap-y-3 gap-x-6 mt-8">
+          <li className="transform translate-1 hover:scale-110">
+            <a
+              href="https://scholar.google.com/citations?user=7Be7e7IAAAAJ&hl=en"
+              target="_blank"
+            >
+              <FaGoogleScholar className="text-2xl text-blue-500" />
+            </a>
+          </li>
+
+          <li className="transform translate-1 hover:scale-110">
+            <a
+              href="https://www.researchgate.net/profile/Chinmoy-Bhattacharya-2"
+              target="_blank"
+            >
+              <FaResearchgate className="text-2xl text-orange-400 rounded-full" />
+            </a>
+          </li>
+
+          <li className="transform translate-1 hover:scale-110">
+            <a
+              href="https://www.scopus.com/authid/detail.uri?authorId=7006023691"
+              target="_blank"
+            >
+              <SiScopus className="text-2xl text-orange-400 rounded-full" />
+            </a>
+          </li>
+
+          <li className="transform translate-1 hover:scale-110">
+            <a href="https://orcid.org/0000-0003-2370-7108" target="_blank">
+              <FaOrcid className="text-2xl text-lime-400 rounded-full" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <ul className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 lg:grid-cols-4 gap-12 mt-20">
+        <li className="flex items-center cursor-pointer">
+          <div
+            className="bg-gray-900 h-10 w-10 rounded-full flex items-center
+           justify-center shrink-0"
+          >
+            <PiPhoneCallFill className="text-2xl text-blue-500" />
+          </div>
+          <a href="tel: +918334911400" className="text-blue-500 text-sm ml-3">
+            <small className="block">Tel:</small>
+            <strong>+ 91 8334-911-400</strong>
+          </a>
+        </li>
+
+        <li className="flex items-center cursor-pointer">
+          <div className="bg-gray-900 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+            <PiPhoneCallFill className="text-2xl text-blue-500 " />
+          </div>
+          <a href="tel: +917003191127" className="text-blue-500 text-sm ml-3">
+            <small className="block">Tel:</small>
+            <strong>+ 91 7003-191-127</strong>
+          </a>
+        </li>
+
+        <li className="flex items-center cursor-pointer">
+          <div className="bg-gray-900 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+            <MdOutlineMailOutline className="text-2xl  text-blue-500 " />
+          </div>
+          <a
+            href="mailto:chinmoy@chem.iiests.ac.in"
+            className="text-blue-500 text-sm ml-3"
+          >
+            <small className="block">Mail</small>
+            <strong>chinmoy@chem.iiests.ac.in</strong>
+          </a>
+        </li>
+
+        <li className="flex items-center cursor-pointer">
+          <div className="bg-gray-900 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+            <MdOutlineMailOutline className="text-2xl  text-blue-500 " />
+          </div>
+          <a
+            href="mailto:cbhattacharya.besus@gmail.com"
+            className="text-blue-500 text-sm ml-3"
+          >
+            <small className="block">Mail</small>
+            <strong>cbhattacharya.besus@gmail.com</strong>
+          </a>
+        </li>
+      </ul>
+
+      <hr className="my-10 border-gray-200 dark:border-gray-800" />
+
+      <div className="flex max-md:flex-col gap-4">
+        <ul className="flex flex-wrap gap-4">
+          <li className="text-sm">
+            <a
+              href="javascript:void(0)"
+              className="text-blue-500 font-semibold hover:underline"
+            >
+              Terms of Service
+            </a>
+          </li>
+        </ul>
+        <p className="text-sm md:ml-auto">
+          Copyright © {new Date().getFullYear()} - All right reserved
+        </p>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
