@@ -2,7 +2,7 @@ import React from "react";
 
 const CommonHeading = ({ Heading, subHeading }) => {
   return (
-    <section className="mx-12 py-12 bg-gray-50 dark:bg-slate-800">
+    <section className="px-12 py-12 bg-gray-50 dark:bg-slate-800">
       <h2 className="text-2xl font-semibold text-center mb-2 text-gray-700 dark:text-gray-200">
         {Heading}
       </h2>

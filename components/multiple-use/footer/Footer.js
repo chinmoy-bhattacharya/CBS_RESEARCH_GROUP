@@ -66,62 +66,63 @@ const Footer = () => {
         </ul>
       </div>
 
-      <ul className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 lg:grid-cols-4 gap-12 mt-20 mx-auto lg:mx-2">
-        <li className="flex items-center cursor-pointer" title="Contact Us">
-          <div
-            className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center
+      <div className="flex justify-center items-center">
+        <ul className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-12 mt-20 mx-auto lg:mx-2">
+          <li className="flex items-center cursor-pointer" title="Contact Us">
+            <div
+              className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center
            justify-center shrink-0"
-          >
-            <PiPhoneCallFill className="text-2xl text-blue-500" />
-          </div>
-          <a href="tel: +918334911400" className="text-blue-500 text-sm ml-3">
-            <small className="block">Tel:</small>
-            <strong className="font-medium">+ 91 8334-911-400</strong>
-          </a>
-        </li>
+            >
+              <PiPhoneCallFill className="text-2xl text-blue-500" />
+            </div>
+            <a href="tel: +918334911400" className="text-blue-500 text-sm ml-3">
+              <small className="block">Tel:</small>
+              <strong className="font-medium">+ 91 8334-911-400</strong>
+            </a>
+          </li>
 
-        <li className="flex items-center cursor-pointer" title="Contact Us">
-          <div className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-            <PiPhoneCallFill className="text-2xl text-blue-500 " />
-          </div>
-          <a href="tel: +917003191127" className="text-blue-500 text-sm ml-3">
-            <small className="block">Tel:</small>
-            <strong className="font-medium">+ 91 7003-191-127</strong>
-          </a>
-        </li>
+          <li className="flex items-center cursor-pointer" title="Contact Us">
+            <div className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+              <PiPhoneCallFill className="text-2xl text-blue-500 " />
+            </div>
+            <a href="tel: +917003191127" className="text-blue-500 text-sm ml-3">
+              <small className="block">Tel:</small>
+              <strong className="font-medium">+ 91 7003-191-127</strong>
+            </a>
+          </li>
 
-        <li className="flex items-center cursor-pointer" title="Send Email">
-          <div className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-            <MdOutlineMailOutline className="text-2xl  text-blue-500 " />
-          </div>
-          <a
-            href="mailto:chinmoy@chem.iiests.ac.in"
-            className="text-blue-500 text-sm ml-3"
-          >
-            <small className="block">Mail</small>
-            <strong className="font-medium">chinmoy@chem.iiests.ac.in</strong>
-          </a>
-        </li>
+          <li className="flex items-center cursor-pointer" title="Send Email">
+            <div className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+              <MdOutlineMailOutline className="text-2xl  text-blue-500 " />
+            </div>
+            <a
+              href="mailto:chinmoy@chem.iiests.ac.in"
+              className="text-blue-500 text-sm ml-3"
+            >
+              <small className="block">Mail</small>
+              <strong className="font-medium">chinmoy@chem.iiests.ac.in</strong>
+            </a>
+          </li>
 
-        <li className="flex items-center cursor-pointer" title="Send Email">
-          <div
-            className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center
+          <li className="flex items-center cursor-pointer" title="Send Email">
+            <div
+              className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center
            justify-center shrink-0"
-          >
-            <MdOutlineMailOutline className="text-2xl  text-blue-500 " />
-          </div>
-          <a
-            href="mailto:cbhattacharya.besus@gmail.com"
-            className="text-blue-500 text-sm ml-3"
-          >
-            <small className="block">Mail</small>
-            <strong className="font-medium">
-              cbhattacharya.besus@gmail.com
-            </strong>
-          </a>
-        </li>
-      </ul>
-
+            >
+              <MdOutlineMailOutline className="text-2xl  text-blue-500 " />
+            </div>
+            <a
+              href="mailto:cbhattacharya.besus@gmail.com"
+              className="text-blue-500 text-sm ml-3"
+            >
+              <small className="block">Mail</small>
+              <strong className="font-medium">
+                cbhattacharya.besus@gmail.com
+              </strong>
+            </a>
+          </li>
+        </ul>
+      </div>
       <hr className="my-10 border-gray-200 dark:border-gray-800" />
 
       <div className="flex max-md:flex-col gap-4">
