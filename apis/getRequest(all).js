@@ -1,4 +1,5 @@
 import axios from "@/config/axios";
+import PropTypes from "prop-types";
 
 const getRequest_all = async (url) => {
   try {
@@ -10,5 +11,7 @@ const getRequest_all = async (url) => {
     throw new Error("Sorry we are unable to fetching");
   }
 };
-
+getRequest_all.propType = {
+  url: PropTypes.string,
+};
 export default getRequest_all;

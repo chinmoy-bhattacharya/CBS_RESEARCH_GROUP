@@ -3,6 +3,7 @@ import ReadAbstract from "@/components/single-use/publication-abstract/ReadAbstr
 import envConfig from "@/config/envConfig";
 import SwiperCarousel from "@/utils/carousel/SwiperCarousel";
 import Link from "next/link";
+import PropTypes from "prop-types";
 import React from "react";
 
 const SinglePublication = async ({ params }) => {
@@ -67,6 +68,10 @@ const SinglePublication = async ({ params }) => {
       />
     </main>
   );
+};
+
+SinglePublication.propType = {
+  params: PropTypes.string,
 };
 
 export default SinglePublication;

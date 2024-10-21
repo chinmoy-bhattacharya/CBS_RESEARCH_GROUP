@@ -11,6 +11,7 @@ import "@/app/globals.css";
 // import required modules
 import { EffectCards } from "swiper/modules";
 import Image from "next/image";
+import PropTypes from "prop-types";
 
 const SwiperCarousel = ({ imageOne, imageTwo, imageThree }) => {
   return (
@@ -49,6 +50,12 @@ const SwiperCarousel = ({ imageOne, imageTwo, imageThree }) => {
       </Swiper>
     </div>
   );
+};
+
+SwiperCarousel.propType = {
+  imageOne: PropTypes.string,
+  imageTwo: PropTypes.string,
+  imageThree: PropTypes.string,
 };
 
 export default SwiperCarousel;

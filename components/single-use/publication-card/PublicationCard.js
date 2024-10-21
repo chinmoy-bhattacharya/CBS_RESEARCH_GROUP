@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Publication_banner from "@/public/images/background/Publication_banner.png";
 import Link from "next/link";
+import PropTypes from "prop-types";
 const PublicationCard = ({
   publishedAt,
   publicationTitle,
@@ -52,6 +53,14 @@ const PublicationCard = ({
       </div>
     </div>
   );
+};
+
+PublicationCard.propType = {
+  publishedAt: PropTypes.string,
+  publicationTitle: PropTypes.string,
+  Contributer: PropTypes.string,
+  seeDetailsLink: PropTypes.string,
+  publicationThumbnail: PropTypes.string,
 };
 
 export default PublicationCard;

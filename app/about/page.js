@@ -14,6 +14,7 @@ const About = async () => {
     <main className="min-h-screen bg-gray-50 dark:bg-slate-800">
       <ProfProfile />
       <CommonHeading
+        customColorHeadig={null}
         Heading={
           "Honoring Excellence: Professional Recognition and Fellowship Achievements"
         }

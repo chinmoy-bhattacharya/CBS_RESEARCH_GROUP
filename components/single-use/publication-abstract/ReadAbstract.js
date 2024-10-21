@@ -1,5 +1,6 @@
 "use client";
 
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 const ReadAbstract = ({ content }) => {
@@ -29,6 +30,10 @@ const ReadAbstract = ({ content }) => {
       </button>
     </section>
   );
+};
+
+ReadAbstract.propType = {
+  content: PropTypes.string,
 };
 
 export default ReadAbstract;

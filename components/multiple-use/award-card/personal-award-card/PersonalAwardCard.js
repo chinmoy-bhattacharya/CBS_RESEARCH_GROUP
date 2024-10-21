@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const PersonalAwardCard = ({ recivedDate, awardTitle, awardOverview }) => {
@@ -25,6 +26,11 @@ const PersonalAwardCard = ({ recivedDate, awardTitle, awardOverview }) => {
       </div>
     </section>
   );
+};
+PersonalAwardCard.propType = {
+  recivedDate: PropTypes.any,
+  awardTitle: PropTypes.string,
+  awardOverview: PropTypes.string,
 };
 
 export default PersonalAwardCard;

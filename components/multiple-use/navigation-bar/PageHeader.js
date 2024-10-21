@@ -208,8 +208,7 @@ const PageHeader = () => {
                 >
                   <span
                     className={
-                      pathname === "/msc-alumni" ||
-                      pathname === "/phd-alumni" ||
+                      pathname === "/alumni" ||
                       pathname === "/msc-members" ||
                       pathname === "/phd-members" ||
                       pathname === "/awards"
@@ -222,8 +221,7 @@ const PageHeader = () => {
                   </span>
                   <RiArrowDropDownLine
                     className={`text-3xl ${
-                      pathname === "/msc-alumni" ||
-                      pathname === "/phd-alumni" ||
+                      pathname === "/alumni" ||
                       pathname === "/msc-members" ||
                       pathname === "/phd-members" ||
                       pathname === "/awards"
@@ -236,34 +234,18 @@ const PageHeader = () => {
                   className="absolute shadow-lg bg-white dark:bg-slate-900 dark:text-gray-400 space-y-3 lg:top-10 mt-2 max-lg:top-8 -left-6 min-w-[250px]
                 z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500"
                 >
-                  {/* MSC Alumni */}
-                  <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
-                    <Link
-                      href="/msc-alumni"
-                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 
-                         dark:text-gray-400 text-[15px] font-bold block
-                        ${
-                          pathname === "/msc-alumni"
-                            ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
-                            : ""
-                        }`}
-                    >
-                      MSc Alumni
-                    </Link>
-                  </li>
-
-                  {/* PHD Alumni */}
+                  {/* Alumni */}
                   <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
                     <Link
-                      href="/phd-alumni"
+                      href="/alumni"
                       className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
-                          pathname === "/phd-alumni"
+                          pathname === "/alumni"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
                             : ""
                         }`}
                     >
-                      PHd Alumni
+                      Alumni
                     </Link>
                   </li>
 

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
 const ContentDisplayer = ({
@@ -65,6 +66,13 @@ const ContentDisplayer = ({
       </div>
     </section>
   );
+};
+
+ContentDisplayer.proptype = {
+  courseTitle: PropTypes.string,
+  courseCode: PropTypes.string,
+  classess: PropTypes.string,
+  colseModel: PropTypes.func,
 };
 
 export default ContentDisplayer;

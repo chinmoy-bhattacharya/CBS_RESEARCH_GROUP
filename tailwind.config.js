@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       screens: {
         xs: "445px",
+        alumni: "1110px",
       },
     },
   },
