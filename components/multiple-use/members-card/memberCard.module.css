@@ -1,0 +1,33 @@
+.card {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.7s ease-in-out;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  background-color: #00a2ff7c;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  transform: translatey(70px);
+  border-radius: 100%;
+  transition: all 0.7s ease-in-out;
+}
+
+.c-txt {
+  z-index: 2;
+}
+
+.card:hover::before {
+  transform: scale(7) translate(-20px);
+}
+
+.card:hover {
+  box-shadow: 1px -10px 500px 500px #9fe4e44a;
+  color: #05104d;
+}

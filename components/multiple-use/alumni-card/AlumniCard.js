@@ -17,10 +17,11 @@ const AlumniCard = ({
     <section className="rounded-lg my-12 text-gray-800 dark:text-gray-300 dark:hover:text-orange-500  hover:text-green-600 flex justify-center cursor-pointer">
       <div
         className="group hover:saturate-100 saturate-0 shadow-lg transition-[filter] 
-      relative w-[350px] h-[350px] pt-6 bg-[#FAEDE4] dark:bg-[#18123d13] border-b-2 border-b-[#F04E29] rounded-lg"
+      relative w-[300px] h-[300px] pt-6 bg-[#FAEDE4] dark:bg-[#18123d13] border-b-2 border-b-[#F04E29] rounded-lg"
       >
         <Image
-          className="group-hover:rounded-br-[100px] max-h-[150px] w-[150px] mx-auto rounded-br-[10px] rounded-xl transition-[border-radius]"
+          className="group-hover:rounded-br-[1px] group-hover:ring-orange-600 max-h-[100px] w-[100px] 
+          mx-auto rounded-bl-[50%] rounded-br-[50%] rounded-tl-[50%] rounded-tr-[50%] transition-[border-radius] ring-4  ring-gray-600"
           alt={`${alumnusName}'s Profile Picture`}
           height={500}
           width={500}
@@ -54,8 +55,11 @@ const AlumniCard = ({
           <address className="m-[5px] font-medium text-sm">
             <a href={`tel: +91${phoneNumber}`}>{phoneNumber}</a>
           </address>
-          <Link href={alumnusProfileLink} className="font-bold hover:underline">
-            <span>See More...</span>
+          <Link
+            href={alumnusProfileLink}
+            className="font-bold hover:underline transform translate-x hover:scale-110 block hover:text-blue-600"
+          >
+            <span className="">About&rarr;</span>
           </Link>
         </div>
         <svg

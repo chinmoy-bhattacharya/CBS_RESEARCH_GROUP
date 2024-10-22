@@ -7,6 +7,8 @@ const environment = {
   publicationsApiUrl: process.env.NEXT_PUBLIC_PUBLICATIONS_URL,
   mastersAlumniApiUrl: process.env.NEXT_PUBLIC_MASTERS_ALUMNI_URL,
   doctorateAlumniApiUrl: process.env.NEXT_PUBLIC_DOCTORATES_ALUMNI_URL,
+  projectStudentApiUrl: process.env.NEXT_PUBLIC_MSC_MEMBERS_URL,
+  phdStudentApiUrl: process.env.NEXT_PUBLIC_PHD_MEMBERS_URL,
 };
 
 const envConfig = Object.freeze(environment);

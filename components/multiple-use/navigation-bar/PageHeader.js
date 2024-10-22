@@ -209,8 +209,7 @@ const PageHeader = () => {
                   <span
                     className={
                       pathname === "/alumni" ||
-                      pathname === "/msc-members" ||
-                      pathname === "/phd-members" ||
+                      pathname === "/members" ||
                       pathname === "/awards"
                         ? "text-blue-500 "
                         : ""
@@ -222,8 +221,7 @@ const PageHeader = () => {
                   <RiArrowDropDownLine
                     className={`text-3xl ${
                       pathname === "/alumni" ||
-                      pathname === "/msc-members" ||
-                      pathname === "/phd-members" ||
+                      pathname === "/members" ||
                       pathname === "/awards"
                         ? "text-blue-500 "
                         : ""
@@ -249,35 +247,21 @@ const PageHeader = () => {
                     </Link>
                   </li>
 
-                  {/* MSC Members */}
+                  {/* Members */}
                   <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
                     <Link
-                      href="/msc-members"
+                      href="/members"
                       className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
-                          pathname === "/msc-members"
+                          pathname === "/members"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
                             : ""
                         }`}
                     >
-                      MSc Members
+                      Members
                     </Link>
                   </li>
 
-                  {/* PHD Members */}
-                  <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
-                    <Link
-                      href="/phd-members"
-                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
-                        ${
-                          pathname === "/phd-members"
-                            ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
-                            : ""
-                        }`}
-                    >
-                      PHd Members
-                    </Link>
-                  </li>
                   {/* Awards */}
                   <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
                     <Link

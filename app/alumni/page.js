@@ -30,7 +30,10 @@ const Alumni = async () => {
         }
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 min-[1200px]:grid-cols-3 2xl:grid-cols-4 place-content-center">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 
+      lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 place-content-center"
+      >
         {getAllDoctorateAlumni &&
           getAllDoctorateAlumni.map((alumnus, index) => (
             <AlumniCard
@@ -54,7 +57,10 @@ const Alumni = async () => {
         }
       />
 
-      <div className="grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 min-[1200px]:grid-cols-3 2xl:grid-cols-4 place-content-center">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 
+      lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 place-content-center"
+      >
         {getAllMastersAlumni &&
           getAllMastersAlumni.map((alumnus, index) => (
             <AlumniCard

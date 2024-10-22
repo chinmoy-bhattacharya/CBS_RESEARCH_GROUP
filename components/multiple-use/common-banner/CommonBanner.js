@@ -16,7 +16,7 @@ const CommonBanner = ({
         alt="backgroundImage"
         className="absolute min-h-full inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
-      <div className="blurBackground relative overflow-hidden py-24 sm:py-32 lg:py-40">
+      <div className="extraBlurBackground relative overflow-hidden py-24 sm:py-32 lg:py-40">
         <div
           className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10
            sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"

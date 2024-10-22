@@ -7,6 +7,15 @@
   backdrop-filter: blur(1px);
 }
 
+.extraBlurBackground {
+  background-color: rgba(0, 0, 0, 0.747);
+  backdrop-filter: blur(3px);
+}
+.spacialBlur {
+  background-color: rgba(0, 0, 0, 0.164);
+  backdrop-filter: blur(8px);
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
