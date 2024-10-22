@@ -51,6 +51,15 @@
   visibility: visible;
 }
 
+.cardScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.cardScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 /* For Webkit browsers */
 ::-webkit-scrollbar {
   width: 12px;

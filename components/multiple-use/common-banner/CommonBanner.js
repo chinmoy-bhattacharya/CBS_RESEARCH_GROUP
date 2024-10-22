@@ -57,9 +57,9 @@ const CommonBanner = ({
 
 CommonBanner.propType = {
   bannerBackgroundImg: PropTypes.string,
-  headingFirst: PropTypes.string,
-  UniqueHeading: PropTypes.string,
-  headingLast: PropTypes.string,
+  headingFirst: PropTypes.string || null,
+  UniqueHeading: PropTypes.string || null,
+  headingLast: PropTypes.string || null,
   subHeading: PropTypes.string,
 };
 
