@@ -12,6 +12,7 @@ const environment = {
   phdStudentApiUrl: process.env.NEXT_PUBLIC_PHD_MEMBERS_URL,
   latestGroupUpdateApiUrl: process.env.NEXT_PUBLIC_GROUP_NEWS_URL,
   labEquipmentsApiUrl: process.env.NEXT_PUBLIC_LAB_INSTRUMENTS_URL,
+  projectsApiUrl: process.env.NEXT_PUBLIC_PROJECTS_URL,
 };
 
 const envConfig = Object.freeze(environment);

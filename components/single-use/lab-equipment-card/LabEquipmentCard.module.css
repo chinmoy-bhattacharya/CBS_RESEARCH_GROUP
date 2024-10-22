@@ -29,31 +29,29 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: 1px solid rgb(80, 235, 255);
+  /* border: 1px solid rgb(100, 255, 80); */
   border-radius: 1rem;
 }
 
 .flipCardFront {
   background: linear-gradient(
     120deg,
-    rgb(68, 253, 244) 60%,
-    rgb(0, 177, 168) 88%,
-    rgb(40, 241, 255) 40%,
-    rgba(0, 182, 206, 0.603) 48%
+    rgba(69, 112, 255, 0.247) 60%,
+    rgba(73, 76, 255, 0.24) 88%,
+    rgba(57, 165, 253, 0.445) 40%,
+    rgba(0, 140, 158, 0.349) 48%
   );
-  color: rgb(0, 61, 192);
   font-weight: 800;
 }
 
 .flipCardBack {
   background: linear-gradient(
     120deg,
-    rgb(255, 181, 69) 60%,
-    rgb(255, 237, 73) 88%,
-    rgb(253, 145, 57) 40%,
-    rgba(158, 134, 0, 0.603) 48%
+    rgba(255, 181, 69, 0.596) 60%,
+    rgba(255, 237, 73, 0.445) 88%,
+    rgba(253, 145, 57, 0.575) 40%,
+    rgba(158, 134, 0, 0.452) 48%
   );
-  color: rgb(31, 9, 9);
   width: 100%;
   transform: rotateY(180deg);
 }

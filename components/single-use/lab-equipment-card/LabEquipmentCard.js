@@ -11,19 +11,23 @@ const LabEquipmentCard = ({
     <div className={mouduleStyle.flipCard}>
       <div className={mouduleStyle.flipCardInner}>
         <div className={mouduleStyle.flipCardFront}>
-          <p className={mouduleStyle.title}>
-            <Image
-              src={equipmentImage}
-              alt="second"
-              className="rounded-xl mx-auto w-full mb-2"
-              width={500}
-              height={500}
-            />
+          <div className={mouduleStyle.title}>
+            <div className="max-h-[220px] h-[205px]">
+              <Image
+                src={equipmentImage}
+                alt="second"
+                className="rounded-xl mx-auto w-[95%] mb-2 max-h-[200px] m-2"
+                width={500}
+                height={500}
+              />
+            </div>
+          </div>
+          <p className="text-center text-blue-800 dark:text-blue-300">
+            About &rarr;
           </p>
-          <p className="text-center h-14 my-auto items-center">About &rarr;</p>
         </div>
         <div
-          className={`p-4 ${mouduleStyle.flipCardBack} overflow-y-scroll cardScrollbar`}
+          className={`p-4 ${mouduleStyle.flipCardBack} text-gray-800 dark:text-gray-200 overflow-y-scroll cardScrollbar`}
         >
           <h2
             className="font-semibold text-md border-b
