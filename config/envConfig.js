@@ -4,6 +4,7 @@ const environment = {
   phdAlumniApiUrl: process.env.NEXT_PUBLIC_PHD_ALUMNI_URL,
   mscAlumniApiUrl: process.env.NEXT_PUBLIC_MSC_ALUMNI_URL,
   personalAwardsApiUrl: process.env.NEXT_PUBLIC_PERSONAL_AWARDS_URL,
+  teamAwardsApiUrl: process.env.NEXT_PUBLIC_TEAM_AWARDS_URL,
   publicationsApiUrl: process.env.NEXT_PUBLIC_PUBLICATIONS_URL,
   mastersAlumniApiUrl: process.env.NEXT_PUBLIC_MASTERS_ALUMNI_URL,
   doctorateAlumniApiUrl: process.env.NEXT_PUBLIC_DOCTORATES_ALUMNI_URL,

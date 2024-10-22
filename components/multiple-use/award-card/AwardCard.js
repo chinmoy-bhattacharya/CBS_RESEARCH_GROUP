@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const PersonalAwardCard = ({ recivedDate, awardTitle, awardOverview }) => {
+const AwardCard = ({ recivedDate, awardTitle, awardOverview }) => {
   return (
     <section className="text-gray-600 body-font overflow-hidden my-4">
       <div className="container w-full py-2 mx-auto bg-white dark:bg-slate-700 dark:text-gray-300 shadow-xl rounded-md px-4">
@@ -27,10 +27,10 @@ const PersonalAwardCard = ({ recivedDate, awardTitle, awardOverview }) => {
     </section>
   );
 };
-PersonalAwardCard.propType = {
+AwardCard.propType = {
   recivedDate: PropTypes.any,
   awardTitle: PropTypes.string,
   awardOverview: PropTypes.string,
 };
 
-export default PersonalAwardCard;
+export default AwardCard;

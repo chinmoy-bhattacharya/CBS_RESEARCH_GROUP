@@ -1,5 +1,5 @@
 import getRequest_all from "@/apis/getRequest(all)";
-import PersonalAwardCard from "@/components/multiple-use/award-card/personal-award-card/PersonalAwardCard";
+import AwardCard from "@/components/multiple-use/award-card/AwardCard";
 import ProfProfile from "@/components/single-use/professor-profile/ProfProfile";
 import envConfig from "@/config/envConfig";
 import CommonHeading from "@/utils/common-headings/CommonHeading";
@@ -31,7 +31,7 @@ const About = async () => {
         {!getPersonalAwards && <ComponentSpinner />}
         {getPersonalAwards &&
           getPersonalAwards.map((award, index) => (
-            <PersonalAwardCard
+            <AwardCard
               key={index}
               recivedDate={award.recivedDate}
               awardTitle={award.awardTitle}
