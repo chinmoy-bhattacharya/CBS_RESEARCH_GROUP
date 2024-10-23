@@ -10,7 +10,7 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertMessage, setAlertmessage] = useState({
-    text: "Hello World",
+    text: "",
     message: "",
     status: false,
   });

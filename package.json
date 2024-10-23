@@ -12,6 +12,7 @@
     "aos": "^2.3.4",
     "axios": "^1.7.7",
     "next": "14.2.15",
+    "photoswipe": "^5.4.4",
     "prop-types": "^15.8.1",
     "react": "^18",
     "react-countup": "^6.5.3",
