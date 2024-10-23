@@ -13,6 +13,7 @@ const environment = {
   latestGroupUpdateApiUrl: process.env.NEXT_PUBLIC_GROUP_NEWS_URL,
   labEquipmentsApiUrl: process.env.NEXT_PUBLIC_LAB_INSTRUMENTS_URL,
   projectsApiUrl: process.env.NEXT_PUBLIC_PROJECTS_URL,
+  contactFormPostApiUrl: process.env.NEXT_PUBLIC_CONTACT_FORM_POST_URL,
 };
 
 const envConfig = Object.freeze(environment);
