@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "next.config.js",
+      "src": "package.json",
       "use": "@vercel/next"
     }
   ],
@@ -11,5 +11,13 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "functions": {
+    "api/**/*.js": {
+      "memory": 1024,
+      "maxDuration": 5
+    }
+  }
 }
