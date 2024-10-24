@@ -1,9 +1,18 @@
 import React from "react";
 import tvStyle from "./NotFound.module.css";
-const NotFoundComp = () => {
+import Image from "next/image";
+import second from "@/public/images/background/antenna.png";
+const NotFoundTv = () => {
   return (
     /* From Uiverse.io by Sophiek9h */
-    <div className={tvStyle.main_wrapper}>
+    <div className={` mx-12 ${tvStyle.main_wrapper}`}>
+      <Image
+        src={second}
+        alt="404"
+        width={180}
+        height={300}
+        className="object-cover object-center"
+      />
       <div className={tvStyle.main}>
         <div className={tvStyle.antenna}>
           <div className={tvStyle.antenna_shadow}></div>
@@ -54,4 +63,4 @@ const NotFoundComp = () => {
   );
 };
 
-export default NotFoundComp;
+export default NotFoundTv;

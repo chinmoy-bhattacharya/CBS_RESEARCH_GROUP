@@ -10,7 +10,7 @@ import React, { useEffect, useRef, useState } from "react";
 import IIESTLogo from "@/public/icons/brandlogo/Indian Institute of Engineering Science and Technology.webp";
 import IIESTLogoDark from "@/public/icons/brandlogo/IIEST_Brand_Logo_Dark.png";
 import CBSLogo from "@/public/icons/brandlogo/CBS Research Group Logo.png";
-import CBSLogoWhite from "@/public/icons/brandlogo/CBS_Research_Group_Logo_Dark.webp";
+import CBSLogoWhite from "@/public/icons/brandlogo/CBS_Research_Group_Logo_Dark.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/app-context/ThemeContext";
