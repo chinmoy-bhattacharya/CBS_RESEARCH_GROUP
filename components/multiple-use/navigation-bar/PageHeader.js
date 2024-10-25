@@ -15,12 +15,23 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 const PageHeader = () => {
+  const [cbsLogo, setCbsLogo] = useState(CBSLogo);
+  const [iiestLogo, setIiestLogo] = useState(IIESTLogo);
   const navbarRef = useRef(null);
   const pathname = usePathname();
   const [openCollapseMenu, setOpenCollapseMenu] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const { theme, setTheme } = useTheme();
 
+  useEffect(() => {
+    if (theme === "dark") {
+      setCbsLogo(CBSLogoWhite);
+      setIiestLogo(IIESTLogoDark);
+    } else {
+      setCbsLogo(CBSLogo);
+      setIiestLogo(IIESTLogo);
+    }
+  }, [theme]);
   //1. Navbar open and close function
   const handleClick = () => {
     setOpenCollapseMenu((prev) => !prev);
@@ -92,7 +103,7 @@ const PageHeader = () => {
       <section className="border-b border-gray-100 dark:border-gray-700">
         <div className="flex justify-center px-10 bg-white dark:bg-slate-900">
           <Image
-            src={theme === "dark" ? IIESTLogoDark : IIESTLogo}
+            src={iiestLogo}
             alt="IIEST Shibpur Image"
             width={500}
             height={100}
@@ -107,12 +118,7 @@ const PageHeader = () => {
       >
         <div className="flex flex-wrap items-center justify-between px-10 py-3 gap-4 w-full">
           <Link href="/">
-            <Image
-              src={theme === "dark" ? CBSLogoWhite : CBSLogo}
-              alt="logo"
-              width={80}
-              height={80}
-            />
+            <Image src={cbsLogo} alt="logo" width={80} height={80} />
           </Link>
 
           <div
@@ -147,12 +153,7 @@ const PageHeader = () => {
             >
               <li className="mb-6 hidden max-lg:block">
                 <Link href="/">
-                  <Image
-                    src={(theme === "dark") === true ? CBSLogoWhite : CBSLogo}
-                    alt="logo"
-                    width={80}
-                    height={80}
-                  />
+                  <Image src={cbsLogo} alt="logo" width={80} height={80} />
                 </Link>
               </li>
 
