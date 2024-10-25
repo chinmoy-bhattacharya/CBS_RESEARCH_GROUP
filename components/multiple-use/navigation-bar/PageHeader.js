@@ -7,19 +7,19 @@ import { PiSunFill } from "react-icons/pi";
 import { TbMoonFilled } from "react-icons/tb";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import React, { useEffect, useRef, useState } from "react";
-import IIESTLogo from "@/public/icons/brandlogo/Indian Institute of Engineering Science and Technology.webp";
+import IIESTLogo from "@/public/icons/brandlogo/Indian_Institute_of_Engineering_Science_and_Technology.png";
 import IIESTLogoDark from "@/public/icons/brandlogo/IIEST_Brand_Logo_Dark.png";
-import CBSLogo from "@/public/icons/brandlogo/CBS Research Group Logo.png";
+import CBSLogo from "@/public/icons/brandlogo/CBS_Research_Group_Logo.png";
 import CBSLogoWhite from "@/public/icons/brandlogo/CBS_Research_Group_Logo_Dark.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "@/app-context/ThemeContext";
+import { useTheme } from "next-themes";
 const PageHeader = () => {
   const navbarRef = useRef(null);
   const pathname = usePathname();
   const [openCollapseMenu, setOpenCollapseMenu] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const { darkMode, setDarkMode } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   //1. Navbar open and close function
   const handleClick = () => {
@@ -81,6 +81,7 @@ const PageHeader = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [openCollapseMenu]);
+
   return (
     <header
       className={`${
@@ -91,7 +92,7 @@ const PageHeader = () => {
       <section className="border-b border-gray-100 dark:border-gray-700">
         <div className="flex justify-center px-10 bg-white dark:bg-slate-900">
           <Image
-            src={darkMode === true ? IIESTLogoDark : IIESTLogo}
+            src={theme === "dark" ? IIESTLogoDark : IIESTLogo}
             alt="IIEST Shibpur Image"
             width={500}
             height={100}
@@ -107,7 +108,7 @@ const PageHeader = () => {
         <div className="flex flex-wrap items-center justify-between px-10 py-3 gap-4 w-full">
           <Link href="/">
             <Image
-              src={darkMode === true ? CBSLogoWhite : CBSLogo}
+              src={theme === "dark" ? CBSLogoWhite : CBSLogo}
               alt="logo"
               width={80}
               height={80}
@@ -147,7 +148,7 @@ const PageHeader = () => {
               <li className="mb-6 hidden max-lg:block">
                 <Link href="/">
                   <Image
-                    src={darkMode === true ? CBSLogoWhite : CBSLogo}
+                    src={(theme === "dark") === true ? CBSLogoWhite : CBSLogo}
                     alt="logo"
                     width={80}
                     height={80}
@@ -399,8 +400,10 @@ const PageHeader = () => {
               <span className="tooltiptext">Login As An Admin</span>
             </a>
 
-            <button onClick={() => setDarkMode((prev) => !prev)}>
-              {darkMode ? (
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? (
                 <TbMoonFilled className="text-2xl hover:text-yellow-400 cursor-pointer" />
               ) : (
                 <PiSunFill className="text-2xl transition-opacity duration-300 dark:text-gray-400 hover:text-yellow-400 cursor-pointer" />
