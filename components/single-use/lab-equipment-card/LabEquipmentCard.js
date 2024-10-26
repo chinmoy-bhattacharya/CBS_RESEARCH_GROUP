@@ -42,7 +42,7 @@ const LabEquipmentCard = ({
   );
 };
 
-LabEquipmentCard.propType = {
+LabEquipmentCard.propTypes = {
   equipmentImage: PropTypes.string,
   equipmentName: PropTypes.string,
   equipmentDetails: PropTypes.string,

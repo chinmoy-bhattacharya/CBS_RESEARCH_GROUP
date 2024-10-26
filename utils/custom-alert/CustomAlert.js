@@ -88,7 +88,7 @@ const CustomAlert = ({ alertText, message, isSuccessful }) => {
     </main>
   );
 };
-CustomAlert.propType = {
+CustomAlert.propTypes = {
   alertText: PropTypes.string,
   message: PropTypes.string,
   isSuccessful: PropTypes.bool,

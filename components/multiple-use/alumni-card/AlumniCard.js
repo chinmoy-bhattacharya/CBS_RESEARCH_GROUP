@@ -80,7 +80,7 @@ const AlumniCard = ({
   );
 };
 
-AlumniCard.propType = {
+AlumniCard.propTypes = {
   alumnusImage: PropTypes.string,
   googleScholarId: PropTypes.string,
   researchGateId: PropTypes.string,

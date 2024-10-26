@@ -28,7 +28,7 @@ const ProjectCard = ({ projectTitle, status, projectDetails }) => {
   );
 };
 
-ProjectCard.propType = {
+ProjectCard.propTypes = {
   projectTitle: PropTypes.string,
   status: PropTypes.string,
   projectDetails: PropTypes.string,

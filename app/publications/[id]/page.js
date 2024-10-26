@@ -80,9 +80,10 @@ const SinglePublication = async ({ params }) => {
     </main>
   );
 };
-
-SinglePublication.propType = {
-  params: PropTypes.string,
+SinglePublication.propTypes = {
+  params: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default SinglePublication;

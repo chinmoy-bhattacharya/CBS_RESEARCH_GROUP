@@ -68,7 +68,7 @@ const ContentDisplayer = ({
   );
 };
 
-ContentDisplayer.proptype = {
+ContentDisplayer.proptypes = {
   courseTitle: PropTypes.string,
   courseCode: PropTypes.string,
   classess: PropTypes.string,

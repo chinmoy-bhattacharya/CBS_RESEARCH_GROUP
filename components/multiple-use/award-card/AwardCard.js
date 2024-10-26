@@ -27,7 +27,7 @@ const AwardCard = ({ recivedDate, awardTitle, awardOverview }) => {
     </section>
   );
 };
-AwardCard.propType = {
+AwardCard.propTypes = {
   recivedDate: PropTypes.any,
   awardTitle: PropTypes.string,
   awardOverview: PropTypes.string,

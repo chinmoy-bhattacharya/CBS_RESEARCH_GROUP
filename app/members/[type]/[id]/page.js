@@ -50,7 +50,11 @@ async function AlumnusProfile({ params }) {
     </Suspense>
   );
 }
-AlumnusProfile.propType = {
-  params: PropTypes.object,
+AlumnusProfile.propTypes = {
+  params: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  }).isRequired,
 };
+
 export default AlumnusProfile;

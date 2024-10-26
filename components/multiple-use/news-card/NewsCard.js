@@ -34,7 +34,7 @@ const NewsCard = ({ createAt, newsTitle, newsDescription }) => {
   );
 };
 
-NewsCard.propType = {
+NewsCard.propTypes = {
   createAt: PropTypes.string,
   newsTitle: PropTypes.string,
   newsDescription: PropTypes.string,

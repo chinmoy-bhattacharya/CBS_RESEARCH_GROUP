@@ -1,5 +1,4 @@
 import axios from "@/config/axios";
-import PropTypes from "prop-types";
 
 const getRequest_single = async (url, requireId) => {
   try {
@@ -10,10 +9,6 @@ const getRequest_single = async (url, requireId) => {
     console.log(error.message);
     throw new Error("Sorry we are unable to fetching");
   }
-};
-getRequest_single.propType = {
-  url: PropTypes.string,
-  requireId: PropTypes.string,
 };
 
 export default getRequest_single;

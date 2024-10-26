@@ -31,7 +31,7 @@ const ReadAbstract = ({ content }) => {
   );
 };
 
-ReadAbstract.propType = {
+ReadAbstract.propTypes = {
   content: PropTypes.string,
 };
 

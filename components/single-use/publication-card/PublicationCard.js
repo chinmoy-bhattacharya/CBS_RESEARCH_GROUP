@@ -54,7 +54,7 @@ const PublicationCard = ({
   );
 };
 
-PublicationCard.propType = {
+PublicationCard.propTypes = {
   publishedAt: PropTypes.string,
   publicationTitle: PropTypes.string,
   Contributer: PropTypes.string,

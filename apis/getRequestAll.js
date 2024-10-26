@@ -1,16 +1,13 @@
 import axios from "@/config/axios.js";
-import PropTypes from "prop-types";
 
 const getRequest_all = async (url) => {
   try {
     const res = await axios.get(url, { cache: "no-store" });
-    const apiRes = await res.data;
-    return apiRes;
+    return res.data; // Directly return the data
   } catch (error) {
-    throw new Error(error);
+    console.error("Error fetching data:", error); // Log the error for debugging
+    throw error; // Rethrow the original error
   }
 };
-getRequest_all.propType = {
-  url: PropTypes.string,
-};
+
 export default getRequest_all;

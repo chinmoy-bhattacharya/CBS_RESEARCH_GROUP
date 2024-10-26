@@ -98,7 +98,7 @@ const MembersCard = ({
   );
 };
 
-MembersCard.propType = {
+MembersCard.propTypes = {
   studentType: PropTypes.string,
   currentYear: PropTypes.string,
   studentProfilePic: PropTypes.string,

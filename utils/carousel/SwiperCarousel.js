@@ -52,7 +52,7 @@ const SwiperCarousel = ({ imageOne, imageTwo, imageThree }) => {
   );
 };
 
-SwiperCarousel.propType = {
+SwiperCarousel.propTypes = {
   imageOne: PropTypes.string,
   imageTwo: PropTypes.string,
   imageThree: PropTypes.string,
