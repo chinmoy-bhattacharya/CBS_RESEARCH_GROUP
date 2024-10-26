@@ -2,6 +2,7 @@ const getRequest_all = async (url) => {
   try {
     const response = await fetch(url, {
       method: "GET",
+      next: { revalidate: 60 },
     });
 
     if (!response.ok) {
