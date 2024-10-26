@@ -33,8 +33,7 @@ const PublicationCard = ({
           <h6 className="mb-4 block  text-base font-semibold leading-relaxed tracking-normal text-blue-600 dark:text-yellow-500">
             Published At:{" "}
             <span className="text-gray-600 dark:text-gray-300">
-              {typeof window !== "undefined" &&
-                new Date(publishedAt).toLocaleDateString()}
+              {new Date(publishedAt).toLocaleDateString()}
             </span>
           </h6>
           <h4 className="mb-2 block  text-lg font-semibold leading-snug tracking-normal text-gray-800 dark:text-gray-300">

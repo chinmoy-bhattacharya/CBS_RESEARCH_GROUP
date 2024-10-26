@@ -38,10 +38,8 @@ const SinglePublication = async ({ params }) => {
               Published At:
             </span>
             <time className="text-gray-500 dark:text-gray-300">
-              {typeof window !== "undefined" &&
-                new Date(
-                  getPublicationById && getPublicationById.publishedDate
-                ).toLocaleDateString()}
+              {getPublicationById &&
+                new Date(getPublicationById.publishedDate).toLocaleDateString()}
             </time>
           </h1>
           <h2 className="text-lg text-start lg:text-xl font-semibold text-gray-700 dark:text-gray-200">

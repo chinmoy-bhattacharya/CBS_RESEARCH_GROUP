@@ -158,10 +158,10 @@ const PhotoGallery = () => {
   }, [openFullImage]);
 
   return (
-    <section className="bg-gray-50 dark:bg-slate-800 pb-28 min-h-screen">
+    <section className="bg-gray-50 dark:bg-slate-800 pb-0 lg:pb-28 lg:min-h-screen">
       {openFullImage === true && (
         <IoClose
-          className="text-4xl font-extrabold cursor-pointer float-end relative top-12 right-6 dark:text-white"
+          className="text-4xl font-extrabold cursor-pointer float-end lg:relative lg:top-12 lg:right-6 dark:text-white"
           onClick={handleImageClose}
         />
       )}

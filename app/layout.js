@@ -2,7 +2,8 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import PageHeader from "@/components/multiple-use/navigation-bar/PageHeader.js";
 import Footer from "@/components/multiple-use/footer/Footer.js";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "./NextThemesProvider";
+// import { ThemeProvider } from 'next-themes';
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,6 +11,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
+
 const inter = Inter({
   subsets: ["latin"],
 });
@@ -22,8 +24,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins || inter} suppressHydrationWarning={true}>
-        <ThemeProvider attribute="class" defaultTheme="system">
+      <body
+        className={`${poppins.variable} ${inter.variable}`}
+        suppressHydrationWarning={true}
+      >
+        <ThemeProvider attribute="class" defaultTheme="light">
           <PageHeader />
           {children}
           <Footer />
