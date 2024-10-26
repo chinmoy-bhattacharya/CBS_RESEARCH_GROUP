@@ -2,7 +2,7 @@ const getRequest_single = async (url, requireId) => {
   try {
     const response = await fetch(`${url}/${requireId}`, {
       method: "GET",
-      next: { revalidate: 60 },
+      next: { revalidate: 120 },
     });
 
     if (!response.ok) {

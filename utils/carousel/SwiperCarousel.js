@@ -1,52 +1,38 @@
 "use client";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
-
 import "@/app/globals.css";
-
-// import required modules
 import { EffectCards } from "swiper/modules";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
 const SwiperCarousel = ({ imageOne, imageTwo, imageThree }) => {
+  // Ensure images are defined and not causing hydration issues
+  const images = [imageOne, imageTwo, imageThree].filter(Boolean);
+
   return (
-    <div>
+    <div className="flex justify-center items-center">
       <Swiper
         effect={"cards"}
         grabCursor={true}
         modules={[EffectCards]}
-        className="mySwiper"
+        className="swiper flex justify-center items-center"
       >
-        <SwiperSlide className="shadow-lg bg-white dark:bg-slate-700">
-          <Image
-            src={imageOne}
-            alt={"First Publication Graphics"}
-            height={500}
-            width={500}
-            className="rounded-xl"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="shadow-lg bg-white dark:bg-slate-700">
-          <Image
-            src={imageTwo}
-            alt={"Second Publication Graphics"}
-            height={500}
-            width={500}
-          />
-        </SwiperSlide>
-        <SwiperSlide className="shadow-lg bg-white dark:bg-slate-700">
-          <Image
-            src={imageThree}
-            alt={"Third Publication Graphics"}
-            height={500}
-            width={500}
-          />
-        </SwiperSlide>
+        {images.map((src, index) => (
+          <SwiperSlide
+            key={index}
+            className="flex justify-center items-center shadow-lg bg-white dark:bg-slate-700 h-64"
+          >
+            <Image
+              src={src}
+              alt={`Publication Graphics ${index + 1}`}
+              height={500}
+              width={500}
+              className="rounded-xl"
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

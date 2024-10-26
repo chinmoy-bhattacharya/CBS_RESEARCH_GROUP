@@ -36,7 +36,9 @@ const StudentPreview = ({
             <p className="font-poppins font-semibold text-heading sm:text-4xl text-2xl capitalize text-gray-700">
               {studentName}
             </p>
-            <p className="text-heading mt-2 font-normal">{previewHeading}</p>
+            <p className="text-heading dark:text-gray-800 mt-2 font-normal">
+              {previewHeading}
+            </p>
             <p className="text-center inline-flex item-center">
               <a
                 href={`https://${googleScholarId}`}

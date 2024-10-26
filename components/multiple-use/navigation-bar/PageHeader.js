@@ -22,6 +22,9 @@ const PageHeader = () => {
   const [openCollapseMenu, setOpenCollapseMenu] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+  const [isGroupDropDownOpen, setIsGroupDropDownOpen] = useState(false);
+  const [isResourceDropDownOpen, setIsResourceDropDownOpen] = useState(false);
 
   useEffect(() => {
     if (theme === "dark") {
@@ -41,8 +44,10 @@ const PageHeader = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
+        setIsMobile(true);
         setOpenCollapseMenu(false);
       } else {
+        setIsMobile(false);
         setOpenCollapseMenu(true);
       }
     };
@@ -130,7 +135,7 @@ const PageHeader = () => {
              `}
           >
             <button
-              onClick={handleClick}
+              // onClick={handleClick}
               className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white
                dark:bg-slate-900 dark:text-gray-400 p-2 transform
               translate-1
@@ -141,7 +146,6 @@ const PageHeader = () => {
 
             <ul
               ref={navbarRef}
-              onClick={handleClick}
               className={`lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white dark:bg-slate-900 dark:text-gray-400
                  max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50
   dark:[&::-webkit-scrollbar-thumb]:bg-blue-500"
@@ -151,14 +155,17 @@ const PageHeader = () => {
   dark:[&::-webkit-scrollbar-track]:bg-neutral-700
   dark:[&::-webkit-scrollbar-thumb]:bg-blue-500`}
             >
-              <li className="mb-6 hidden max-lg:block">
+              <li className="mb-6 hidden max-lg:block" onClick={handleClick}>
                 <Link href="/">
                   <Image src={cbsLogo} alt="logo" width={80} height={80} />
                 </Link>
               </li>
 
               {/* Home */}
-              <li className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 block lg:inline-flex lg:items-center">
+              <li
+                className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 block lg:inline-flex lg:items-center"
+                onClick={handleClick}
+              >
                 <Link
                   href="/"
                   className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
@@ -172,7 +179,10 @@ const PageHeader = () => {
                 </Link>
               </li>
               {/* About Us */}
-              <li className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 lg:inline-flex lg:items-center">
+              <li
+                onClick={handleClick}
+                className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 lg:inline-flex lg:items-center"
+              >
                 <Link
                   href="/about"
                   className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
@@ -187,7 +197,10 @@ const PageHeader = () => {
               </li>
 
               {/* Publications */}
-              <li className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 lg:inline-flex lg:items-center">
+              <li
+                onClick={handleClick}
+                className="max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 lg:inline-flex lg:items-center"
+              >
                 <Link
                   href="/publications"
                   className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold
@@ -202,180 +215,386 @@ const PageHeader = () => {
               </li>
 
               {/* Groups */}
-              <li className="group max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 relative">
-                <p
-                  className="cursor-pointer hover:text-[#007bff] dark:hover:text-[#007bff]
+              {isMobile === true ? (
+                <ol
+                  onClick={() => setIsGroupDropDownOpen((prev) => !prev)}
+                  className="group max-lg:border-b border-gray-200 dark:border-gray-700 
+              max-lg:py-3 relative"
+                >
+                  <p
+                    className="cursor-pointer hover:text-[#007bff] dark:hover:text-[#007bff]
                      text-gray-600 dark:text-gray-400 text-[15px] font-bold
                      inline-flex items-center"
-                >
-                  <span
-                    className={
-                      pathname === "/alumni" ||
-                      pathname === "/members" ||
-                      pathname === "/awards"
-                        ? "text-blue-500 "
-                        : ""
-                    }
                   >
-                    {" "}
-                    Groups
-                  </span>
-                  <RiArrowDropDownLine
-                    className={`text-3xl ${
-                      pathname === "/alumni" ||
-                      pathname === "/members" ||
-                      pathname === "/awards"
-                        ? "text-blue-500 "
-                        : ""
-                    }`}
-                  />
-                </p>
-                <ul
-                  className="absolute shadow-lg bg-white dark:bg-slate-900 dark:text-gray-400 space-y-3 lg:top-10 mt-2 max-lg:top-8 -left-6 min-w-[250px]
-                z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500"
-                >
-                  {/* Alumni */}
-                  <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
-                    <Link
-                      href="/alumni"
-                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                    <span
+                      className={
+                        pathname === "/alumni" ||
+                        pathname === "/members" ||
+                        pathname === "/awards"
+                          ? "text-blue-500 "
+                          : ""
+                      }
+                    >
+                      {" "}
+                      Groups
+                    </span>
+                    <RiArrowDropDownLine
+                      className={`text-3xl ${
+                        pathname === "/alumni" ||
+                        pathname === "/members" ||
+                        pathname === "/awards"
+                          ? "text-blue-500 "
+                          : ""
+                      }`}
+                    />
+                  </p>
+                  <ul
+                    onClick={handleClick}
+                    className={`absolute shadow-lg bg-white dark:bg-slate-900
+                dark:text-gray-400 space-y-3 lg:top-10 mt-2 max-lg:top-8 -left-6
+                  min-w-[250px] z-50 ${
+                    isGroupDropDownOpen === true ? "block" : "hidden"
+                  } overflow-hidden  px-6  transition-all duration-500
+                  opacity-100 max-h-[700px] pb-4 pt-6`}
+                  >
+                    {/* Alumni */}
+                    <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
+                      <Link
+                        href="/alumni"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/alumni"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
                             : ""
                         }`}
-                    >
-                      Alumni
-                    </Link>
-                  </li>
+                      >
+                        Alumni
+                      </Link>
+                    </li>
 
-                  {/* Members */}
-                  <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
-                    <Link
-                      href="/members"
-                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                    {/* Members */}
+                    <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
+                      <Link
+                        href="/members"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/members"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
                             : ""
                         }`}
-                    >
-                      Members
-                    </Link>
-                  </li>
+                      >
+                        Members
+                      </Link>
+                    </li>
 
-                  {/* Awards */}
-                  <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
-                    <Link
-                      href="/awards"
-                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                    {/* Awards */}
+                    <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
+                      <Link
+                        href="/awards"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/awards"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
                             : ""
                         }`}
+                      >
+                        Awards
+                      </Link>
+                    </li>
+                  </ul>
+                </ol>
+              ) : (
+                <ol
+                  className="group max-lg:border-b border-gray-200 dark:border-gray-700 
+              max-lg:py-3 relative"
+                >
+                  <p
+                    className="cursor-pointer hover:text-[#007bff] dark:hover:text-[#007bff]
+                     text-gray-600 dark:text-gray-400 text-[15px] font-bold
+                     inline-flex items-center"
+                  >
+                    <span
+                      className={
+                        pathname === "/alumni" ||
+                        pathname === "/members" ||
+                        pathname === "/awards"
+                          ? "text-blue-500 "
+                          : ""
+                      }
                     >
-                      Awards
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+                      {" "}
+                      Groups
+                    </span>
+                    <RiArrowDropDownLine
+                      className={`text-3xl ${
+                        pathname === "/alumni" ||
+                        pathname === "/members" ||
+                        pathname === "/awards"
+                          ? "text-blue-500 "
+                          : ""
+                      }`}
+                    />
+                  </p>
+                  <ul
+                    className="absolute shadow-lg bg-white dark:bg-slate-900
+                dark:text-gray-400 space-y-3 lg:top-10 mt-2 max-lg:top-8 -left-6
+                  min-w-[250px] z-50 max-h-0 overflow-hidden  px-6  transition-all duration-500
+                  group-hover:opacity-100 group-hover:max-h-[700px] group-hover:pb-4 group-hover:pt-6"
+                  >
+                    {/* Alumni */}
+                    <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
+                      <Link
+                        href="/alumni"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                        ${
+                          pathname === "/alumni"
+                            ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
+                            : ""
+                        }`}
+                      >
+                        Alumni
+                      </Link>
+                    </li>
+
+                    {/* Members */}
+                    <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
+                      <Link
+                        href="/members"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                        ${
+                          pathname === "/members"
+                            ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
+                            : ""
+                        }`}
+                      >
+                        Members
+                      </Link>
+                    </li>
+
+                    {/* Awards */}
+                    <li className="border-b border-gray-200 dark:border-gray-700  py-2 ">
+                      <Link
+                        href="/awards"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                        ${
+                          pathname === "/awards"
+                            ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
+                            : ""
+                        }`}
+                      >
+                        Awards
+                      </Link>
+                    </li>
+                  </ul>
+                </ol>
+              )}
 
               {/* Resources */}
-              <li className="group max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 relative">
-                <p
-                  className="cursor-pointer hover:text-[#007bff] dark:hover:text-[#007bff]
+              {isMobile === true ? (
+                <ol
+                  onClick={() => setIsResourceDropDownOpen((prev) => !prev)}
+                  className="group max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 relative"
+                >
+                  <p
+                    className="cursor-pointer hover:text-[#007bff] dark:hover:text-[#007bff]
+   text-gray-600 dark:text-gray-400  text-[15px] font-bold
+   inline-flex items-center"
+                  >
+                    <span
+                      className={
+                        pathname === "/news" ||
+                        pathname === "/gallery" ||
+                        pathname === "/projects" ||
+                        pathname === "/lab-facilities"
+                          ? "text-blue-500"
+                          : ""
+                      }
+                    >
+                      Resources
+                    </span>
+                    <RiArrowDropDownLine
+                      className={` text-3xl ${
+                        pathname === "/news" ||
+                        pathname === "/gallery" ||
+                        pathname === "/projects" ||
+                        pathname === "/lab-facilities"
+                          ? "text-blue-500"
+                          : ""
+                      }`}
+                    />
+                  </p>
+                  <ul
+                    onClick={handleClick}
+                    className={`absolute shadow-lg bg-white dark:bg-slate-900 dark:text-gray-400 px-6 space-y-3 lg:top-10
+   mt-2 max-lg:top-8 -left-6 min-w-[250px] z-50 ${
+     isResourceDropDownOpen === true ? "visable" : "hidden"
+   } overflow-hidden transition-all duration-500
+   opacity-100 max-h-[700px] pb-4 pt-6`}
+                  >
+                    {/* News */}
+                    <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
+                      <Link
+                        href="/news"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+         ${
+           pathname === "/news"
+             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
+             : ""
+         }`}
+                      >
+                        News
+                      </Link>
+                    </li>
+
+                    {/* Lab Facilities */}
+                    <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
+                      <Link
+                        href="/lab-facilities"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+         ${
+           pathname === "/lab-facilities"
+             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
+             : ""
+         }`}
+                      >
+                        Lab Facilities
+                      </Link>
+                    </li>
+
+                    {/* Projects */}
+                    <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
+                      <Link
+                        href="/projects"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+         ${
+           pathname === "/projects"
+             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
+             : ""
+         }`}
+                      >
+                        Projects
+                      </Link>
+                    </li>
+
+                    {/* Gallery */}
+                    <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
+                      <Link
+                        href="/gallery"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+         ${
+           pathname === "/gallery"
+             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
+             : ""
+         }`}
+                      >
+                        Gallery
+                      </Link>
+                    </li>
+                  </ul>
+                </ol>
+              ) : (
+                <ol className="group max-lg:border-b border-gray-200 dark:border-gray-700 max-lg:py-3 relative">
+                  <p
+                    className="cursor-pointer hover:text-[#007bff] dark:hover:text-[#007bff]
                   text-gray-600 dark:text-gray-400  text-[15px] font-bold
                   inline-flex items-center"
-                >
-                  <span
-                    className={
-                      pathname === "/news" ||
-                      pathname === "/gallery" ||
-                      pathname === "/projects" ||
-                      pathname === "/lab-facilities"
-                        ? "text-blue-500"
-                        : ""
-                    }
                   >
-                    Resources
-                  </span>
-                  <RiArrowDropDownLine
-                    className={` text-3xl ${
-                      pathname === "/news" ||
-                      pathname === "/gallery" ||
-                      pathname === "/projects" ||
-                      pathname === "/lab-facilities"
-                        ? "text-blue-500"
-                        : ""
-                    }`}
-                  />
-                </p>
-                <ul className="absolute shadow-lg bg-white dark:bg-slate-900 dark:text-gray-400  space-y-3 lg:top-10 mt-2 max-lg:top-8 -left-6 min-w-[250px] z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500">
-                  {/* News */}
-                  <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
-                    <Link
-                      href="/news"
-                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                    <span
+                      className={
+                        pathname === "/news" ||
+                        pathname === "/gallery" ||
+                        pathname === "/projects" ||
+                        pathname === "/lab-facilities"
+                          ? "text-blue-500"
+                          : ""
+                      }
+                    >
+                      Resources
+                    </span>
+                    <RiArrowDropDownLine
+                      className={` text-3xl ${
+                        pathname === "/news" ||
+                        pathname === "/gallery" ||
+                        pathname === "/projects" ||
+                        pathname === "/lab-facilities"
+                          ? "text-blue-500"
+                          : ""
+                      }`}
+                    />
+                  </p>
+                  <ul
+                    className="absolute shadow-lg bg-white dark:bg-slate-900 dark:text-gray-400 px-6 space-y-3 lg:top-10
+                  mt-2 max-lg:top-8 -left-6 min-w-[250px] z-50 max-h-0 overflow-hidden transition-all duration-500
+                  group-hover:opacity-100 group-hover:max-h-[700px] group-hover:pb-4 group-hover:pt-6"
+                  >
+                    {/* News */}
+                    <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
+                      <Link
+                        href="/news"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/news"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
                             : ""
                         }`}
-                    >
-                      News
-                    </Link>
-                  </li>
+                      >
+                        News
+                      </Link>
+                    </li>
 
-                  {/* Lab Facilities */}
-                  <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
-                    <Link
-                      href="/lab-facilities"
-                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                    {/* Lab Facilities */}
+                    <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
+                      <Link
+                        href="/lab-facilities"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/lab-facilities"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
                             : ""
                         }`}
-                    >
-                      Lab Facilities
-                    </Link>
-                  </li>
+                      >
+                        Lab Facilities
+                      </Link>
+                    </li>
 
-                  {/* Projects */}
-                  <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
-                    <Link
-                      href="/projects"
-                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                    {/* Projects */}
+                    <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
+                      <Link
+                        href="/projects"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/projects"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
                             : ""
                         }`}
-                    >
-                      Projects
-                    </Link>
-                  </li>
+                      >
+                        Projects
+                      </Link>
+                    </li>
 
-                  {/* Gallery */}
-                  <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
-                    <Link
-                      href="/gallery"
-                      className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
+                    {/* Gallery */}
+                    <li className="border-b border-gray-200 dark:border-gray-700 py-2 ">
+                      <Link
+                        href="/gallery"
+                        className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold block
                         ${
                           pathname === "/gallery"
                             ? "text-[#007bff] border-b-2 w-fit border-[#007bff] "
                             : ""
                         }`}
-                    >
-                      Gallery
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+                      >
+                        Gallery
+                      </Link>
+                    </li>
+                  </ul>
+                </ol>
+              )}
 
               {/* Contact */}
-              <li className="max-lg:py-3 lg:inline-flex lg:items-center">
+              <li
+                onClick={handleClick}
+                className="max-lg:py-3 lg:inline-flex lg:items-center"
+              >
                 <Link
                   href="/contact"
                   className={`hover:text-[#007bff] dark:hover:text-[#007bff] text-gray-600 dark:text-gray-400 text-[15px] font-bold

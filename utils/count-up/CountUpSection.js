@@ -5,15 +5,14 @@ import React, { useEffect, useState } from "react";
 import ComponentSpinner from "../spinner/component-spinner/ComponentSpinner.js";
 
 const CountUpSection = () => {
-  const [loading, setLoading] = useState(false);
-  const [mscAlumni, setMscAlumni] = useState([]);
-  const [phdAlumni, setPhdAlumni] = useState([]);
-  const [mscStudents, setMscStudents] = useState([]);
-  const [phdStudents, setPhdStudents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [mscAlumniCount, setMscAlumniCount] = useState(0);
+  const [phdAlumniCount, setPhdAlumniCount] = useState(0);
+  const [mscStudentsCount, setMscStudentsCount] = useState(0);
+  const [phdStudentsCount, setPhdStudentsCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
       try {
         const mscAlumniResponse = await fetch(envConfig.mscAlumniApiUrl);
         const phdAlumniResponse = await fetch(envConfig.phdAlumniApiUrl);
@@ -34,10 +33,10 @@ const CountUpSection = () => {
         const mscStudentsData = await mscStudentsResponse.json();
         const phdStudentsData = await phdStudentsResponse.json();
 
-        setMscAlumni(mscAlumniData);
-        setPhdAlumni(phdAlumniData);
-        setMscStudents(mscStudentsData);
-        setPhdStudents(phdStudentsData);
+        setMscAlumniCount(mscAlumniData.length);
+        setPhdAlumniCount(phdAlumniData.length);
+        setMscStudentsCount(mscStudentsData.length);
+        setPhdStudentsCount(phdStudentsData.length);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -57,31 +56,31 @@ const CountUpSection = () => {
           className="flex flex-col justify-center items-center shadow-lg mb-8
          bg-white text-blue-600 dark:bg-slate-900 dark:text-gray-400"
         >
-          <div className="flex flex-col lg:flex-row md:flex-row justify-between gap-6 md:w-3/4 my-8 ">
+          <div className="flex flex-col lg:flex-row md:flex-row justify-between gap-6 md:w-3/4 my-8">
             <div className="flex flex-col justify-center items-center">
               <h3 className="text-3xl font-bold">
-                <CountUp start={0} end={mscAlumni.length} duration={2.75} />+
+                <CountUp start={0} end={mscAlumniCount} duration={2.75} />+
               </h3>
               <p className="text-base font-semibold">Masters Alumni</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
               <h3 className="text-3xl font-bold">
-                <CountUp start={0} end={phdAlumni.length} duration={2.75} />+
+                <CountUp start={0} end={phdAlumniCount} duration={2.75} />+
               </h3>
               <p className="text-base font-semibold">Doctorate Alumni</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
               <h3 className="text-3xl font-bold">
-                <CountUp start={0} end={mscStudents.length} duration={2.75} />+
+                <CountUp start={0} end={mscStudentsCount} duration={2.75} />+
               </h3>
               <p className="text-base font-semibold">MSc Students</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
               <h3 className="text-3xl font-bold">
-                <CountUp start={0} end={phdStudents.length} duration={2.75} />+
+                <CountUp start={0} end={phdStudentsCount} duration={2.75} />+
               </h3>
               <p className="text-base font-semibold">PhD Students</p>
             </div>

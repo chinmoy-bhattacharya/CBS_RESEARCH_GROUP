@@ -83,7 +83,7 @@ const CustomAlert = ({ alertText, message, isSuccessful }) => {
           </p>
         </div>
 
-        <div class="tn-progress"></div>
+        <div className="tn-progress"></div>
       </div>
     </main>
   );

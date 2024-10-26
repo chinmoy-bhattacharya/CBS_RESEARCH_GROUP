@@ -13,7 +13,8 @@ const NewsCard = ({ createAt, newsTitle, newsDescription }) => {
           Posted:
         </span>
         <span className="text-gray-600 dark:text-gray-300 font-normal">
-          {new Date(createAt).toLocaleDateString()}
+          {typeof window !== "undefined" &&
+            new Date(createAt).toLocaleDateString()}
         </span>
       </div>
       <div className="p-6">

@@ -165,8 +165,8 @@ const PhotoGallery = () => {
           onClick={handleImageClose}
         />
       )}
-      <div class="container mx-auto px-5 py-2  lg:px-32 lg:pt-24">
-        <div class="-m-1 flex flex-wrap md:-m-2 justify-end">
+      <div className="container mx-auto px-5 py-2  lg:px-32 lg:pt-24">
+        <div className="-m-1 flex flex-wrap md:-m-2 justify-end">
           {openFullImage === true ? (
             <>
               <div className={`${images.height} ${images.width} `}>
@@ -180,17 +180,17 @@ const PhotoGallery = () => {
               </div>
             </>
           ) : (
-            <div class="grid grid-cols-2 ">
+            <div className="grid grid-cols-2 ">
               {galleryImages &&
                 galleryImages.map((item, index) => (
                   <div
-                    class="w-full p-1 md:p-2"
+                    className="w-full p-1 md:p-2"
                     key={index}
                     onClick={() => openCloseImage(item.id)}
                   >
                     <Image
                       alt="gallery"
-                      class="block h-full w-full rounded-lg object-cover object-center cursor-pointer"
+                      className="block h-full w-full rounded-lg object-cover object-center cursor-pointer"
                       src={item.path}
                       loading="lazy"
                     />

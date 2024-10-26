@@ -19,6 +19,7 @@ const SinglePublication = async ({ params }) => {
     envConfig.publicationsApiUrl,
     id
   );
+
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-800 py-28">
       <section className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 place-content-center">
@@ -37,8 +38,10 @@ const SinglePublication = async ({ params }) => {
               Published At:
             </span>
             <time className="text-gray-500 dark:text-gray-300">
-              {getPublicationById &&
-                new Date(getPublicationById.publishedDate).toLocaleDateString()}
+              {typeof window !== "undefined" &&
+                new Date(
+                  getPublicationById && getPublicationById.publishedDate
+                ).toLocaleDateString()}
             </time>
           </h1>
           <h2 className="text-lg text-start lg:text-xl font-semibold text-gray-700 dark:text-gray-200">

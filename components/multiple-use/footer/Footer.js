@@ -134,7 +134,9 @@ const Footer = () => {
           </li>
         </ul>
         <p className="text-sm md:ml-auto">
-          Copyright © {new Date().getFullYear()} - All right reserved
+          Copyright ©{" "}
+          {typeof window !== "undefined" && new Date().getFullYear()} - All
+          right reserved
         </p>
       </div>
     </footer>

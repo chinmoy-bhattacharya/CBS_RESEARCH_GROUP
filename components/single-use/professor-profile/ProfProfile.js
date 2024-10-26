@@ -10,7 +10,7 @@ import { GiLightBulb } from "react-icons/gi";
 const ProfProfile = () => {
   return (
     <div>
-      <div className="p-16">
+      <div className="w-full p-0 lg:p-16">
         <div className="p-8 bg-white dark:bg-slate-700 shadow-lg rounded-md mt-24">
           {" "}
           <div className="grid grid-cols-1 md:grid-cols-3">
