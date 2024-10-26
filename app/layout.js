@@ -2,8 +2,7 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import PageHeader from "@/components/multiple-use/navigation-bar/PageHeader.js";
 import Footer from "@/components/multiple-use/footer/Footer.js";
-import { ThemeProvider } from "./NextThemesProvider";
-// import { ThemeProvider } from 'next-themes';
+import { ThemeProvider } from "./NextThemesProvider.js";
 
 const poppins = Poppins({
   subsets: ["latin"],
