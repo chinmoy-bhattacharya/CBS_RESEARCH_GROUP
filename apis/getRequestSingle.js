@@ -1,13 +1,18 @@
-import axios from "@/config/axios";
-
 const getRequest_single = async (url, requireId) => {
   try {
-    const res = await axios.get(`${url}/${requireId}`);
-    const apiRes = await res.data;
-    return apiRes;
+    const response = await fetch(`${url}/${requireId}`, {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json(); // Parse the JSON data
+    return data; // Return the data directly
   } catch (error) {
-    console.log(error.message);
-    throw new Error("Sorry we are unable to fetching");
+    console.error(error.message); // Log the error for debugging
+    throw new Error("Sorry, we are unable to fetch the data."); // Throw a user-friendly error
   }
 };
 

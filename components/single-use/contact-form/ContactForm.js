@@ -1,5 +1,5 @@
 "use client";
-import axios from "@/config/axios.js";
+
 import envConfig from "@/config/envConfig.js";
 import CustomAlert from "@/utils/custom-alert/CustomAlert.js";
 import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner.js";
@@ -25,53 +25,56 @@ const ContactForm = () => {
 
   const handleSubmission = async (e) => {
     e.preventDefault();
-    let emailvalidation;
+    let emailValidation;
     let numberValidation;
     const givenEmail = email.split("@")[1];
     const lowerCaseEmail = givenEmail.toLowerCase();
-    if (lowerCaseEmail === "gmail.com" || lowerCaseEmail === "outlook.com") {
-      emailvalidation = "true";
-    } else {
-      emailvalidation = "false";
-    }
 
-    if (phoneNumber.length > 10 || phoneNumber.length < 10) {
-      numberValidation = "false";
-    } else {
-      numberValidation = "true";
-    }
+    emailValidation =
+      lowerCaseEmail === "gmail.com" || lowerCaseEmail === "outlook.com"
+        ? "true"
+        : "false";
 
-    if (numberValidation === "true" && emailvalidation === "true") {
+    numberValidation = phoneNumber.length === 10 ? "true" : "false";
+
+    if (numberValidation === "true" && emailValidation === "true") {
       setLoading(true);
       const contactInfo = {
-        userName: firstName + " " + lastName,
+        userName: `${firstName} ${lastName}`,
         emailId: email,
         phoneNumber: phoneNumber,
         desireCourse: course,
         message: userMessage,
       };
+
       try {
-        axios.post(envConfig.contactFormPostApiUrl, contactInfo).then((res) => {
-          if (res) {
-            setLoading(false);
-            setAlertmessage({
-              text: "Successful!",
-              message: "Everything seems great.",
-              status: true,
-            });
-            setAlertOpen(true);
-          }
+        const response = await fetch(envConfig.contactFormPostApiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(contactInfo),
         });
-      } catch (error) {
-        if (error) {
+
+        if (response.ok) {
           setLoading(false);
           setAlertmessage({
-            text: "Failed!",
-            message: "Something went wrong.",
-            status: false,
+            text: "Successful!",
+            message: "Everything seems great.",
+            status: true,
           });
           setAlertOpen(true);
+        } else {
+          throw new Error("Network response was not ok");
         }
+      } catch (error) {
+        setLoading(false);
+        setAlertmessage({
+          text: "Failed!",
+          message: "Something went wrong.",
+          status: false,
+        });
+        setAlertOpen(true);
         console.log(error);
       } finally {
         formRef.current.reset();
@@ -79,12 +82,8 @@ const ContactForm = () => {
         setNumberNotValid(false);
       }
     } else {
-      numberValidation === "false"
-        ? setNumberNotValid(true)
-        : setNumberNotValid(false);
-      emailvalidation === "false"
-        ? setEmailNotValid(true)
-        : setEmailNotValid(false);
+      setNumberNotValid(numberValidation === "false");
+      setEmailNotValid(emailValidation === "false");
     }
   };
 
