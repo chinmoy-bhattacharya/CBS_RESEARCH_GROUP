@@ -1,10 +1,12 @@
-// /app/alumni/[type]/[id]/page.tsx
-
-import getRequest_single from "@/apis/getRequest(single).js";
-import StudentPreview from "@/components/multiple-use/student-preview/StudentPreview";
-import envConfig from "@/config/envConfig";
+import getRequest_single from "@/apis/getRequestSingle.js";
+import envConfig from "@/config/envConfig.js";
+import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner";
+import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
-
+import { Suspense } from "react";
+const StudentPreview = dynamic(() =>
+  import("@/components/multiple-use/student-preview/StudentPreview.js")
+);
 async function AlumnusProfile({ params }) {
   const { type, id } = params; // Get dynamic parameters from the URL
   // Based on the `type`, decide which API to call
@@ -27,23 +29,25 @@ async function AlumnusProfile({ params }) {
 
   // Return the JSX to display the alumnus profile
   return (
-    <main className="bg-gray-50 dark:bg-slate-800 py-24">
-      <StudentPreview
-        studentName={membersInfo.memberName}
-        profileImageUrl={membersInfo.profilePicture}
-        previewHeading={isPhd ? "PHd Member" : "Masters Member"}
-        googleScholarId={membersInfo.googleScholarId}
-        researchGateId={membersInfo.researchGateId}
-        emailId={membersInfo.emailId}
-        phoneNumber={membersInfo.phoneNumber}
-        bscCollege={membersInfo.bscDoneFrom}
-        mscCollege={membersInfo.mscDoneFrom}
-        yearOfPassout={null}
-        currentYear={membersInfo.currentYear}
-        aboutInfo={membersInfo.details}
-        goBackLink="/members"
-      />
-    </main>
+    <Suspense fallback={<ApplicationSpinner />}>
+      <main className="bg-gray-50 dark:bg-slate-800 py-24">
+        <StudentPreview
+          studentName={membersInfo.memberName}
+          profileImageUrl={membersInfo.profilePicture}
+          previewHeading={isPhd ? "PHd Member" : "Masters Member"}
+          googleScholarId={membersInfo.googleScholarId}
+          researchGateId={membersInfo.researchGateId}
+          emailId={membersInfo.emailId}
+          phoneNumber={membersInfo.phoneNumber}
+          bscCollege={membersInfo.bscDoneFrom}
+          mscCollege={membersInfo.mscDoneFrom}
+          yearOfPassout={null}
+          currentYear={membersInfo.currentYear}
+          aboutInfo={membersInfo.details}
+          goBackLink="/members"
+        />
+      </main>
+    </Suspense>
   );
 }
 AlumnusProfile.propType = {

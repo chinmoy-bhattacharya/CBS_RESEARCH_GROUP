@@ -1,10 +1,17 @@
-import getRequest_single from "@/apis/getRequest(single)";
-import ReadAbstract from "@/components/single-use/publication-abstract/ReadAbstract";
-import envConfig from "@/config/envConfig";
-import SwiperCarousel from "@/utils/carousel/SwiperCarousel";
+import getRequest_single from "@/apis/getRequestSingle.js";
+import envConfig from "@/config/envConfig.js";
+import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { Suspense } from "react";
+
+const SwiperCarousel = dynamic(() =>
+  import("@/utils/carousel/SwiperCarousel.js")
+);
+const ReadAbstract = dynamic(() =>
+  import("@/components/single-use/publication-abstract/ReadAbstract.js")
+);
 
 const SinglePublication = async ({ params }) => {
   const { id } = params;
@@ -15,13 +22,15 @@ const SinglePublication = async ({ params }) => {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-800 py-28">
       <section className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 place-content-center">
-        <SwiperCarousel
-          imageOne={
-            getPublicationById && getPublicationById.publicationThumbnail
-          }
-          imageTwo={getPublicationById && getPublicationById.firstOverview}
-          imageThree={getPublicationById && getPublicationById.secondOverview}
-        />
+        <Suspense fallback={<ApplicationSpinner />}>
+          <SwiperCarousel
+            imageOne={
+              getPublicationById && getPublicationById.publicationThumbnail
+            }
+            imageTwo={getPublicationById && getPublicationById.firstOverview}
+            imageThree={getPublicationById && getPublicationById.secondOverview}
+          />
+        </Suspense>
         <div className="p-12 lg:pl-0 lg:pr-24">
           <h1 className="mt-2">
             <span className="text-blue-500 dark:text-yellow-500 font-semibold mr-2">
@@ -63,9 +72,11 @@ const SinglePublication = async ({ params }) => {
         </div>
       </section>
 
-      <ReadAbstract
-        content={getPublicationById && getPublicationById.aboutPublication}
-      />
+      <Suspense fallback={<ApplicationSpinner />}>
+        <ReadAbstract
+          content={getPublicationById && getPublicationById.aboutPublication}
+        />
+      </Suspense>
     </main>
   );
 };

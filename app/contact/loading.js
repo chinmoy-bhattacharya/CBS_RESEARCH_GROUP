@@ -1,4 +1,4 @@
-import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner";
+import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner.js";
 import React from "react";
 
 const loading = () => {

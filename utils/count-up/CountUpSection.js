@@ -1,9 +1,9 @@
 "use client";
-import axios from "@/config/axios";
-import envConfig from "@/config/envConfig";
-import React, { useEffect, useRef, useState } from "react";
+import axios from "@/config/axios.js";
 import CountUp from "react-countup";
-import ComponentSpinner from "../spinner/component-spinner/ComponentSpinner";
+import envConfig from "@/config/envConfig.js";
+import React, { useEffect, useState } from "react";
+import ComponentSpinner from "../spinner/component-spinner/ComponentSpinner.js";
 
 const CountUpSection = () => {
   // When user richout to this section the section will visable

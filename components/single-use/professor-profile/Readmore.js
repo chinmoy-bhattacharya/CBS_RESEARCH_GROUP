@@ -1,5 +1,5 @@
 "use client";
-import ContentDisplayer from "@/utils/modals/ContentDisplayer";
+import ContentDisplayer from "@/utils/modals/ContentDisplayer.js";
 import React, { useState } from "react";
 
 const Readmore = () => {

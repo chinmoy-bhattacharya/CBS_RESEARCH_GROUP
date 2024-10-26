@@ -1,6 +1,6 @@
-import LandingBanner from "@/components/single-use/landing-banner/LandingBanner";
-import ResearchAreas from "@/components/single-use/research-areas/ResearchAreas";
-import CountUpSection from "@/utils/count-up/CountUpSection";
+import LandingBanner from "@/components/single-use/landing-banner/LandingBanner.js";
+import ResearchAreas from "@/components/single-use/research-areas/ResearchAreas.js";
+import CountUpSection from "@/utils/count-up/CountUpSection.js";
 
 export default function Home() {
   return (

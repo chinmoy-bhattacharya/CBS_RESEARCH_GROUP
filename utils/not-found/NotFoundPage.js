@@ -1,5 +1,5 @@
 import React from "react";
-import NotFoundTv from "./NotFoundTv";
+import NotFoundTv from "./NotFoundTv.js";
 import Link from "next/link";
 
 const NotFoundPage = () => {

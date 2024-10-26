@@ -1,8 +1,8 @@
 "use client";
-import axios from "@/config/axios";
-import envConfig from "@/config/envConfig";
-import CustomAlert from "@/utils/custom-alert/CustomAlert";
-import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner";
+import axios from "@/config/axios.js";
+import envConfig from "@/config/envConfig.js";
+import CustomAlert from "@/utils/custom-alert/CustomAlert.js";
+import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner.js";
 import React, { useRef, useState } from "react";
 
 const ContactForm = () => {

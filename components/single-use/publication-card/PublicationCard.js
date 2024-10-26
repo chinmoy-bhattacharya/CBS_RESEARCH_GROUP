@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Publication_banner from "@/public/images/background/Publication_banner.png";
 import Link from "next/link";
 import PropTypes from "prop-types";
 const PublicationCard = ({
