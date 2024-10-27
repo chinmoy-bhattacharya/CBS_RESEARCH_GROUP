@@ -14,6 +14,73 @@ const LabEquipmentCard = dynamic(() =>
   import("@/components/single-use/lab-equipment-card/LabEquipmentCard.js")
 );
 
+export const metadata = {
+  title: "Lab Facilities | CBS Research Group",
+  description:
+    "Explore the state-of-the-art lab facilities of the CBS Research Group at IIEST Shibpur, designed to support advanced research in electrochemistry.",
+  keywords:
+    "lab facilities, CBS Research Group, electrochemistry lab, IIEST Shibpur, research equipment, Dr. Chinmoy Bhattacharya",
+  author: "Dr. Chinmoy Bhattacharya",
+  openGraph: {
+    title: "Lab Facilities | CBS Research Group",
+    description:
+      "Discover the advanced lab facilities at CBS Research Group, providing the necessary equipment and environment for cutting-edge research in electrochemistry.",
+    type: "website",
+    url: "https://www.chinmoybhattacharyaelectrochemistry.com/lab-facilities",
+    image: "/favicon_io/favicon.ico?v=4",
+  },
+  iiest: {
+    card: "https://www.iiests.ac.in/IIEST/Faculty/chem-chinmoy",
+    title: "Chinmoy Bhattacharya",
+    description:
+      "Associate Professor, Department of Chemistry, Indian Institute of Engineering Science and Technology. Joined as Assistant Professor on June 23, 2006, and promoted to Associate Professor on February 22, 2019.",
+    image:
+      "https://www.iiests.ac.in/assets/images/faculty/chem-faculty_chinmoy-bhattacharya.jpg",
+  },
+  googlescholar: {
+    card: "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=7Be7e7IAAAAJ&citpid=2",
+    title: "Dr. Chinmoy Bhattacharya",
+    description:
+      "Associate Professor, Department of Chemistry, Indian Institute of Engineering Science and Technology.",
+    image:
+      "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=7Be7e7IAAAAJ&citpid=2",
+  },
+  researchgate: {
+    card: "https://www.researchgate.net/profile/Chinmoy-Bhattacharya-2",
+    title: "Dr. Chinmoy Bhattacharya",
+    description:
+      "Associate Professor, Department of Chemistry, Indian Institute of Engineering Science and Technology, Shibpur, Howrah, India.",
+  },
+  orcid: {
+    card: "https://orcid.org/0000-0003-2370-7108",
+    title: "Chinmoy Bhattacharya",
+    description:
+      "Associate Professor, Department of Chemistry, Indian Institute of Engineering Science and Technology, specializing in Photoelectrochemistry, Electrochemistry, and Corrosion Electrochemistry.",
+    image: "https://orcid.org/0000-0003-2370-7108",
+  },
+  scopus: {
+    card: "https://www.scopus.com/authid/detail.uri?authorId=7006023691",
+    title: "Bhattacharya, Chinmoy",
+    description:
+      "Associate Professor, Department of Chemistry, Indian Institute of Engineering Science and Technology, focusing on Photoelectrochemistry, Electrochemistry, and Corrosion Electrochemistry.",
+  },
+  vidyan: {
+    card: "https://vidwan.inflibnet.ac.in/profile/93345",
+    title: "Dr. Chinmoy Bhattacharya",
+    description:
+      "Associate Professor, Department of Chemistry, Indian Institute of Engineering Science and Technology.",
+    image: "https://irins.org/assets/profile_images/93345.jpg",
+  },
+  additional: {
+    httpEquiv: "X-UA-Compatible",
+    content: "IE=edge",
+    canonical:
+      "https://www.chinmoybhattacharyaelectrochemistry.com/lab-facilities",
+    icon: "/favicon_io/favicon.ico?v=4",
+  },
+};
+
+export const viewport = "width=device-width, initial-scale=1.0";
 const LabFacilities = async () => {
   const getAllEquipmens = await getRequest_all(envConfig.labEquipmentsApiUrl);
 

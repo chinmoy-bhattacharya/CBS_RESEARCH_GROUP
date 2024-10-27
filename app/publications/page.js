@@ -4,7 +4,7 @@ import getRequest_all from "@/apis/getRequestAll.js";
 import envConfig from "@/config/envConfig.js";
 import Publication_banner from "@/public/images/background/Publication_banner.png";
 import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner";
-
+import Head from "next/head";
 const CommonBanner = dynamic(() =>
   import("@/components/multiple-use/common-banner/CommonBanner.js")
 );
@@ -16,11 +16,49 @@ const PublicationCard = dynamic(() =>
   import("@/components/single-use/publication-card/PublicationCard.js")
 );
 
+export const metadata = {
+  title: "Publications | CBS Research Group",
+  description:
+    "Details about the publications of IIEST Shibpur Chemistry depertment lab (CBS Research Group).",
+  keywords:
+    "publications, IIEST Shibpur Chemistry depertment lab, CBS Research Group, Doctorate, Masters",
+  author: "Dr. Chinmoy Bhattacharya",
+  openGraph: {
+    title: "Publications | CBS Research Group",
+    description:
+      "Details about the publications of IIEST Shibpur Chemistry depertment lab (CBS Research Group). The Government of India proposed IIEST in 2007 to address the growing need for qualified personnel in research and development, as well as in the industrial and service sectors. The first college to become an IIEST was IIEST, Shibpur in 2014",
+    type: "profile",
+    url: "https://www.chinmoybhattacharyaelectrochemistry.com/publications",
+    image: "/favicon_io/favicon.ico?v=4",
+  },
+  additional: {
+    httpEquiv: "X-UA-Compatible",
+    content: "IE=edge",
+    canonical:
+      "https://www.chinmoybhattacharyaelectrochemistry.com/publications",
+    icon: "/favicon_io/favicon.ico?v=4",
+  },
+};
+
+export const viewport = "width=device-width, initial-scale=1.0";
+
 const Publications = async () => {
   const getAllPublications = await getRequest_all(envConfig.publicationsApiUrl);
-
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-800 pb-12">
+      {getAllPublications.map((item, index) => (
+        <Head key={index}>
+          <title>{item.title}</title>
+          <meta name="description" content={item.aboutPublication} />
+          <meta name="keywords" content={item.title} />
+          <meta name="author" content={item.contributer} />
+          <meta name="viewport" content={viewport} />
+          <meta property="og:title" content={item.title} />
+          <meta property="og:description" content={item.aboutPublication} />
+          <link rel="canonical" href={metadata.additional.canonical} />
+          <link rel="icon" href={metadata.additional.icon} />
+        </Head>
+      ))}
       <Suspense fallback={<ApplicationSpinner />}>
         <CommonBanner
           bannerBackgroundImg={Publication_banner}

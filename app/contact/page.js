@@ -10,6 +10,29 @@ const ContactForm = dynamic(() =>
   import("@/components/single-use/contact-form/ContactForm.js")
 );
 
+export const metadata = {
+  title: "Contact | CBS Research Group",
+  description:
+    "Get in touch with the CBS Research Group for inquiries related to publications, research collaboration, and more.",
+  keywords:
+    "contact, CBS Research Group, IIEST Shibpur, inquiries, publications, research collaboration",
+  author: "Dr. Chinmoy Bhattacharya",
+  openGraph: {
+    title: "Contact | CBS Research Group",
+    description:
+      "Reach out to the CBS Research Group for any questions regarding publications and research activities.",
+    type: "website",
+    url: "https://www.chinmoybhattacharyaelectrochemistry.com/contact",
+    image: "/favicon_io/favicon.ico?v=4",
+  },
+  additional: {
+    httpEquiv: "X-UA-Compatible",
+    content: "IE=edge",
+    canonical: "https://www.chinmoybhattacharyaelectrochemistry.com/contact",
+    icon: "/favicon_io/favicon.ico?v=4",
+  },
+};
+
 const Contact = () => {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-800 pt-12 pb-28">
