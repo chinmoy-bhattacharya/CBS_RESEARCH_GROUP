@@ -116,7 +116,7 @@ const SinglePublication = async ({ params }) => {
               {getPublicationById && getPublicationById.title}
             </h2>
 
-            <h3 className="text-gray-600 dark:text-gray-300 font-medium my-4">
+            <h3 className="text-gray-600 dark:text-gray-300 font-medium my-4 text-sm md:text-base lg:text-base">
               {getPublicationById && getPublicationById.contributer}
             </h3>
             <div className="flex justify-center items-center pt-4 lg:flex-row lg:justify-normal">

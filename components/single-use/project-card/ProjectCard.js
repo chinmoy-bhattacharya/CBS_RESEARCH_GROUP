@@ -23,7 +23,9 @@ const ProjectCard = ({ projectTitle, status, projectDetails }) => {
         )}
       </div>
 
-      <p className="text-gray-600 dark:text-gray-300 mb-6">{projectDetails}</p>
+      <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base lg:text-base leading-2 mb-6">
+        {projectDetails}
+      </p>
     </section>
   );
 };

@@ -5,7 +5,7 @@ import Link from "next/link";
 const NotFoundPage = () => {
   return (
     <div className="flex justify-center items-center flex-col py-20">
-      <h2 className="text-2xl font-semibold dark:text-gray-200">
+      <h2 className="text-lg md:text-xl lg:text-2xl text-center leading-2 font-semibold dark:text-gray-200">
         The page you are trying to get access is not exist, 404.
       </h2>
 

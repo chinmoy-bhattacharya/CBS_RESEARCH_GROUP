@@ -40,7 +40,7 @@ const PublicationCard = ({
             {publicationTitle}
           </h4>
           <hr className="my-2 border border-gray-300 dark:border-gray-800" />
-          <p className="mb-8 block  text-base font-normal leading-relaxed text-gray-700 dark:text-gray-400">
+          <p className="mb-8 block text-sm md:text-base lg:text-base font-normal leading-relaxed text-gray-700 dark:text-gray-400">
             {Contributer}
           </p>
           <Link className="inline-block" href={seeDetailsLink}>

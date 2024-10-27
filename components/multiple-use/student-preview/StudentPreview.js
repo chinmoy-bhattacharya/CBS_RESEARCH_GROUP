@@ -36,7 +36,7 @@ const StudentPreview = ({
             <p className="font-poppins font-semibold text-heading sm:text-4xl text-2xl capitalize text-gray-700">
               {studentName}
             </p>
-            <p className="text-heading dark:text-gray-800 mt-2 font-normal">
+            <p className="text-heading text-sm md:text-base lg:text-base dark:text-gray-800 mt-2 font-normal">
               {previewHeading}
             </p>
             <p className="text-center inline-flex item-center">
@@ -67,7 +67,7 @@ const StudentPreview = ({
                 </h2>
                 <div className="border-2 w-32 border-top-color my-3 border-gray-300 dark:border-gray-600"></div>
 
-                <div className="flex flex-col justify-start ml-0 mr-2 text-lg font-medium text-gray-600 dark:text-gray-300">
+                <div className="flex text-sm md:text-base lg:text-base flex-col justify-start ml-0 mr-2 font-medium text-gray-600 dark:text-gray-300">
                   <div className="flex items-start my-1">
                     <div>{emailId}</div>
                   </div>
@@ -125,7 +125,7 @@ const StudentPreview = ({
                   About Info
                 </h2>
                 <div className="border-2 w-32 border-top-color my-3 border-gray-300 dark:border-gray-600"></div>
-                <article className="text-start text-gray-500 dark:text-gray-300">
+                <article className="text-start text-gray-500 dark:text-gray-300 text-sm md:text-base lg:text-base">
                   {aboutInfo}
                 </article>
                 <div className="flex justify-start mt-4">

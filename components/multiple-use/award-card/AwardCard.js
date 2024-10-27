@@ -19,7 +19,9 @@ const AwardCard = ({ recivedDate, awardTitle, awardOverview }) => {
               <h2 className="text-xl font-medium text-gray-700 dark:text-gray-300 title-font mb-2">
                 {awardTitle}
               </h2>
-              <p className="leading-relaxed text-md">{awardOverview}</p>
+              <p className="text-sm md:text-base lg:text-base leading-2">
+                {awardOverview}
+              </p>
             </div>
           </div>
         </div>

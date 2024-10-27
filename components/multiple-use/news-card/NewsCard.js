@@ -24,7 +24,7 @@ const NewsCard = ({ createAt, newsTitle, newsDescription }) => {
           - From CBS Research Group{" "}
           <cite
             title="Source Title"
-            className="text-gray-600 dark:text-gray-300"
+            className="text-gray-600 dark:text-gray-300 text-sm md:text-normal lg:text-normal"
           >
             {newsDescription}
           </cite>

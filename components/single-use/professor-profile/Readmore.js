@@ -86,7 +86,7 @@ const Readmore = () => {
     <main>
       <div className="mt-12 flex flex-col justify-center">
         {" "}
-        <p className="text-gray-800 dark:text-gray-300 text-center font-normal lg:px-16 mb-10">
+        <p className="text-sm md:text-base lg:text-lg text-gray-800 dark:text-gray-300 text-center font-normal lg:px-16 mb-10">
           Joined the Institute as Assistant Professor , Department of Chemistry,
           Indian Institute of Engineering Science & Technology, Shibpur
           (formerly, BESUS) Howrah – 711 103, West Bengal on 23rd June 2006.
@@ -120,7 +120,7 @@ const Readmore = () => {
                           >
                             <button
                               onClick={() => handleShowCourseDetails(index)}
-                              className="font-semibold hover:underline hover:text-blue-600"
+                              className="font-semibold hover:underline hover:text-blue-600 text-sm md:text-md lg:text-base"
                             >
                               {topic.title}
                             </button>

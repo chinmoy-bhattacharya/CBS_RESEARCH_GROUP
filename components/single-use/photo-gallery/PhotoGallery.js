@@ -159,6 +159,7 @@ const PhotoGallery = () => {
   //5. Click outside and close navbar event listen
   useEffect(() => {
     AOS.init();
+    window.scrollTo(0, 0);
     if (openFullImage) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {

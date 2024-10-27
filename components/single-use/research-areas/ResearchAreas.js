@@ -11,12 +11,12 @@ const ResearchAreas = () => {
       <div className="bg-gray-50 dark:bg-slate-800 pb-12 p-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-12 items-center max-w-6xl max-lg:max-w-2xl max-sm:max-w-sm mx-auto">
           <div>
-            <h2 className="text-3xl font-semibold text-yellow-700  mb-6">
+            <h2 className="text-xl md:text-2xl lg:text-2xl font-semibold text-yellow-700  mb-6">
               Research Areas
             </h2>
             <h3
-              className="text-xl max-md:text-2xl font-semibold text-gray-500
-             dark:text-gray-300 leading-10"
+              className="text-sm md:text-base lg:text-base leading-2 pb-8 lg:pb-32 font-semibold text-gray-500
+             dark:text-gray-300"
             >
               Electrochemistry Research Focus: Corrosion, Dopant Optimization,
               Metal Oxides, and Photocatalytic Performance....

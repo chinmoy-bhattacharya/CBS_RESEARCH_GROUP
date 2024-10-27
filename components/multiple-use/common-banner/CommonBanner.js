@@ -33,12 +33,13 @@ const CommonBanner = ({
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex justify-center item-center ">
           <div className="mx-auto max-w-full lg:mx-0 ">
-            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-3xl dark:text-gray-300">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white sm:text-3xl dark:text-gray-300">
+              {" "}
               {headingFirst}
               <span className="text-yellow-500 mx-2">{UniqueHeading}</span>
               {headingLast}
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-200 dark:text-gray-400">
+            <p className="mt-6 text-sm md:text-base lg:text-base leading-2 text-gray-200 dark:text-gray-400">
               {subHeading}
             </p>
           </div>
