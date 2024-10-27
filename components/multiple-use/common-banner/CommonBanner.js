@@ -13,7 +13,10 @@ const CommonBanner = ({
     <section className="relative isolate">
       <Image
         src={bannerBackgroundImg}
-        alt="backgroundImage"
+        priority
+        quality={70}
+        loading="eager"
+        alt={`${UniqueHeading} Background image`}
         className="absolute min-h-full inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
       <div className="extraBlurBackground relative overflow-hidden py-24 sm:py-32 lg:py-40">

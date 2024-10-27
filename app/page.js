@@ -1,6 +1,18 @@
+import dynamic from "next/dynamic";
+import ComponentSpinner from "@/utils/spinner/component-spinner/ComponentSpinner";
 import LandingBanner from "@/components/single-use/landing-banner/LandingBanner.js";
-import ResearchAreas from "@/components/single-use/research-areas/ResearchAreas.js";
-import CountUpSection from "@/utils/count-up/CountUpSection.js";
+const ResearchAreas = dynamic(
+  () => import("@/components/single-use/research-areas/ResearchAreas.js"),
+  {
+    loading: () => <ComponentSpinner />,
+  }
+);
+const CountUpSection = dynamic(
+  () => import("@/utils/count-up/CountUpSection.js"),
+  {
+    loading: () => <ComponentSpinner />,
+  }
+);
 
 export const metadata = {
   title: "Home | CBS Research Group",
@@ -66,7 +78,7 @@ export const metadata = {
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };
-
+export const viewport = "width=device-width, initial-scale=1.0";
 export default function Home() {
   return (
     <>

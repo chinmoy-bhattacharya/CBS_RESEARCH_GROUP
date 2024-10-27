@@ -1,4 +1,4 @@
-const getRequest_single = async (url, requireId) => {
+const getRequest_single = async (url, requireId, retries = 3) => {
   try {
     const response = await fetch(`${url}/${requireId}`, {
       method: "GET",
@@ -9,11 +9,15 @@ const getRequest_single = async (url, requireId) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data = await response.json(); // Parse the JSON data
-    return data; // Return the data directly
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error(error.message); // Log the error for debugging
-    throw new Error("Sorry, we are unable to fetch the data."); // Throw a user-friendly error
+    if (retries > 0 && error.code === "ECONNRESET") {
+      console.warn(`Retrying... (${retries} attempts left)`);
+      return await getRequest_single(url, requireId, retries - 1);
+    }
+    console.error(error.message);
+    throw new Error("Sorry, we are unable to fetch the data.");
   }
 };
 

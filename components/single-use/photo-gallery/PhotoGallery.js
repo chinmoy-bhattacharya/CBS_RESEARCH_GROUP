@@ -5,11 +5,12 @@ import galleryImage_1 from "@/public/images/gallery/gallery_image_1.webp";
 import galleryImage_2 from "@/public/images/gallery/gallery_image_2.webp";
 import galleryImage_3 from "@/public/images/gallery/gallery_image_3.webp";
 import galleryImage_4 from "@/public/images/gallery/gallery_image_4.webp";
-import galleryImage_5 from "@/public/images/gallery/gallery_image_5.jpg";
-import galleryImage_6 from "@/public/images/gallery/gallery_image_6.jpg";
-import galleryImage_7 from "@/public/images/gallery/gallery_image_7.jpg";
-import galleryImage_8 from "@/public/images/gallery/gallery_image_8.jpg";
+import galleryImage_5 from "@/public/images/gallery/gallery_image_5.webp";
+import galleryImage_6 from "@/public/images/gallery/gallery_image_6.webp";
+import galleryImage_7 from "@/public/images/gallery/gallery_image_7.webp";
+import galleryImage_8 from "@/public/images/gallery/gallery_image_8.webp";
 import galleryImage_9 from "@/public/images/gallery/gallery_image_9.webp";
+import galleryImage_10 from "@/public/images/gallery/gallery_image_10.webp";
 import { IoClose } from "react-icons/io5";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -57,6 +58,10 @@ const PhotoGallery = () => {
     {
       id: 9,
       path: galleryImage_9,
+    },
+    {
+      id: 10,
+      path: galleryImage_10,
     },
   ];
 
@@ -129,6 +134,14 @@ const PhotoGallery = () => {
       setOpenFullImage(true);
       setImages({
         path: galleryImage_9,
+        height: "h-full",
+        width: "w-full",
+      });
+    }
+    if (id === 10) {
+      setOpenFullImage(true);
+      setImages({
+        path: galleryImage_10,
         height: "h-full",
         width: "w-full",
       });

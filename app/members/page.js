@@ -1,18 +1,22 @@
 import dynamic from "next/dynamic";
-import React, { Suspense } from "react";
-import membersBackground from "@/public/images/background/members-banner-backgroun.png";
+import React from "react";
+import membersBackground from "@/public/images/background/members-banner-backgroun.webp";
 import getRequest_all from "@/apis/getRequestAll.js";
 import envConfig from "@/config/envConfig.js";
-import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner";
+import ComponentSpinner from "@/utils/spinner/component-spinner/ComponentSpinner";
+import CommonBanner from "@/components/multiple-use/common-banner/CommonBanner.js";
 
-const MembersCard = dynamic(() =>
-  import("@/components/multiple-use/members-card/MembersCard.js")
+const MembersCard = dynamic(
+  () => import("@/components/multiple-use/members-card/MembersCard.js"),
+  {
+    loading: () => <ComponentSpinner />,
+  }
 );
-const CommonHeading = dynamic(() =>
-  import("@/utils/common-headings/CommonHeading.js")
-);
-const CommonBanner = dynamic(() =>
-  import("@/components/multiple-use/common-banner/CommonBanner.js")
+const CommonHeading = dynamic(
+  () => import("@/utils/common-headings/CommonHeading.js"),
+  {
+    loading: () => <ComponentSpinner />,
+  }
 );
 
 // Fetch data for the page
@@ -96,73 +100,63 @@ const Members = async () => {
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-800 pb-16">
-      <Suspense fallback={<ApplicationSpinner />}>
-        <CommonBanner
-          bannerBackgroundImg={membersBackground}
-          headingFirst={"All"}
-          UniqueHeading={"Member's"}
-          headingLast={"Of CBS Group"}
-          subHeading={
-            "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
-          }
-        />
-      </Suspense>
+      <CommonBanner
+        bannerBackgroundImg={membersBackground}
+        headingFirst={"All"}
+        UniqueHeading={"Member's"}
+        headingLast={"Of CBS Group"}
+        subHeading={
+          "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+        }
+      />
 
-      <Suspense fallback={<ApplicationSpinner />}>
-        <CommonHeading
-          Heading={"All Doctorate Students"}
-          subHeading={
-            "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
-          }
-          customColorHeadig={"text-blue-500 dark:text-yellow-500"}
-        />
-      </Suspense>
+      <CommonHeading
+        Heading={"All Doctorate Students"}
+        subHeading={
+          "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+        }
+        customColorHeadig={"text-blue-500 dark:text-yellow-500"}
+      />
 
-      <Suspense fallback={<ApplicationSpinner />}>
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-4">
-          {getAllPHdStudents &&
-            getAllPHdStudents.map((data, index) => (
-              <MembersCard
-                key={index}
-                studentType={"PhD Student"}
-                currentYear={data.currentYear}
-                researchGateHandle={data.researchGateId}
-                studentProfilePic={data.profilePicture}
-                googlescholarHandle={data.googleScholarId}
-                studentName={data.memberName}
-                overViewlink={`/members/phd/${data._id}`}
-              />
-            ))}
-        </section>
-      </Suspense>
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-4">
+        {getAllPHdStudents &&
+          getAllPHdStudents.map((data, index) => (
+            <MembersCard
+              key={index}
+              studentType={"PhD Student"}
+              currentYear={data.currentYear}
+              researchGateHandle={data.researchGateId}
+              studentProfilePic={data.profilePicture}
+              googlescholarHandle={data.googleScholarId}
+              studentName={data.memberName}
+              overViewlink={`/members/phd/${data._id}`}
+            />
+          ))}
+      </section>
 
-      <Suspense fallback={<ApplicationSpinner />}>
-        <CommonHeading
-          Heading={"All Project Students"}
-          subHeading={
-            "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
-          }
-          customColorHeadig={"text-blue-500 dark:text-yellow-500"}
-        />
-      </Suspense>
+      <CommonHeading
+        Heading={"All Project Students"}
+        subHeading={
+          "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+        }
+        customColorHeadig={"text-blue-500 dark:text-yellow-500"}
+      />
 
-      <Suspense fallback={<ApplicationSpinner />}>
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-4">
-          {getAllProjectStudents &&
-            getAllProjectStudents.map((data, index) => (
-              <MembersCard
-                key={index}
-                studentType={"Project Student"}
-                currentYear={data.currentYear}
-                researchGateHandle={data.researchGateId}
-                studentProfilePic={data.profilePicture}
-                googlescholarHandle={data.googleScholarId}
-                studentName={data.memberName}
-                overViewlink={`/members/project/${data._id}`}
-              />
-            ))}
-        </section>
-      </Suspense>
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-4">
+        {getAllProjectStudents &&
+          getAllProjectStudents.map((data, index) => (
+            <MembersCard
+              key={index}
+              studentType={"Project Student"}
+              currentYear={data.currentYear}
+              researchGateHandle={data.researchGateId}
+              studentProfilePic={data.profilePicture}
+              googlescholarHandle={data.googleScholarId}
+              studentName={data.memberName}
+              overViewlink={`/members/project/${data._id}`}
+            />
+          ))}
+      </section>
     </main>
   );
 };

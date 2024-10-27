@@ -1,9 +1,10 @@
-import photocatalytic_research from "@/public/images/research-areas/photocatalytic_research.jpeg";
-import CorrosionBehavior from "@/public/images/research-areas/CorrosionBehavior.jpg";
-import Photocatalysts from "@/public/images/research-areas/Photocatalysts.jpg";
-import Photoelectrochemical from "@/public/images/research-areas/Photoelectrochemical.jpg";
-import SynthesizingSemiconductors from "@/public/images/research-areas/SynthesizingSemiconductors.jpg";
+import photocatalytic_research from "@/public/images/research-areas/photocatalytic_research.webp";
+import CorrosionBehavior from "@/public/images/research-areas/CorrosionBehavior.webp";
+import Photocatalysts from "@/public/images/research-areas/Photocatalysts.webp";
+import Photoelectrochemical from "@/public/images/research-areas/Photoelectrochemical.webp";
+import SynthesizingSemiconductors from "@/public/images/research-areas/SynthesizingSemiconductors.webp";
 import Image from "next/image";
+
 const ResearchAreas = () => {
   return (
     <main className="py-16">
@@ -35,7 +36,8 @@ const ResearchAreas = () => {
                 alt="Study Of Photocatalytic Dye Degradation Ability(PCA) Performance Of Semiconductors Graphics"
                 height={500}
                 width={500}
-                quality={100}
+                quality={80}
+                loading="lazy"
                 className="w-full object-cover rounded-md"
               />
               <div className="py-6">
@@ -72,6 +74,8 @@ const ResearchAreas = () => {
                 src={Photocatalysts}
                 alt="Development Of Metal Oxides Based Photocatalysts Graphics"
                 height={300}
+                quality={80}
+                loading="lazy"
                 width={300}
                 className="w-full object-cover rounded-md"
               />
@@ -108,6 +112,8 @@ const ResearchAreas = () => {
                 alt="Use Of Scanning Electrochemical Microscopy(SECM) For Synthesizing Semiconductors Graphics"
                 height={300}
                 width={300}
+                quality={80}
+                loading="lazy"
                 className="w-full object-cover rounded-md"
               />
               <div className="py-6">
@@ -138,6 +144,8 @@ const ResearchAreas = () => {
                 alt="Study Of Corrosion Behavior Of Al Alloys & Metal Matrix Composites Under Different Environmental Conditions Graphics"
                 height={300}
                 width={300}
+                quality={80}
+                loading="lazy"
                 className="w-full object-cover rounded-md"
               />
               <div className="py-6">
@@ -175,6 +183,8 @@ const ResearchAreas = () => {
                 alt="Study Of Photoelectrochemical (PEC) Performance Of Semiconductors Graphics"
                 height={300}
                 width={300}
+                quality={80}
+                loading="lazy"
                 className="w-full object-cover rounded-md"
               />
               <div className="py-6">

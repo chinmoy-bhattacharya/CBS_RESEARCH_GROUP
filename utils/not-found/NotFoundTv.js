@@ -1,7 +1,7 @@
 import React from "react";
 import tvStyle from "./NotFound.module.css";
 import Image from "next/image";
-import second from "@/public/images/background/antenna.png";
+import second from "@/public/images/background/antenna.webp";
 const NotFoundTv = () => {
   return (
     /* From Uiverse.io by Sophiek9h */

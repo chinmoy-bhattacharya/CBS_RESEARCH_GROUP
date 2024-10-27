@@ -1,14 +1,8 @@
-import dynamic from "next/dynamic";
 import Image from "next/image";
-import React, { Suspense } from "react";
-import Contact_Image from "@/public/images/background/Contact_Grid.png";
-import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner";
-const CommonHeading = dynamic(() =>
-  import("@/utils/common-headings/CommonHeading.js")
-);
-const ContactForm = dynamic(() =>
-  import("@/components/single-use/contact-form/ContactForm.js")
-);
+import React from "react";
+import Contact_Image from "@/public/images/background/Contact_Grid.webp";
+import CommonHeading from "@/utils/common-headings/CommonHeading.js";
+import ContactForm from "@/components/single-use/contact-form/ContactForm.js";
 
 export const metadata = {
   title: "Contact | CBS Research Group",
@@ -32,23 +26,20 @@ export const metadata = {
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };
-
+export const viewport = "width=device-width, initial-scale=1.0";
 const Contact = () => {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-800 pt-12 pb-28">
       <div className="px-0 lg:px-28 xl:px-36">
-        <Suspense fallback={<ApplicationSpinner />}>
-          <CommonHeading
-            Heading="Get in Touch with Our Lab"
-            subHeading="Whether you have questions about our research or admission, need assistance with experiments, or want to collaborate, we’re here to help! Please fill out the form below, and our team will get back to you as soon as possible"
-            customColorHeadig={null}
-          />
-        </Suspense>
+        <CommonHeading
+          Heading="Get in Touch with Our Lab"
+          subHeading="Whether you have questions about our research or admission, need assistance with experiments, or want to collaborate, we’re here to help! Please fill out the form below, and our team will get back to you as soon as possible"
+          customColorHeadig={null}
+        />
       </div>
       <section className="grid grid-cols-1 lg:grid-cols-2 place-items-center mx-auto place-content-center">
-        <Suspense fallback={<ApplicationSpinner />}>
-          <ContactForm />
-        </Suspense>
+        <ContactForm />
+
         <div className="flex justify-center items-center order-first lg:order-none pb-12 lg:pb-0">
           <Image src={Contact_Image} alt="Hero" />
         </div>

@@ -1,12 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .blurBackground {
   background-color: rgba(0, 0, 0, 0.747);
   backdrop-filter: blur(1px);
 }
-
 .extraBlurBackground {
   background-color: rgba(0, 0, 0, 0.747);
   backdrop-filter: blur(3px);
@@ -15,19 +13,17 @@
   background-color: rgba(0, 0, 0, 0.164);
   backdrop-filter: blur(8px);
 }
-
 .tooltip {
   position: relative;
   display: inline-block;
 }
-
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 170px;
-  background-color: rgb(0, 116, 211);
+  background-color: #0074d3;
   font-size: small;
   font-weight: 500;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -36,7 +32,6 @@
   top: -5px;
   right: 110%;
 }
-
 .tooltip .tooltiptext::after {
   content: "";
   position: absolute;
@@ -45,46 +40,36 @@
   margin-top: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent transparent rgb(0, 116, 211);
+  border-color: transparent transparent transparent #0074d3;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-
 .cardScrollbar::-webkit-scrollbar {
   display: none;
 }
-
-/* Hide scrollbar for IE, Edge and Firefox */
 .cardScrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-/* For Webkit browsers */
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
-
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #be8d1a;
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-/* Swiper Slider Styles  */
 .swiper {
   width: 340px;
   height: 340px;
 }
-
 @media screen and (max-width: 480px) {
   .swiper {
     width: 200px;
@@ -103,14 +88,12 @@
   justify-content: center;
   border-radius: 18px;
 }
-
-/* Custom alert Style and animation  */
 .tn-box {
   width: 360px;
   position: fixed;
   top: 0;
   right: 0;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   padding: 25px 15px;
   text-align: left;
   z-index: 10001;
@@ -119,9 +102,9 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
   opacity: 0;
   cursor: default;
-  display: none;
+  display: block;
+  animation: 5s linear forwards fadeOut;
 }
-
 .tn-progress {
   width: 0;
   height: 4px;
@@ -133,18 +116,12 @@
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
     0 -1px 0 rgba(255, 255, 255, 0.6);
 }
-
-.tn-box {
-  display: block;
-  animation: fadeOut 5s linear forwards;
-}
-
 .tn-box .tn-progress {
-  animation: runProgress 4s linear forwards 0.5s;
+  animation: 4s linear 0.5s forwards runProgress;
 }
-
 @keyframes fadeOut {
-  0% {
+  0%,
+  100% {
     opacity: 0;
   }
   10% {
@@ -152,17 +129,13 @@
   }
   90% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   99% {
     opacity: 0;
     transform: translateY(-30px);
   }
-  100% {
-    opacity: 0;
-  }
 }
-
 @keyframes runProgress {
   0% {
     width: 0%;
@@ -170,6 +143,6 @@
   }
   100% {
     width: 96%;
-    background: rgb(255, 0, 0);
+    background: red;
   }
 }

@@ -3,9 +3,12 @@ import envConfig from "@/config/envConfig.js";
 import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner";
 import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
-import { Suspense } from "react";
-const StudentPreview = dynamic(() =>
-  import("@/components/multiple-use/student-preview/StudentPreview.js")
+import React from "react";
+const StudentPreview = dynamic(
+  () => import("@/components/multiple-use/student-preview/StudentPreview.js"),
+  {
+    loading: () => <ApplicationSpinner />,
+  }
 );
 
 export const metadata = {
@@ -72,6 +75,7 @@ export const metadata = {
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };
+export const viewport = "width=device-width, initial-scale=1.0";
 
 async function AlumnusProfile({ params }) {
   const { type, id } = await params; // Get dynamic parameters from the URL
@@ -95,25 +99,23 @@ async function AlumnusProfile({ params }) {
 
   // Return the JSX to display the alumnus profile
   return (
-    <Suspense fallback={<ApplicationSpinner />}>
-      <main className="bg-gray-50 dark:bg-slate-800 py-24">
-        <StudentPreview
-          studentName={membersInfo.memberName}
-          profileImageUrl={membersInfo.profilePicture}
-          previewHeading={isPhd ? "PHd Member" : "Masters Member"}
-          googleScholarId={membersInfo.googleScholarId}
-          researchGateId={membersInfo.researchGateId}
-          emailId={membersInfo.emailId}
-          phoneNumber={membersInfo.phoneNumber}
-          bscCollege={membersInfo.bscDoneFrom}
-          mscCollege={membersInfo.mscDoneFrom}
-          yearOfPassout={null}
-          currentYear={membersInfo.currentYear}
-          aboutInfo={membersInfo.details}
-          goBackLink="/members"
-        />
-      </main>
-    </Suspense>
+    <main className="bg-gray-50 dark:bg-slate-800 py-24">
+      <StudentPreview
+        studentName={membersInfo.memberName}
+        profileImageUrl={membersInfo.profilePicture}
+        previewHeading={isPhd ? "PHd Member" : "Masters Member"}
+        googleScholarId={membersInfo.googleScholarId}
+        researchGateId={membersInfo.researchGateId}
+        emailId={membersInfo.emailId}
+        phoneNumber={membersInfo.phoneNumber}
+        bscCollege={membersInfo.bscDoneFrom}
+        mscCollege={membersInfo.mscDoneFrom}
+        yearOfPassout={null}
+        currentYear={membersInfo.currentYear}
+        aboutInfo={membersInfo.details}
+        goBackLink="/members"
+      />
+    </main>
   );
 }
 AlumnusProfile.propTypes = {

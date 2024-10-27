@@ -2,12 +2,15 @@ import dynamic from "next/dynamic";
 import getRequest_single from "@/apis/getRequestSingle.js";
 import envConfig from "@/config/envConfig.js";
 import PropTypes from "prop-types";
-import { Suspense } from "react";
-import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner.js";
+import React from "react";
 import Head from "next/head";
+import ApplicationSpinner from "@/utils/spinner/application-spinner/ApplicationSpinner";
 
-const StudentPreview = dynamic(() =>
-  import("@/components/multiple-use/student-preview/StudentPreview.js")
+const StudentPreview = dynamic(
+  () => import("@/components/multiple-use/student-preview/StudentPreview.js"),
+  {
+    loading: () => <ApplicationSpinner />,
+  }
 );
 
 export const metadata = {
@@ -89,25 +92,23 @@ async function AlumnusProfile({ params }) {
           <link rel="icon" href={dynamicMetadata.additional.icon} />
         </Head>
         <main className="bg-gray-50 dark:bg-slate-800 py-24">
-          <Suspense fallback={<ApplicationSpinner />}>
-            <StudentPreview
-              studentName={alumnusInfo.alumniName}
-              profileImageUrl={alumnusInfo.profilePicture}
-              previewHeading={
-                isDoctorate ? "Doctorate Alumnus" : "Masters Alumnus"
-              }
-              googleScholarId={alumnusInfo.googleScholarId}
-              researchGateId={alumnusInfo.researchGateId}
-              emailId={alumnusInfo.emailId}
-              phoneNumber={alumnusInfo.phoneNumber}
-              bscCollege={alumnusInfo.bscDoneFrom}
-              mscCollege={alumnusInfo.mscDoneFrom}
-              yearOfPassout={alumnusInfo.yearOfPassout}
-              currentYear={null} // Update if necessary
-              aboutInfo={alumnusInfo.details}
-              goBackLink="/alumni"
-            />
-          </Suspense>
+          <StudentPreview
+            studentName={alumnusInfo.alumniName}
+            profileImageUrl={alumnusInfo.profilePicture}
+            previewHeading={
+              isDoctorate ? "Doctorate Alumnus" : "Masters Alumnus"
+            }
+            googleScholarId={alumnusInfo.googleScholarId}
+            researchGateId={alumnusInfo.researchGateId}
+            emailId={alumnusInfo.emailId}
+            phoneNumber={alumnusInfo.phoneNumber}
+            bscCollege={alumnusInfo.bscDoneFrom}
+            mscCollege={alumnusInfo.mscDoneFrom}
+            yearOfPassout={alumnusInfo.yearOfPassout}
+            currentYear={null} // Update if necessary
+            aboutInfo={alumnusInfo.details}
+            goBackLink="/alumni"
+          />
         </main>
       </>
     );

@@ -29,6 +29,9 @@ const SwiperCarousel = ({ imageOne, imageTwo, imageThree }) => {
               alt={`Publication Graphics ${index + 1}`}
               height={500}
               width={500}
+              priority
+              loading="eager"
+              quality={70}
               className="rounded-xl"
             />
           </SwiperSlide>

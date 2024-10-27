@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import profProfileImg from "@/public/images/client/professor_profile-image.jpeg";
+import profProfileImg from "@/public/images/client/professor_profile-image.webp";
 import Readmore from "./Readmore.js";
 import { FaGoogleScholar } from "react-icons/fa6";
 import { FaResearchgate } from "react-icons/fa6";
@@ -51,6 +51,8 @@ const ProfProfile = () => {
                   src={profProfileImg}
                   alt="Prof. Chinmoy Bhattacharya"
                   quality={100}
+                  loading="eager"
+                  priority
                   className="rounded-full"
                 />
               </div>{" "}

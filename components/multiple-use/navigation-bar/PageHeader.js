@@ -7,10 +7,10 @@ import { PiSunFill } from "react-icons/pi";
 import { TbMoonFilled } from "react-icons/tb";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import React, { useEffect, useRef, useState } from "react";
-import IIESTLogo from "@/public/icons/brandlogo/Indian_Institute_of_Engineering_Science_and_Technology.png";
-import IIESTLogoDark from "@/public/icons/brandlogo/IIEST_Brand_Logo_Dark.png";
-import CBSLogo from "@/public/icons/brandlogo/CBS_Research_Group_Logo.png";
-import CBSLogoWhite from "@/public/icons/brandlogo/CBS_Research_Group_Logo_Dark.png";
+import IIESTLogo from "@/public/icons/IIEST_Brand_Logo_Light.webp";
+import IIESTLogoDark from "@/public/icons/IIEST_Brand_Logo_Dark.webp";
+import CBSLogo from "@/public/icons/CBS_Research_Group_Logo_Light.webp";
+import CBSLogoDark from "@/public/icons/CBS_Research_Group_Logo_Dark.webp";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -29,7 +29,7 @@ const PageHeader = () => {
 
   useEffect(() => {
     if (theme === "dark") {
-      setCbsLogo(CBSLogoWhite);
+      setCbsLogo(CBSLogoDark);
       setIiestLogo(IIESTLogoDark);
     } else {
       setCbsLogo(CBSLogo);
