@@ -88,8 +88,12 @@ const Publications = async () => {
           "Browse the complete collection of publications from CBS Research Group since 2013, reflecting our commitment to advancing knowledge through innovative research. These works encompass a wide range of topics and disciplines, demonstrating the impact and contributions of our researchers to global academic and industry advancements."
         }
       />
-
-      {getAllPublications &&
+      {getAllPublications.length == 0 ? (
+        <h2 className="text-xl font-semibold text-center mx-0 lg:mx-10 my-20 text-gray-600 dark:text-gray-300">
+          At this time, information regarding publications is not available.
+        </h2>
+      ) : (
+        getAllPublications &&
         getAllPublications.map((content, index) => (
           <PublicationCard
             key={index}
@@ -99,7 +103,8 @@ const Publications = async () => {
             publicationThumbnail={content.publicationThumbnail}
             seeDetailsLink={`/publications/${content._id}`}
           />
-        ))}
+        ))
+      )}
     </main>
   );
 };

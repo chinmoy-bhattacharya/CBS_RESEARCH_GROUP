@@ -117,22 +117,27 @@ const Members = async () => {
         }
         customColorHeadig={"text-blue-500 dark:text-yellow-500"}
       />
-
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-4">
-        {getAllPHdStudents &&
-          getAllPHdStudents.map((data, index) => (
-            <MembersCard
-              key={index}
-              studentType={"PhD Student"}
-              currentYear={data.currentYear}
-              researchGateHandle={data.researchGateId}
-              studentProfilePic={data.profilePicture}
-              googlescholarHandle={data.googleScholarId}
-              studentName={data.memberName}
-              overViewlink={`/members/phd/${data._id}`}
-            />
-          ))}
-      </section>
+      {getAllPHdStudents.length == 0 ? (
+        <h2 className="text-xl font-semibold text-center mx-0 lg:mx-10 my-20 text-gray-600 dark:text-gray-300">
+          At this time, information regarding members is not available.
+        </h2>
+      ) : (
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-4">
+          {getAllPHdStudents &&
+            getAllPHdStudents.map((data, index) => (
+              <MembersCard
+                key={index}
+                studentType={"PhD Student"}
+                currentYear={data.currentYear}
+                researchGateHandle={data.researchGateId}
+                studentProfilePic={data.profilePicture}
+                googlescholarHandle={data.googleScholarId}
+                studentName={data.memberName}
+                overViewlink={`/members/phd/${data._id}`}
+              />
+            ))}
+        </section>
+      )}
 
       <CommonHeading
         Heading={"Meet Our MSc Scholars.."}
@@ -141,22 +146,27 @@ const Members = async () => {
         }
         customColorHeadig={"text-blue-500 dark:text-yellow-500"}
       />
-
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-4">
-        {getAllProjectStudents &&
-          getAllProjectStudents.map((data, index) => (
-            <MembersCard
-              key={index}
-              studentType={"Project Student"}
-              currentYear={data.currentYear}
-              researchGateHandle={data.researchGateId}
-              studentProfilePic={data.profilePicture}
-              googlescholarHandle={data.googleScholarId}
-              studentName={data.memberName}
-              overViewlink={`/members/project/${data._id}`}
-            />
-          ))}
-      </section>
+      {getAllProjectStudents.length == 0 ? (
+        <h2 className="text-xl font-semibold text-center mx-0 lg:mx-10 my-20 text-gray-600 dark:text-gray-300">
+          At this time, information regarding members is not available.
+        </h2>
+      ) : (
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-4">
+          {getAllProjectStudents &&
+            getAllProjectStudents.map((data, index) => (
+              <MembersCard
+                key={index}
+                studentType={"Project Student"}
+                currentYear={data.currentYear}
+                researchGateHandle={data.researchGateId}
+                studentProfilePic={data.profilePicture}
+                googlescholarHandle={data.googleScholarId}
+                studentName={data.memberName}
+                overViewlink={`/members/project/${data._id}`}
+              />
+            ))}
+        </section>
+      )}
     </main>
   );
 };

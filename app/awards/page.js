@@ -107,13 +107,12 @@ const Awards = async () => {
       />
 
       <div className="pb-20">
-        {getAllPersonalAwards.length == 0 && (
+        {getAllPersonalAwards.length == 0 ? (
           <h2 className="text-xl font-semibold text-center mx-10 my-20 text-gray-600 dark:text-gray-300">
-            Currently awards informations ain&apos;t available.
+            At this time, information regarding awards is not available.
           </h2>
-        )}
-        {!getAllPersonalAwards && <ComponentSpinner />}
-        {getAllPersonalAwards &&
+        ) : (
+          getAllPersonalAwards &&
           getAllPersonalAwards.map((award, index) => (
             <AwardCard
               key={index}
@@ -121,7 +120,8 @@ const Awards = async () => {
               awardTitle={award.awardTitle}
               awardOverview={award.recivedFor}
             />
-          ))}
+          ))
+        )}
       </div>
 
       <CommonHeading
@@ -131,13 +131,12 @@ const Awards = async () => {
       />
 
       <div className="pb-20">
-        {getAllTeamAwards.length == 0 && (
+        {getAllTeamAwards.length == 0 ? (
           <h2 className="text-xl font-semibold text-center mx-10 my-20 text-gray-600 dark:text-gray-300">
-            Currently awards informations ain&apos;t available.
+            At this time, information regarding awards is not available.
           </h2>
-        )}
-        {!getAllTeamAwards && <ComponentSpinner />}
-        {getAllTeamAwards &&
+        ) : (
+          getAllTeamAwards &&
           getAllTeamAwards.map((award, index) => (
             <AwardCard
               key={index}
@@ -145,7 +144,8 @@ const Awards = async () => {
               awardTitle={award.awardTitle}
               awardOverview={award.recivedFor}
             />
-          ))}
+          ))
+        )}
       </div>
     </main>
   );

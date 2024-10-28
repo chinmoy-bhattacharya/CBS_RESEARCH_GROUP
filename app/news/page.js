@@ -104,17 +104,23 @@ const News = async () => {
         customColorHeadig={null}
       />
 
-      <section className="pb-20">
-        {getAllLatestGroupNews &&
-          getAllLatestGroupNews.map((news, index) => (
-            <NewsCard
-              key={index}
-              createAt={news.createdAt}
-              newsTitle={news.newsTitle}
-              newsDescription={news.content}
-            />
-          ))}
-      </section>
+      {getAllLatestGroupNews.length == 0 ? (
+        <h2 className="pb-20 text-xl font-semibold text-center mx-0 lg:mx-10 my-20 text-gray-600 dark:text-gray-300">
+          At this time, information regarding news & updates is not available.
+        </h2>
+      ) : (
+        <section className="pb-20">
+          {getAllLatestGroupNews &&
+            getAllLatestGroupNews.map((news, index) => (
+              <NewsCard
+                key={index}
+                createAt={news.createdAt}
+                newsTitle={news.newsTitle}
+                newsDescription={news.content}
+              />
+            ))}
+        </section>
+      )}
     </main>
   );
 };

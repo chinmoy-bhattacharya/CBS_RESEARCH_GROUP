@@ -102,17 +102,23 @@ const Projects = async () => {
         customColorHeadig={null}
       />
 
-      <section className="pb-24">
-        {getAllProjects &&
-          getAllProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              projectTitle={project.projectName}
-              status={project.projectStatus}
-              projectDetails={project.description}
-            />
-          ))}
-      </section>
+      {getAllProjects.length == 0 ? (
+        <h2 className="pb-24 text-xl font-semibold text-center mx-0 lg:mx-10 my-20 text-gray-600 dark:text-gray-300">
+          At this time, information regarding projects is not available.
+        </h2>
+      ) : (
+        <section className="pb-24">
+          {getAllProjects &&
+            getAllProjects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                projectTitle={project.projectName}
+                status={project.projectStatus}
+                projectDetails={project.description}
+              />
+            ))}
+        </section>
+      )}
     </main>
   );
 };

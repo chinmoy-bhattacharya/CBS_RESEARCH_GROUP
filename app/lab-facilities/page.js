@@ -105,21 +105,26 @@ const LabFacilities = async () => {
         subHeading="Explore the advanced tools and instruments utilized in our electrochemistry lab at CBS Research Group. From potentiostats to electrochemical cells, our state-of-the-art equipment supports innovative research in energy storage, corrosion studies, and material characterization."
         customColorHeadig={null}
       />
-
-      <section
-        className="grid py-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+      {getAllEquipmens.length == 0 ? (
+        <h2 className="pb-28 text-xl font-semibold text-center mx-0 lg:mx-10 my-20 text-gray-600 dark:text-gray-300">
+          At this time, information regarding lab equipments is not available.
+        </h2>
+      ) : (
+        <section
+          className="grid py-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3
          xl:grid-cols-3 2xl:grid-cols-4 place-items-center gap-y-8"
-      >
-        {getAllEquipmens &&
-          getAllEquipmens.map((equipment, index) => (
-            <LabEquipmentCard
-              key={index}
-              equipmentImage={equipment.instrumentImage}
-              equipmentName={equipment.instrumentName}
-              equipmentDetails={equipment.description}
-            />
-          ))}
-      </section>
+        >
+          {getAllEquipmens &&
+            getAllEquipmens.map((equipment, index) => (
+              <LabEquipmentCard
+                key={index}
+                equipmentImage={equipment.instrumentImage}
+                equipmentName={equipment.instrumentName}
+                equipmentDetails={equipment.description}
+              />
+            ))}
+        </section>
+      )}
     </main>
   );
 };

@@ -104,13 +104,12 @@ const About = async () => {
       />
 
       <div className="pb-20">
-        {getPersonalAwards.length == 0 && (
+        {getPersonalAwards.length == 0 ? (
           <h2 className="text-xl font-semibold text-center mx-0 lg:mx-10 my-20 text-gray-600 dark:text-gray-300">
-            Currently awards informations ain&apos;t available.
+            At this time, information regarding awards is not available.
           </h2>
-        )}
-
-        {getPersonalAwards &&
+        ) : (
+          getPersonalAwards &&
           getPersonalAwards.map((award, index) => (
             <AwardCard
               key={index}
@@ -118,7 +117,8 @@ const About = async () => {
               awardTitle={award.awardTitle}
               awardOverview={award.recivedFor}
             />
-          ))}
+          ))
+        )}
       </div>
     </main>
   );

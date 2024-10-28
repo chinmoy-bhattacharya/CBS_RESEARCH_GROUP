@@ -205,25 +205,30 @@ const Alumni = async () => {
             "View the profiles of our Doctorate alumni from CBS Research Group, showcasing their academic achievements, research contributions, and the impact they've made in their fields. Learn more about their journeys, and professional growth."
           }
         />
-        <div
-          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 
+        {getAllDoctorateAlumni.length == 0 ? (
+          <h2 className="text-xl font-semibold text-center mx-0 lg:mx-10 my-20 text-gray-600 dark:text-gray-300">
+            At this time, information regarding alumni is not available.
+          </h2>
+        ) : (
+          <div
+            className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 
       lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 place-content-center"
-        >
-          {getAllDoctorateAlumni &&
-            getAllDoctorateAlumni.map((alumnus, index) => (
-              <AlumniCard
-                key={index}
-                alumnusImage={alumnus.profilePicture}
-                googleScholarId={alumnus.googleScholarId}
-                researchGateId={alumnus.researchGateId}
-                alumnusName={alumnus.alumniName}
-                emailId={alumnus.emailId}
-                phoneNumber={alumnus.phoneNumber}
-                alumnusProfileLink={`/alumni/doctorate/${alumnus._id}`}
-              />
-            ))}
-        </div>
-
+          >
+            {getAllDoctorateAlumni &&
+              getAllDoctorateAlumni.map((alumnus, index) => (
+                <AlumniCard
+                  key={index}
+                  alumnusImage={alumnus.profilePicture}
+                  googleScholarId={alumnus.googleScholarId}
+                  researchGateId={alumnus.researchGateId}
+                  alumnusName={alumnus.alumniName}
+                  emailId={alumnus.emailId}
+                  phoneNumber={alumnus.phoneNumber}
+                  alumnusProfileLink={`/alumni/doctorate/${alumnus._id}`}
+                />
+              ))}
+          </div>
+        )}
         <CommonHeading
           customColorHeadig={"text-blue-500 dark:text-yellow-500"}
           Heading={"Meet Our Masters Alumni.."}
@@ -231,25 +236,30 @@ const Alumni = async () => {
             "View the profiles of our Doctorate alumni from CBS Research Group, showcasing their academic achievements, research contributions, and the impact they've made in their fields. Learn more about their journeys, and professional growth."
           }
         />
-
-        <div
-          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 
+        {getAllMastersAlumni.length == 0 ? (
+          <h2 className="pt-16 pb-28 text-xl font-semibold text-center mx-0 lg:mx-10 text-gray-600 dark:text-gray-300">
+            At this time, information regarding alumni is not available.
+          </h2>
+        ) : (
+          <div
+            className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 
       lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 place-content-center"
-        >
-          {getAllMastersAlumni &&
-            getAllMastersAlumni.map((alumnus, index) => (
-              <AlumniCard
-                key={index}
-                alumnusImage={alumnus.profilePicture}
-                googleScholarId={alumnus.googleScholarId}
-                researchGateId={alumnus.researchGateId}
-                alumnusName={alumnus.alumniName}
-                emailId={alumnus.emailId}
-                phoneNumber={alumnus.phoneNumber}
-                alumnusProfileLink={`/alumni/masters/${alumnus._id}`}
-              />
-            ))}
-        </div>
+          >
+            {getAllMastersAlumni &&
+              getAllMastersAlumni.map((alumnus, index) => (
+                <AlumniCard
+                  key={index}
+                  alumnusImage={alumnus.profilePicture}
+                  googleScholarId={alumnus.googleScholarId}
+                  researchGateId={alumnus.researchGateId}
+                  alumnusName={alumnus.alumniName}
+                  emailId={alumnus.emailId}
+                  phoneNumber={alumnus.phoneNumber}
+                  alumnusProfileLink={`/alumni/masters/${alumnus._id}`}
+                />
+              ))}
+          </div>
+        )}
       </main>
     </>
   );
