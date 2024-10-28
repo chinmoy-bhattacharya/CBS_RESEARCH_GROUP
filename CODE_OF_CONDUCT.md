@@ -10,35 +10,35 @@ This project is an electrochemistry lab under a government college, and we are d
 
 We expect all participants in our project to adhere to the following standards:
 
-- **Respectful Communication**: Always be respectful and considerate in your communication with others. Avoid any form of harassment, discrimination, or offensive language.
+-   **Respectful Communication**: Always be respectful and considerate in your communication with others. Avoid any form of harassment, discrimination, or offensive language.
 
-- **Inclusivity**: Embrace diversity and ensure that everyone, regardless of age, race, gender, sexual orientation, disability, or background, feels welcome and included in our community.
+-   **Inclusivity**: Embrace diversity and ensure that everyone, regardless of age, race, gender, sexual orientation, disability, or background, feels welcome and included in our community.
 
-- **Constructive Feedback**: Provide feedback in a constructive and respectful manner. Be open to receiving feedback and willing to improve based on others' suggestions.
+-   **Constructive Feedback**: Provide feedback in a constructive and respectful manner. Be open to receiving feedback and willing to improve based on others' suggestions.
 
-- **Collaboration**: Work together with fellow contributors in a spirit of cooperation and mutual respect. Collaboration is key to the success of our project.
+-   **Collaboration**: Work together with fellow contributors in a spirit of cooperation and mutual respect. Collaboration is key to the success of our project.
 
-- **Professionalism**: Maintain a high level of professionalism in all interactions related to the project. This includes respecting the confidentiality of any sensitive information related to the lab or the project.
+-   **Professionalism**: Maintain a high level of professionalism in all interactions related to the project. This includes respecting the confidentiality of any sensitive information related to the lab or the project.
 
 ## Unacceptable Behavior
 
 The following behaviors are considered unacceptable and will not be tolerated:
 
-- **Harassment**: Harassment, including but not limited to unwelcome sexual attention, offensive comments, or discriminatory behavior based on personal characteristics.
+-   **Harassment**: Harassment, including but not limited to unwelcome sexual attention, offensive comments, or discriminatory behavior based on personal characteristics.
 
-- **Disrespectful Communication**: Insults, threats, or derogatory comments directed at other contributors, whether in public or private.
+-   **Disrespectful Communication**: Insults, threats, or derogatory comments directed at other contributors, whether in public or private.
 
-- **Disruption**: Any behavior that disrupts the collaborative and productive environment of the project.
+-   **Disruption**: Any behavior that disrupts the collaborative and productive environment of the project.
 
-- **Unauthorized Sharing**: Sharing confidential or proprietary information related to the project or the lab without permission.
+-   **Unauthorized Sharing**: Sharing confidential or proprietary information related to the project or the lab without permission.
 
 ## Enforcement
 
 Project maintainers are responsible for enforcing this Code of Conduct. Violations of the Code of Conduct may result in actions such as:
 
-- A warning to the offender
-- Temporary or permanent ban from the project
-- Reporting the behavior to the relevant authorities within the government college
+-   A warning to the offender
+-   Temporary or permanent ban from the project
+-   Reporting the behavior to the relevant authorities within the government college
 
 ## Reporting
 
@@ -47,7 +47,3 @@ If you experience or witness any behavior that violates this Code of Conduct, pl
 ## Acknowledgment
 
 By participating in this project, you agree to adhere to this Code of Conduct and contribute to a positive and respectful environment.
-
-## Attribution
-
-This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org/), version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
