@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CBS Research Group
 
-## Getting Started
+## Overview
 
-First, run the development server:
+CBS Research Group is an electrochemistry lab under (Indian Institute of Engineering Science and Technology) it is located in Shibpur P.O. - Botanic Garden, Howrah - 711 103 West Bengal, India Phone: +91 (033) 2668 4561 to 63 Fax: +91 (033) 2668 2916
+
+## Table of Contents
+
+- Project Information
+- Frontend Technology Stack
+- Packages
+- Base URLs
+- Routes
+- Setup and Installation
+- Usage
+- Contributing
+- License
+
+## Project Information
+
+- Project Name: CBS Research Group.
+- Owner: Dr. Chinmoy Bhattachary
+- Organization: Indian Institute of Engineering Science and Technology, Shibpur.
+- About Organization: CBS Research Group is a chemistry research lab, under (Indian Institute of Engineering Science and Technology)
+  Shibpur (IIEST, Shibpur) has a more than 160 years long and rich history.
+- Adress: Botanic Garden, Dist: Howrah, West Bengal, India - 711103 +91 (033) 2668 4561 to 63 +91 (033) 2668 2916 (Fax)
+- Author: Kunal Chandra Das
+- Position: Web Developer
+
+## Frontend Technology Stack
+
+- Javascript Framework: Next.js/React
+- Css Framework: Tailwind/css
+- Runtime: Node.js
+- Cloud Provider: Cloudinary
+
+## Extarnal Packages:
+
+- aos
+- next-themes
+- prop-types
+- react-countup
+- react-icons
+- sharp
+- swiper
+
+- Base Url:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  https://chinmoybhattacharyaelectrochemistry.com
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Routes Path:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+|-------------------------------|
+| Entity 	         | Endpoint   |
+|-------------------------------|
+| Home           | /            |
+|-------------------------------|
+| About Us       | /about       |
+|-------------------------------|
+| Publications   | /publications|
+|-------------------------------|
+| Alumni         | /alumni      |
+|-------------------------------|
+| Members        | /members     |
+|-------------------------------|
+| Awards         | /awards      |
+|-------------------------------|
+| News           | /projects    |
+|-------------------------------|
+| Lab Facilities | /about-info  |
+|-------------------------------|
+| Projects       | /projects    |
+|-------------------------------|
+| Gallery        | /gallery     |
+|-------------------------------|
+| Contact        | /contact     |
+|-------------------------------|
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
 
-## Learn More
+## Setup and Installation
 
-To learn more about Next.js, take a look at the following resources:
+- Clone the Repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  git clone https://github.com/chinmoy-bhattacharya/CBS_RESEARCH_GROUP.git
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Navigate to the Project Directory:
 
-## Deploy on Vercel
+```bash
+ cd cbs-research-group
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Install Dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+ npm install
+```
+
+Set Up Environment Variables:
+Create a .env file and configure the necessary environment variables (e.g., API keys, etc.).
+
+Run the Server In Development:
+
+```bash
+ npm run dev
+```
+
+Run the Server In Production:
+
+```bash
+ npm start
+```
+
+#3 Usage
+
+- Use tools like Postman to interact with the API endpoints.
+- Implement the routes according to the base URLs and endpoints provided.
+
+## Contributing
+
+- Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+
+- This project is licensed under the MIT License.

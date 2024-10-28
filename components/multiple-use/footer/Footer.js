@@ -128,7 +128,11 @@ const Footer = () => {
       <div className="flex max-md:flex-col gap-4 px-8">
         <ul className="flex flex-wrap gap-4">
           <li className="text-sm">
-            <a href="#" className="text-blue-500 font-semibold hover:underline">
+            <a
+              href="https://github.com/chinmoy-bhattacharya/CBS_RESEARCH_GROUP/issues"
+              target="_blank"
+              className="text-blue-500 font-semibold hover:underline"
+            >
               Report Issues
             </a>
           </li>
