@@ -187,6 +187,11 @@ const PhotoGallery = () => {
                 <Image
                   ref={imageRef}
                   src={images && images.path}
+                  quality={100}
+                  loading="eager"
+                  priority
+                  height={images.height}
+                  width={images.width}
                   alt="full_image"
                   className="pb-20"
                   data-aos="zoom-in"
@@ -207,6 +212,9 @@ const PhotoGallery = () => {
                       className="block h-full w-full rounded-lg object-cover object-center cursor-pointer"
                       src={item.path}
                       loading="lazy"
+                      quality={100}
+                      height={500}
+                      width={500}
                     />
                   </div>
                 ))}

@@ -53,6 +53,8 @@ const ProfProfile = () => {
                   quality={100}
                   loading="eager"
                   priority
+                  width={500}
+                  height={500}
                   className="rounded-full"
                 />
               </div>{" "}

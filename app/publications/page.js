@@ -68,7 +68,7 @@ const Publications = async () => {
       <CommonBanner
         bannerBackgroundImg={Publication_banner}
         headingFirst={"Here are all the"}
-        UniqueHeading={"Publication's"}
+        UniqueHeading={"Publications"}
         headingLast={"from CBS Research Group."}
         subHeading={`Our research work mainly focusses on different synthetic routes of
               various photocatalysts or semiconductors that are basically oxides

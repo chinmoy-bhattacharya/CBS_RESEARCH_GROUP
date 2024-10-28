@@ -6,7 +6,7 @@ const NewsCard = ({ createAt, newsTitle, newsDescription }) => {
     <section
       className="my-8 block rounded-lg bg-white
        dark:bg-slate-700 text-surface
-     dark:bg-surface-dark dark:text-white shadow-lg"
+     dark:bg-surface-dark dark:text-white shadow-lg mx-2"
     >
       <div className="border-b-2 border-neutral-100 px-6 py-3 dark:border-white/10">
         <span className="text-blue-500 dark:text-yellow-500 font-medium mr-2">

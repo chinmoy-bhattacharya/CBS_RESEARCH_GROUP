@@ -8,7 +8,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 const Footer = () => {
   return (
     <footer
-      className="bg-white dark:bg-slate-900 text-gray-600 dark:text-gray-300 py-10 px-10 
+      className="bg-white dark:bg-slate-900 text-gray-600 dark:text-gray-300 py-10 px-2 lg:px-10 
     font-sans tracking-wide"
     >
       <div className="max-w-2xl mx-auto text-center">
@@ -66,8 +66,8 @@ const Footer = () => {
         </ul>
       </div>
 
-      <div className="flex justify-center items-center">
-        <ul className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-12 mt-20 mx-auto lg:mx-2">
+      <div className="flex justify-start md:justify-center md:items-center">
+        <ul className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mt-20 mx-4 md:mx-2">
           <li className="flex items-center cursor-pointer" title="Contact Us">
             <div
               className="dark:bg-slate-700 h-10 w-10 rounded-full flex items-center
@@ -125,11 +125,11 @@ const Footer = () => {
       </div>
       <hr className="my-10 border-gray-200 dark:border-gray-800" />
 
-      <div className="flex max-md:flex-col gap-4">
+      <div className="flex max-md:flex-col gap-4 px-8">
         <ul className="flex flex-wrap gap-4">
           <li className="text-sm">
             <a href="#" className="text-blue-500 font-semibold hover:underline">
-              Terms of Service
+              Report Issues
             </a>
           </li>
         </ul>

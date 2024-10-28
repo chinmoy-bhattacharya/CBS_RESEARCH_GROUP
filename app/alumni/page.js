@@ -200,12 +200,11 @@ const Alumni = async () => {
 
         <CommonHeading
           customColorHeadig={"text-blue-500 dark:text-yellow-500"}
-          Heading={"Doctorate Alumni"}
+          Heading={"Meet Our Doctorate Alumni.."}
           subHeading={
             "View the profiles of our Doctorate alumni from CBS Research Group, showcasing their academic achievements, research contributions, and the impact they've made in their fields. Learn more about their journeys, and professional growth."
           }
         />
-
         <div
           className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 
       lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 place-content-center"
@@ -227,7 +226,7 @@ const Alumni = async () => {
 
         <CommonHeading
           customColorHeadig={"text-blue-500 dark:text-yellow-500"}
-          Heading={"Masters Alumni"}
+          Heading={"Meet Our Masters Alumni.."}
           subHeading={
             "View the profiles of our Doctorate alumni from CBS Research Group, showcasing their academic achievements, research contributions, and the impact they've made in their fields. Learn more about their journeys, and professional growth."
           }

@@ -102,18 +102,18 @@ const Members = async () => {
     <main className="min-h-screen bg-gray-50 dark:bg-slate-800 pb-16">
       <CommonBanner
         bannerBackgroundImg={membersBackground}
-        headingFirst={"All"}
-        UniqueHeading={"Member's"}
-        headingLast={"Of CBS Group"}
+        headingFirst={null}
+        UniqueHeading={"PhD and MSc Members"}
+        headingLast={"Of CBS Research Lab"}
         subHeading={
-          "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+          "Unlocking the potential of the next generation of researchers, CBS Research Lab fosters a vibrant community of PhD and MSc students. With a focus on collaboration, cutting-edge research, and mentorship, our students are equipped to tackle global challenges and drive advancements in their fields, contributing to impactful solutions for a better future."
         }
       />
 
       <CommonHeading
-        Heading={"All Doctorate Students"}
+        Heading={"Meet Our PhD Scholars.."}
         subHeading={
-          "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+          "Discover the diverse expertise and innovative projects of our PhD members at CBS Research Lab. Each scholar brings a unique perspective, contributing to groundbreaking research and collaborative initiatives that push the boundaries of knowledge and drive impactful solutions in their respective fields."
         }
         customColorHeadig={"text-blue-500 dark:text-yellow-500"}
       />
@@ -135,9 +135,9 @@ const Members = async () => {
       </section>
 
       <CommonHeading
-        Heading={"All Project Students"}
+        Heading={"Meet Our MSc Scholars.."}
         subHeading={
-          "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+          "Explore the dynamic talents and research endeavors of our MSc students at CBS Research Lab. Each student contributes fresh ideas and perspectives, engaging in collaborative projects that foster innovation and address real-world challenges, paving the way for a brighter future in their fields."
         }
         customColorHeadig={"text-blue-500 dark:text-yellow-500"}
       />

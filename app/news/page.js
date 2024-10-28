@@ -92,25 +92,15 @@ const News = async () => {
     <main className="min-h-screen bg-gray-50 dark:bg-slate-800">
       <CommonBanner
         bannerBackgroundImg={groupNewsBannerImage}
-        headingFirst={"Here are all the"}
-        UniqueHeading={"Publication's"}
-        headingLast={"from CBS Research Group."}
-        subHeading={`Our research work mainly focusses on different synthetic routes of
-              various photocatalysts or semiconductors that are basically oxides
-              of inorganic compound. Using these, we check their
-              photoelectrochemical and photocatalytic activity so that they can
-              be useful in the modern world. Additionally, our research group
-              also works in the field of Corrosion Chemistry. All the published
-              papers till date has been provided here, you can freely access
-              them and get a thorough understanding about the research work of
-              our lab.`}
+        headingFirst={"Stay Informed:"}
+        UniqueHeading={"Research Lab News and Updates"}
+        headingLast={null}
+        subHeading={`Catch up on the latest developments, discoveries, and announcements from our research lab, including important admissions news. Stay connected with ongoing projects, upcoming events, and insights that showcase the impactful work being done by our team, ensuring you never miss a vital update in the world of research.`}
       />
 
       <CommonHeading
-        Heading="Latest Group News"
-        subHeading="Our research work mainly focusses on different synthetic routes of
-              various photocatalysts or semiconductors that are basically oxides
-              of inorganic compound. Using these, we check their"
+        Heading="Important Announcements And Notice"
+        subHeading="Stay informed with our latest announcements, including essential updates and critical information regarding our research lab."
         customColorHeadig={null}
       />
 

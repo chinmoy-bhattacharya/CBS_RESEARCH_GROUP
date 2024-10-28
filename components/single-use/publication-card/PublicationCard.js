@@ -25,7 +25,7 @@ const PublicationCard = ({
             src={publicationThumbnail}
             alt="image"
             width={500}
-            height={800}
+            height={500}
             className="h-full w-full lg:h-[250px] lg:w-[500px] rounded-lg shadow-lg"
           />
         </div>

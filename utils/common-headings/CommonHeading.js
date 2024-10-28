@@ -13,7 +13,7 @@ const CommonHeading = ({ Heading, subHeading, customColorHeadig }) => {
       >
         {Heading}
       </h2>
-      <p className="text-center px-4 md:px-6 text-sm md:text-base lg:text-base leading-2 text-gray-500 dark:text-gray-300">
+      <p className="text-center px-2 md:px-6 text-sm md:text-base lg:text-base leading-2 text-gray-500 dark:text-gray-300">
         {subHeading}
       </p>
     </section>

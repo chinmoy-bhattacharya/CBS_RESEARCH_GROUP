@@ -74,9 +74,9 @@ const ResearchAreas = () => {
                 src={Photocatalysts}
                 alt="Development Of Metal Oxides Based Photocatalysts Graphics"
                 height={300}
+                width={300}
                 quality={80}
                 loading="lazy"
-                width={300}
                 className="w-full object-cover rounded-md"
               />
               <div className="py-6">

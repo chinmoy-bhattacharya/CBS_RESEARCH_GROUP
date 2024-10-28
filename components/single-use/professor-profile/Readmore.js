@@ -86,7 +86,7 @@ const Readmore = () => {
     <main>
       <div className="mt-12 flex flex-col justify-center">
         {" "}
-        <p className="text-sm md:text-base lg:text-lg text-gray-800 dark:text-gray-300 text-center font-normal lg:px-16 mb-10">
+        <p className="text-sm md:text-base lg:text-base text-gray-800 dark:text-gray-300 text-center font-normal lg:px-16 mb-10">
           Joined the Institute as Assistant Professor , Department of Chemistry,
           Indian Institute of Engineering Science & Technology, Shibpur
           (formerly, BESUS) Howrah – 711 103, West Bengal on 23rd June 2006.
@@ -98,10 +98,10 @@ const Readmore = () => {
             className="py-12 border-t text-gray-600 dark:text-gray-300
                  border-gray-300 dark:border-gray-600"
           >
-            <div className="container">
+            <div className="container mx-auto">
               <div className="mx-auto max-w-screen-lg">
                 <div className="text-center mb-10">
-                  <h1 className="text-center text-2xl font-medium md:text-3xl">
+                  <h1 className="text-center text-xl font-medium md:text-2xl">
                     Academic Qualification & Teaching Experiences
                   </h1>
                 </div>

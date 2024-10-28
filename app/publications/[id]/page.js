@@ -100,7 +100,7 @@ const SinglePublication = async ({ params }) => {
             imageThree={getPublicationById && getPublicationById.secondOverview}
           />
 
-          <div className="p-12 lg:pl-0 lg:pr-24">
+          <div className="p-6 lg:pl-0 lg:pr-24">
             <h1 className="mt-2">
               <span className="text-blue-500 dark:text-yellow-500 font-semibold mr-2">
                 Published At:

@@ -13,7 +13,7 @@ const ReadAbstract = ({ content }) => {
             Abstract
           </h4>
           <article
-            className="px-10 lg:px-20 xl:px-32 2xl:px-56 text-gray-600
+            className="px-4 md:px-10 text-gray-600
                dark:text-gray-300 pt-6 text-sm md:text-base lg:text-base leading-2"
           >
             {content}

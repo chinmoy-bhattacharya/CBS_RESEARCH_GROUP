@@ -41,7 +41,7 @@ const Contact = () => {
         <ContactForm />
 
         <div className="flex justify-center items-center order-first lg:order-none pb-12 lg:pb-0">
-          <Image src={Contact_Image} alt="Hero" />
+          <Image src={Contact_Image} alt="Hero" width={500} height={500} />
         </div>
       </section>
     </main>

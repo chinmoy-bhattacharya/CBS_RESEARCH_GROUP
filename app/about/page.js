@@ -105,7 +105,7 @@ const About = async () => {
 
       <div className="pb-20">
         {getPersonalAwards.length == 0 && (
-          <h2 className="text-xl font-semibold text-center mx-10 my-20 text-gray-600 dark:text-gray-300">
+          <h2 className="text-xl font-semibold text-center mx-0 lg:mx-10 my-20 text-gray-600 dark:text-gray-300">
             Currently awards informations ain&apos;t available.
           </h2>
         )}

@@ -7,6 +7,8 @@ const LandingBanner = () => {
     <section className="relative isolate">
       <Image
         src={backgroundImage}
+        width={500}
+        height={500}
         alt="backgroundImage"
         className="absolute min-h-full inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
@@ -25,13 +27,13 @@ const LandingBanner = () => {
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white sm:text-3xl dark:text-gray-300">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white sm:text-3xl dark:text-gray-300">
               Welcome To{" "}
               <span className="text-yellow-500">
                 Chinmoy Bhattacharya&apos;s
               </span>{" "}
               Research Lab
-            </h2>
+            </h1>
             <p className="mt-6 text-sm md:text-base lg:text-base leading-2 text-gray-200 dark:text-gray-400">
               The main motive of our research group is to build inorganic
               compound based semiconductors that will contribute to a better,
