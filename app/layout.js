@@ -3,7 +3,7 @@ import "./globals.css";
 import PageHeader from "@/components/multiple-use/navigation-bar/PageHeader.js";
 import Footer from "@/components/multiple-use/footer/Footer.js";
 import { ThemeProvider } from "./NextThemesProvider.js";
-
+import { Analytics } from "@vercel/analytics/next";
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -92,6 +92,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="light">
           <PageHeader />
           {children}
+          <Analytics />
           <Footer />
         </ThemeProvider>
       </body>

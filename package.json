@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.4.1",
     "aos": "^2.3.4",
     "next": "^15.0.2-canary.7",
     "next-themes": "^0.3.0",
