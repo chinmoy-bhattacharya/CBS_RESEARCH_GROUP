@@ -21,7 +21,7 @@ export const metadata = {
     description:
       "Discover the visual highlights of the CBS Research Group, featuring our research activities and team events.",
     type: "website",
-    url: "https://www.chinmoybhattacharyaelectrochemistry.com/gallery",
+    url: "https://www.chinmoybhattacharya.com/gallery",
     image: "/favicon_io/favicon.ico?v=4",
   },
   iiest: {
@@ -68,7 +68,7 @@ export const metadata = {
   additional: {
     httpEquiv: "X-UA-Compatible",
     content: "IE=edge",
-    canonical: "https://www.chinmoybhattacharyaelectrochemistry.com/gallery",
+    canonical: "https://www.chinmoybhattacharya.com/gallery",
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };

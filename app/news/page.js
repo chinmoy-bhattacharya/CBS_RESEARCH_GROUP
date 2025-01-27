@@ -31,7 +31,7 @@ export const metadata = {
     description:
       "Get the latest news and updates from CBS Research Group, focused on advancements in electrochemistry.",
     type: "website",
-    url: "https://www.chinmoybhattacharyaelectrochemistry.com/news",
+    url: "https://www.chinmoybhattacharya.com/news",
     image: "/favicon_io/favicon.ico?v=4",
   },
   iiest: {
@@ -78,7 +78,7 @@ export const metadata = {
   additional: {
     httpEquiv: "X-UA-Compatible",
     content: "IE=edge",
-    canonical: "https://www.chinmoybhattacharyaelectrochemistry.com/news",
+    canonical: "https://www.chinmoybhattacharya.com/news",
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };

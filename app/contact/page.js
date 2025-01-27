@@ -16,13 +16,13 @@ export const metadata = {
     description:
       "Reach out to the CBS Research Group for any questions regarding publications and research activities.",
     type: "website",
-    url: "https://www.chinmoybhattacharyaelectrochemistry.com/contact",
+    url: "https://www.chinmoybhattacharya.com/contact",
     image: "/favicon_io/favicon.ico?v=4",
   },
   additional: {
     httpEquiv: "X-UA-Compatible",
     content: "IE=edge",
-    canonical: "https://www.chinmoybhattacharyaelectrochemistry.com/contact",
+    canonical: "https://www.chinmoybhattacharya.com/contact",
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };

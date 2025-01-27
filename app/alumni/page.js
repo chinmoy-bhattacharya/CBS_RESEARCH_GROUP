@@ -32,7 +32,7 @@ export const metadata = {
     description:
       "Discover the contributions of alumni from the CBS Research Group, Indian Institute of Engineering Science and Technology.",
     type: "website",
-    url: "https://www.chinmoybhattacharyaelectrochemistry.com/alumni",
+    url: "https://www.chinmoybhattacharya.com/alumni",
     image: "/favicon_io/favicon.ico?v=4",
   },
   iiest: {
@@ -80,7 +80,7 @@ export const metadata = {
   additional: {
     httpEquiv: "X-UA-Compatible",
     content: "IE=edge",
-    canonical: "https://www.chinmoybhattacharyaelectrochemistry.com/alumni",
+    canonical: "https://www.chinmoybhattacharya.com/alumni",
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };

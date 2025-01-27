@@ -47,7 +47,7 @@ CBS Research Group is an electrochemistry lab under (Indian Institute of Enginee
 - Base Url:
 
 ```bash
-  https://chinmoybhattacharyaelectrochemistry.com
+  https://chinmoybhattacharya.com
 
 ```
 

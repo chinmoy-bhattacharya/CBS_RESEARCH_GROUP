@@ -2,7 +2,7 @@ import getRequest_all from "@/apis/getRequestAll";
 import envConfig from "@/config/envConfig"; // Ensure correct import for MSc students
 
 export default async function sitemap() {
-  const baseUrl = "https://www.chinmoybhattacharyaelectrochemistry.com";
+  const baseUrl = "https://www.chinmoybhattacharya.com";
 
   try {
     // PhD Students sitemap

@@ -2,7 +2,7 @@ import getRequest_all from "@/apis/getRequestAll.js";
 import envConfig from "@/config/envConfig";
 
 export default async function robots() {
-  const baseUrl = "https://www.chinmoybhattacharyaelectrochemistry.com";
+  const baseUrl = "https://www.chinmoybhattacharya.com";
 
   try {
     // Fetch dynamic data

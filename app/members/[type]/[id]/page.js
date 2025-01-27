@@ -23,7 +23,7 @@ export const metadata = {
     description:
       "Botanic Garden, Dist: Howrah, West Bengal, India - 711103  +91 (033) 2668 4561 to 63  +91 (033) 2668 2916 (Fax)",
     type: "website",
-    url: "https://www.chinmoybhattacharyaelectrochemistry.com",
+    url: "https://www.chinmoybhattacharya.com",
     image: "/favicon_io/favicon.ico?v=4",
   },
   iiest: {
@@ -71,7 +71,7 @@ export const metadata = {
   additional: {
     httpEquiv: "X-UA-Compatible",
     content: "IE=edge",
-    canonical: "https://www.chinmoybhattacharyaelectrochemistry.com",
+    canonical: "https://www.chinmoybhattacharya.com",
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };

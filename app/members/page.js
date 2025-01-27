@@ -41,7 +41,7 @@ export const metadata = {
     description:
       "Explore the dedicated team of researchers at CBS Research Group, committed to innovative research in electrochemistry.",
     type: "website",
-    url: "https://www.chinmoybhattacharyaelectrochemistry.com/members",
+    url: "https://www.chinmoybhattacharya.com/members",
     image: "/favicon_io/favicon.ico?v=4",
   },
   iiest: {
@@ -88,7 +88,7 @@ export const metadata = {
   additional: {
     httpEquiv: "X-UA-Compatible",
     content: "IE=edge",
-    canonical: "https://www.chinmoybhattacharyaelectrochemistry.com/members",
+    canonical: "https://www.chinmoybhattacharya.com/members",
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };

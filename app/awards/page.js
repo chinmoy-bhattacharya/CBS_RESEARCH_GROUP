@@ -31,7 +31,7 @@ export const metadata = {
     description:
       "Discover the accolades and honors received by the CBS Research Group, highlighting significant achievements in electrochemistry.",
     type: "website",
-    url: "https://www.chinmoybhattacharyaelectrochemistry.com/awards",
+    url: "https://www.chinmoybhattacharya.com/awards",
     image: "/favicon_io/favicon.ico?v=4",
   },
   iiest: {
@@ -78,7 +78,7 @@ export const metadata = {
   additional: {
     httpEquiv: "X-UA-Compatible",
     content: "IE=edge",
-    canonical: "https://www.chinmoybhattacharyaelectrochemistry.com/awards",
+    canonical: "https://www.chinmoybhattacharya.com/awards",
     icon: "/favicon_io/favicon.ico?v=4",
   },
 };

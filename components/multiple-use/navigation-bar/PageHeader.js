@@ -613,7 +613,7 @@ const PageHeader = () => {
 
           <div className="flex items-center space-x-8 max-lg:ml-auto">
             <a
-              href="https://adminsconsole.chinmoybhattacharyaelectrochemistry.com/"
+              href="https://adminconsole.chinmoybhattacharya.com/"
               target="_blank"
               className="relative flex justify-end tooltip transform translate-1 hover:scale-110"
             >
